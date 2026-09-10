@@ -1,0 +1,657 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "GURI",
+    "inecCode": "10",
+    "delimiterPrefix": "17-10"
+  },
+  "wards": [
+    {
+      "name": "ABUNABO",
+      "inecCode": "01",
+      "registrationAreaCode": "17-10-01",
+      "pollingUnits": [
+        {
+          "code": "17-10-01-001",
+          "name": "ABUNABO PRI. SCH. ABUNABO  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-002",
+          "name": "ABUNABO PRI. SCH. ABUNABO  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-003",
+          "name": "JANGON MAGAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-004",
+          "name": "SABON GIDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-005",
+          "name": "GADUWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-006",
+          "name": "GADUWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-007",
+          "name": "DIRIBDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-008",
+          "name": "DAMEGI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-009",
+          "name": "JANGON MAGAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-01-010",
+          "name": "SABON-GIDA PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-01-011",
+          "name": "DAMAGE PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-01-012",
+          "name": "JSS ABUNABO",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-01-013",
+          "name": "ABUNABO MODEL HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-01-014",
+          "name": "GARIN MALLAM PRI. SCH.",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "ADIYANI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-10-02",
+      "pollingUnits": [
+        {
+          "code": "17-10-02-001",
+          "name": "ADIYANI PRI. SCH. ADIYANI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-002",
+          "name": "ADIYANI PRI. SCH. ADIYANI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-003",
+          "name": "ADIYANI PRI. SCH. ADIYANI  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-004",
+          "name": "ADIYANI PRI. SCH. ADIYANI  IV",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-005",
+          "name": "ZORIYO PRI. SCH. ZORIYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-006",
+          "name": "KASAGA PRI. SCH. KASAGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-007",
+          "name": "AJIBUKARAM / AJIBUKARAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-008",
+          "name": "KASAGA SABUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-02-009",
+          "name": "ADIYANI PRI. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-02-010",
+          "name": "JSS ADIYANI I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-02-011",
+          "name": "JSS ADIYANI II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DAWA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-10-03",
+      "pollingUnits": [
+        {
+          "code": "17-10-03-001",
+          "name": "DAWA PRI. SCH. DAWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-002",
+          "name": "DAWA PRI. SCH. DAWA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-003",
+          "name": "ZUBA BARKONO/ZUBA BARKONO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-004",
+          "name": "MAJANGUWA/MAJANGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-005",
+          "name": "KURYA, KURYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-006",
+          "name": "GAGIYA PRI. SCH GAGIYA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-007",
+          "name": "GAGIYA PRI. SCH GAGIYA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-008",
+          "name": "ABUR PRI. SCH. ABUR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-009",
+          "name": "KAJIMARAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-010",
+          "name": "BAKIN GAYIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-011",
+          "name": "DOROWAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-03-012",
+          "name": "GAGIYA PRI. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-03-013",
+          "name": "DAWA PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GARBAGAL",
+      "inecCode": "04",
+      "registrationAreaCode": "17-10-04",
+      "pollingUnits": [
+        {
+          "code": "17-10-04-001",
+          "name": "GARBAGAL PRI. SCH. GARBAGAL  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-04-002",
+          "name": "GARBAGAL PRI. SCH. GARBAGAL  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-04-003",
+          "name": "GARMAKUWAN YAMMA  GARMAKUWAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-04-004",
+          "name": "GARMAKUWAN GABAS GARMAKUWAN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-04-005",
+          "name": "KUBULU/KUBULU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-04-006",
+          "name": "GARMAGUWAN YAMMA PRI. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-04-007",
+          "name": "GARMAGUWAN GABAS PRI. SCH.",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GURI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-10-05",
+      "pollingUnits": [
+        {
+          "code": "17-10-05-001",
+          "name": "GURI KOFOR FADA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-002",
+          "name": "GURI KOFOR FADA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-003",
+          "name": "GURI GABAS I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-004",
+          "name": "GURI GABAS II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-005",
+          "name": "GURI BAKIN KASUWA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-006",
+          "name": "GURI BAKIN KASUWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-007",
+          "name": "GURI J.S.S. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-008",
+          "name": "GURI J.S.S. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-009",
+          "name": "WARERI PRI. SCH WARERI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-010",
+          "name": "WARERI PRI. SCH WARERI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-05-011",
+          "name": "MODEL BORDING PRI. SCH. & JSS GURI I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-012",
+          "name": "MODEL BORDING PRI. SCH. & JSS GURI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-013",
+          "name": "GOVT. DAY SEN. SEC. SCH. GURI I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-014",
+          "name": "GOVT. DAY SEN. SEC. SCH. GURI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-015",
+          "name": "JUNIOR SEC. SCH. GURI I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-016",
+          "name": "JUNIOR SEC. SCH. GURI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-017",
+          "name": "GIRLS SCIENCE STAFF QTRS I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-05-018",
+          "name": "GIRLS SCIENCE STAFF QTRS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KADIRA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-10-06",
+      "pollingUnits": [
+        {
+          "code": "17-10-06-001",
+          "name": "KADIRA PRI. SCH. KADIRA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-002",
+          "name": "KADIRA PRI. SCH. KADIRA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-003",
+          "name": "KADIRA PRI. SCH. KADIRA  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-004",
+          "name": "ALANJO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-005",
+          "name": "TASGAN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-006",
+          "name": "ZUBA FINJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-007",
+          "name": "ARIN JASKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-008",
+          "name": "GALDIMARI PRI. SCH. GALDIMARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-009",
+          "name": "GALDIMARI PRI. SCH. GALDIMARI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-010",
+          "name": "LAFIYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-011",
+          "name": "GIRYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-012",
+          "name": "JANGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-013",
+          "name": "DOLERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-06-014",
+          "name": "KADIRA PRI. HEALTH CARE I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-06-015",
+          "name": "KADIRA PRI. HEALTH CARE II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "LAFIYA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-10-07",
+      "pollingUnits": [
+        {
+          "code": "17-10-07-001",
+          "name": "LAFIYA PRI. SCH. LAFIYA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-002",
+          "name": "LAFIYA PRI. SCH. LAFIYA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-003",
+          "name": "ARIN PRI. SCH. ARIN  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-004",
+          "name": "ARIN PRI. SCH. ARIN  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-005",
+          "name": "MADAMAWA PRI. SCH. MADAMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-006",
+          "name": "RIGAR LAMIDO GUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-07-007",
+          "name": "MADAMUWA PRI. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-07-008",
+          "name": "JUNIOR SEC. SCH. LAFIYA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MARGADU",
+      "inecCode": "08",
+      "registrationAreaCode": "17-10-08",
+      "pollingUnits": [
+        {
+          "code": "17-10-08-001",
+          "name": "MARGADU PRI. SCH. MARGADU  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-08-002",
+          "name": "MARGADU PRI. SCH. MARGADU  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-08-003",
+          "name": "MARGADU  DABA    MARGADU DAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-08-004",
+          "name": "TUKUIKUI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-08-005",
+          "name": "YOLA MARGADU",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "MATARA BABA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-10-09",
+      "pollingUnits": [
+        {
+          "code": "17-10-09-001",
+          "name": "MATARA  BABBA PRI. SCH. I/MATARA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-002",
+          "name": "MATARA  BABBA PRI. SCH. II/MATARA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-003",
+          "name": "MATARA  BABBA PRI. SCH. III/MARTA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-004",
+          "name": "DOLEN ZUGO PRI. SCH   DOLEN ZUGO  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-005",
+          "name": "DOLEN ZUGO PRI. SCH   DOLEN ZUGO  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-006",
+          "name": "DAGANA PRI. SCH.  DAGANA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-09-007",
+          "name": "DAGANA PRI. SCH.  DAGANA II",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "MUSARI",
+      "inecCode": "10",
+      "registrationAreaCode": "17-10-10",
+      "pollingUnits": [
+        {
+          "code": "17-10-10-001",
+          "name": "MUSARI PRI. SCH.  MUSARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-002",
+          "name": "MUSARI PRI. SCH.  MUSARI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-003",
+          "name": "MUSARI PRI. SCH.  MUSARI  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-004",
+          "name": "UNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-005",
+          "name": "CHAP-CHAPNO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-006",
+          "name": "TAKAZZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-007",
+          "name": "YALWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-008",
+          "name": "ZUGOBIYA PRI. SCH  ZUGOBIYA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-009",
+          "name": "ZUGOBIYA PRI. SCH  ZUGOBIYA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-010",
+          "name": "KUJURU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-011",
+          "name": "TAKALAFIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-10-10-012",
+          "name": "UNA HEALTH POST",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-10-013",
+          "name": "YELWA PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-10-014",
+          "name": "MUSARI PRI. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-10-10-015",
+          "name": "TAKAZZA BASIC HEALTH CARE",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 113,
+    "existingPuCount": 85,
+    "newPuCount": 28
+  }
+}

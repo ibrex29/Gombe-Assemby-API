@@ -1,0 +1,784 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "HADEJIA",
+    "inecCode": "13",
+    "delimiterPrefix": "17-13"
+  },
+  "wards": [
+    {
+      "name": "ATAFI",
+      "inecCode": "01",
+      "registrationAreaCode": "17-13-01",
+      "pollingUnits": [
+        {
+          "code": "17-13-01-001",
+          "name": "ATAFI/RAMIN ATAFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-002",
+          "name": "KASGAYAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-003",
+          "name": "KWARIN MADAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-004",
+          "name": "KWARIN MADAKI/KOFAR GIDAN BAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-005",
+          "name": "MAKWALLA'A/DANDALIMA'S  OFFICE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-006",
+          "name": "SARARIN RAKUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-007",
+          "name": "SARARIN RAKUMA/GINDIN CHEDIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-008",
+          "name": "WURIWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-01-009",
+          "name": "WURIWA/TUNDU WURIWA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "DUBANTU",
+      "inecCode": "02",
+      "registrationAreaCode": "17-13-02",
+      "pollingUnits": [
+        {
+          "code": "17-13-02-001",
+          "name": "AGUMAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-002",
+          "name": "AGUMAU/KOFAR ALH. DANYARO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-003",
+          "name": "DUBANTU/DUBANTU PRI. SCH.  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-004",
+          "name": "DUBANTU/DUBANTU PRI. SCH.  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-005",
+          "name": "DUBANTU/DUBANTU PRI. SCH.  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-006",
+          "name": "DUBANTU/DUBANTU PRI. SCH.  IV",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-007",
+          "name": "DUBANTU/DUBANTU PRY SCH V.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-008",
+          "name": "DUBANTU/YAN SHINKAFA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-009",
+          "name": "MADAURA/UNGUWAR MAIDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-010",
+          "name": "MAKERAN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-02-011",
+          "name": "UNGUWAR SARKIN RUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-02-012",
+          "name": "BUHARI PRI. SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-02-013",
+          "name": "DUBANTU PRI. SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-02-014",
+          "name": "DUBANTU GOV SEC SCH/UNGUWAR SARKIN RUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-02-015",
+          "name": "MAKERAN YAMMA II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GAGULMARI",
+      "inecCode": "03",
+      "registrationAreaCode": "17-13-03",
+      "pollingUnits": [
+        {
+          "code": "17-13-03-001",
+          "name": "AUYAKARI/KOFAR AREWA PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-002",
+          "name": "AUYAKARI/KOFAR AREWA PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-003",
+          "name": "AUYAKARI/KOFAR AREWA PRI. SCH  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-004",
+          "name": "AUYAKARI/KOFAR AREWA PRI. SCH  IV",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-005",
+          "name": "GAGULMARI/MUMBARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-006",
+          "name": "GAGULMARI MUMBARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-007",
+          "name": "GAGULMARI/ KOFAR DANJANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-008",
+          "name": "KAKABURI/BABALE KIRYO I.P.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-009",
+          "name": "KAKABURI/WOMEN CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-010",
+          "name": "KAKABURI/BABALE KIRYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-011",
+          "name": "ZONAGALARI/KANTIN KASSIM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-012",
+          "name": "ZONAGALARI/GINDIN KUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-03-013",
+          "name": "AUYAKARI/KOFAR AREWA PRI SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-03-014",
+          "name": "AUYAKARI/KOFAR AREWA PRI SCH III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-03-015",
+          "name": "GAGULMARI KOFAR DANJANI II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KASUWAR KUDA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-13-04",
+      "pollingUnits": [
+        {
+          "code": "17-13-04-001",
+          "name": "DIKILA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-002",
+          "name": "KACHALLARI / GADARTUDUN BARDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-003",
+          "name": "KASUWAR KUDA/GANGAREN T. MABUDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-004",
+          "name": "KASUWAR KUDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-005",
+          "name": "KASUWAR KUDA / TUDUN TANDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-006",
+          "name": "KWARIN MANU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-007",
+          "name": "TUDUN BARDE/GADAR  T/BARDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-008",
+          "name": "TAGIYABU/G.S.S WUNTI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-009",
+          "name": "TAGIYABU/G.S.S. WUNTI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-04-010",
+          "name": "TAGIYABU/GSS WUNTI  I",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KASUWAR KOFA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-13-05",
+      "pollingUnits": [
+        {
+          "code": "17-13-05-001",
+          "name": "BADERIN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-002",
+          "name": "KASUWAR KOFA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-003",
+          "name": "MASAKA/RUMFAR SAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-004",
+          "name": "UNGUWAR ADAMU/YAN DUTSUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-005",
+          "name": "UNGUWAR GALO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-006",
+          "name": "UNGUWAR  MALAM BABARU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-05-007",
+          "name": "KASUWAR KOFA  II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAJEMA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-13-06",
+      "pollingUnits": [
+        {
+          "code": "17-13-06-001",
+          "name": "KWARIN MADACHIMA/K.DOKAJO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-002",
+          "name": "MAJEMA/CHARBIN KAFINTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-003",
+          "name": "MAJEMA/CHARBIN JIMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-004",
+          "name": "MAJEMA/KANTIN BURALILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-005",
+          "name": "RINDE/KOFAR SANI-SANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-006",
+          "name": "TAGURZAN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-007",
+          "name": "TAGURZAN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-008",
+          "name": "UNGUWAR ALHAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-009",
+          "name": "UNGUWAR MA'AJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-06-010",
+          "name": "TAGURZAN GABAS  II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MATSARO",
+      "inecCode": "07",
+      "registrationAreaCode": "17-13-07",
+      "pollingUnits": [
+        {
+          "code": "17-13-07-001",
+          "name": "GAWUNA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-002",
+          "name": "GAWUNA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-003",
+          "name": "GAWUNA/K.UWANI MAITUWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-004",
+          "name": "MATSARO/MATSARO PRI. SCH I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-005",
+          "name": "MATSARO/MATSARO PRY SCH II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-006",
+          "name": "MATSARO/MATSARO PRI. SCH III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-007",
+          "name": "MATSARO/BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-008",
+          "name": "MATSARO/MAKARA HUTA DUHU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-009",
+          "name": "MATSARO/K.DANBABA RABUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-010",
+          "name": "MATSARO/K.USMAN K/K",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-07-011",
+          "name": "GAWUNA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-012",
+          "name": "MAJE PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-013",
+          "name": "GAWUNA JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-014",
+          "name": "GAWUNA JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-015",
+          "name": "MAISHAADA PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-016",
+          "name": "GAWUNA/K.UWANI MAITUWO JSS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-017",
+          "name": "MATSARO PRI SCH I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-018",
+          "name": "MATSARO PRI SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-019",
+          "name": "MATSARO BAKIN KASUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-020",
+          "name": "K/DANBABA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-021",
+          "name": "MATSARO K/DANBABA RABUKA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-022",
+          "name": "MATSARO/K.IDRIS MUSA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-023",
+          "name": "GAWUNA III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-07-024",
+          "name": "MAISHAHADA COMMUNITY/NEW SETTL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "RUMFA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-13-08",
+      "pollingUnits": [
+        {
+          "code": "17-13-08-001",
+          "name": "BADERIN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-002",
+          "name": "BAYI/BAYI I.P.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-003",
+          "name": "BAYI/ KOFAR CHIROMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-004",
+          "name": "DURUMIN GAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-005",
+          "name": "DURUMIN GAMMA/KJOFAR GUMAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-006",
+          "name": "KILABAKORI/HUDU I.P.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-007",
+          "name": "KWARIN LIFIDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-008",
+          "name": "KWARIN LIFIDA/UNG. DUKAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-009",
+          "name": "KWARIN NAGANDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-010",
+          "name": "OLD CHAMBER/COUNCIL CHAMBER",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-011",
+          "name": "RUMFA/CIVIL DEFENCE OFFICE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-012",
+          "name": "RUMFA/ MASS EDUCATION OFFICE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-08-013",
+          "name": "KALABAKORI/HUDU IPS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SABON GARU",
+      "inecCode": "09",
+      "registrationAreaCode": "17-13-09",
+      "pollingUnits": [
+        {
+          "code": "17-13-09-001",
+          "name": "CHADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-002",
+          "name": "GABARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-003",
+          "name": "GABARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-004",
+          "name": "LIBRARY/DIVISIONAL LIBRARY",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-005",
+          "name": "MAGAMA HUDU/JUNCTION",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-006",
+          "name": "MAKERAN GABAS/SHAGON GARBA FANTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-007",
+          "name": "MAKERAN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-008",
+          "name": "UNGUWAR MA'AJI/KOFAR MA'AJI IMAM I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-009",
+          "name": "UNGUWAR MA'AJI/KOFAR MA'AJI IMAM II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-09-010",
+          "name": "CHADI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-09-011",
+          "name": "GABARI KOFAR MAIUNGUWA JAGA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-09-012",
+          "name": "GABARI USMAN BIN AFFAN",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-09-013",
+          "name": "MAKERAN GABAS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YANKOLI",
+      "inecCode": "10",
+      "registrationAreaCode": "17-13-10",
+      "pollingUnits": [
+        {
+          "code": "17-13-10-001",
+          "name": "AGUYAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-002",
+          "name": "DALLA/ABDULKADIR PRI. SCH.  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-003",
+          "name": "DALLA/ABDULKADIR PRI. SCH.  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-004",
+          "name": "FANTAI G.S.S/G.S.S FANATAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-005",
+          "name": "FANTAI QTRS./KOFAR LABARAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-006",
+          "name": "GARIN UREMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-007",
+          "name": "GUDICHIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-008",
+          "name": "YANKOLI C.A HOSTEL/C.A HOSTEL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-009",
+          "name": "YANKOLI C.A. HOSTEL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-10-010",
+          "name": "YANKOLI/RIJIYAR YANKOLI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "YAYARI",
+      "inecCode": "11",
+      "registrationAreaCode": "17-13-11",
+      "pollingUnits": [
+        {
+          "code": "17-13-11-001",
+          "name": "ANKUN GABAS/MADAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-002",
+          "name": "ANKUN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-003",
+          "name": "KUBURU/KANTIN DANFULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-004",
+          "name": "TUDUN WADA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-005",
+          "name": "TUDUN WADA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-006",
+          "name": "UNGUWAR MAKAFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-007",
+          "name": "UNGUWAR M.YAHAYA /UNG. GOJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-008",
+          "name": "YAYARI/HARUNA PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-009",
+          "name": "YAYARI/HARUNA PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-13-11-010",
+          "name": "HARUNA JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-13-11-011",
+          "name": "HARUNA PRI SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 137,
+    "existingPuCount": 105,
+    "newPuCount": 32
+  }
+}

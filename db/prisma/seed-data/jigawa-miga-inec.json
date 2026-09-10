@@ -1,0 +1,657 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "MIGA",
+    "inecCode": "22",
+    "delimiterPrefix": "17-22"
+  },
+  "wards": [
+    {
+      "name": "DANGYATIN",
+      "inecCode": "01",
+      "registrationAreaCode": "17-22-01",
+      "pollingUnits": [
+        {
+          "code": "17-22-01-001",
+          "name": "DANGYATUN PRI. SCH. DANGYATUN  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-002",
+          "name": "DANGYATUN PRI. SCH. DANGYATUN  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-003",
+          "name": "TSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-004",
+          "name": "BURJI C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-005",
+          "name": "BURJI FULATAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-006",
+          "name": "BURJI KAINAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-007",
+          "name": "BURJI MAKERA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-008",
+          "name": "BURJI MAKERA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-009",
+          "name": "BURJI YANMALAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-010",
+          "name": "KOMAI ALLAH YAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-011",
+          "name": "DANGYATUN C/GARI III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-01-012",
+          "name": "KOMAI ALLAH YAYI GIDAN RUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-01-013",
+          "name": "DANGYATIN BASIC HEALTH CARE",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GARBO",
+      "inecCode": "02",
+      "registrationAreaCode": "17-22-02",
+      "pollingUnits": [
+        {
+          "code": "17-22-02-001",
+          "name": "ALFA-GARBO - ALFA   I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-002",
+          "name": "ALFA-GARBO - ALFA   II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-003",
+          "name": "HARBO - GARBO - C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-004",
+          "name": "GARIN AMADU - GARBO - GARIN - AMADU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-005",
+          "name": "TAKALAFIYA PRI. SCH. TAKALAFIYA C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-006",
+          "name": "KORAN - DABO  TAKALAFIYA - KORAN  - DABO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-007",
+          "name": "ZUNGURAWA - TAKALAFIYA - ZUNGURAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-02-008",
+          "name": "GDSSS TAKALAFIYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-02-009",
+          "name": "SABARA - ZUNGURAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-02-010",
+          "name": "JSS HARBO",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-02-011",
+          "name": "HARBO H/CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "HANTSU",
+      "inecCode": "03",
+      "registrationAreaCode": "17-22-03",
+      "pollingUnits": [
+        {
+          "code": "17-22-03-001",
+          "name": "HANTSU PRI. SCH.  HANTSU C/GARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-002",
+          "name": "GIDAN NAGARI   - GIDAN - C/GARI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-003",
+          "name": "MAIGANJARA/MAIGANJARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-004",
+          "name": "MARKEWA/MARKEWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-005",
+          "name": "SARAWUYA PRI. SCH. SARAWUYA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-006",
+          "name": "SARAWUYA PRI. SCH. SARAWUYA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-007",
+          "name": "HANTSU C/GARI III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-03-008",
+          "name": "HANTSU HEALTH CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-03-009",
+          "name": "HANTSU C/GARI  IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-03-010",
+          "name": "SARAWUYA DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KOYA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-22-04",
+      "pollingUnits": [
+        {
+          "code": "17-22-04-001",
+          "name": "KOYA PRI. SCH. KOYA - C/GARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-04-002",
+          "name": "KOYA PRI. SCH. KOYA - C/GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-04-003",
+          "name": "GALADIMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-04-004",
+          "name": "NAFADAWA/NAFADAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-04-005",
+          "name": "KOYA HEALTH CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MIGA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-22-05",
+      "pollingUnits": [
+        {
+          "code": "17-22-05-001",
+          "name": "MIGA/MIGA  C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-002",
+          "name": "GALAUCIME PRI. SCH  GALAUCIME",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-003",
+          "name": "MIGA/MIGA -  K/FADA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-004",
+          "name": "MIGA/MIGA -  K/FADA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-005",
+          "name": "MIGA/MIGA -  K/KUDU  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-006",
+          "name": "MIGA/MIGA -  K/KUDU II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-007",
+          "name": "KIGAWA PRI. SCH. KIGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-008",
+          "name": "NASARAWA HEALTH CLINIC KIGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-009",
+          "name": "ZAGE DANTSE I-MIGA PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-010",
+          "name": "AGUFA C/GARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-011",
+          "name": "AGUFA C/GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-012",
+          "name": "DAMAGANAWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-013",
+          "name": "ZUGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-014",
+          "name": "GWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-015",
+          "name": "SHUNAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-016",
+          "name": "YANDADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-017",
+          "name": "ZAGE DANTSE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-018",
+          "name": "DAMAGANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-05-019",
+          "name": "HEALTH CLINIC AGUFA CIKIN GARI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-020",
+          "name": "JSS AGUFA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-021",
+          "name": "MIGA LEA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-022",
+          "name": "IMAM MALIK SCHOOL  KADAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-023",
+          "name": "JSS MIGA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-024",
+          "name": "GDSS MIGA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-025",
+          "name": "TARAI KWANA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-026",
+          "name": "GALAUCIME DISPENSARY I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-05-027",
+          "name": "NASARWA PRI SCH",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SABON GARI TAKANEBU",
+      "inecCode": "06",
+      "registrationAreaCode": "17-22-06",
+      "pollingUnits": [
+        {
+          "code": "17-22-06-001",
+          "name": "SABON GARI PRI. SCH. SABON GARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-002",
+          "name": "SABON GARI PRI. SCH. SABON GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-003",
+          "name": "DABA/DABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-004",
+          "name": "NAMAKO/NAMAKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-005",
+          "name": "WAYU/WAYU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-006",
+          "name": "TSAGAIWA PRI. SCH. TSAGAIWA - C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-007",
+          "name": "JAMAGA PRI. SCH. JAMAGA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-008",
+          "name": "JAMAGA PRI. SCH. JAMAGA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-009",
+          "name": "YALO/YALO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-06-010",
+          "name": "JAMAGA HEALTH CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-06-011",
+          "name": "DABA PRI SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-06-012",
+          "name": "SABON GARI OLD CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-06-013",
+          "name": "JSS SABON GARI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SANSANI",
+      "inecCode": "07",
+      "registrationAreaCode": "17-22-07",
+      "pollingUnits": [
+        {
+          "code": "17-22-07-001",
+          "name": "ATAFIYAWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-002",
+          "name": "ATAFIYAWA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-003",
+          "name": "AIGWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-004",
+          "name": "SANSANI AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-005",
+          "name": "SANSANI C/GARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-006",
+          "name": "SANSANI C / GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-007",
+          "name": "MADUGA PRI. SCH.  MADUGU C/GARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-008",
+          "name": "MADUGA PRI. SCH.  MADUGU C/GARI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-009",
+          "name": "MADUGA INARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-010",
+          "name": "MADUGU ZANGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-07-011",
+          "name": "SANSANI HEALTH CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TSAKUWAWA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-22-08",
+      "pollingUnits": [
+        {
+          "code": "17-22-08-001",
+          "name": "TSAKUWAWA PRI. SCH. TSAKUWAWA C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-08-002",
+          "name": "TSAKUWAWA  GULULU I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-08-003",
+          "name": "TSAKUWAWA K/FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-08-004",
+          "name": "TSAKUWAWA UMMADU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-08-005",
+          "name": "TSAKUWAWA ZAGAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-08-006",
+          "name": "TSAKUWAWA UMMADU PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-08-007",
+          "name": "GOVT DAY SEC SCH TSAKUWAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-22-08-008",
+          "name": "TSAKUWAWA GULULU   II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YANDUNA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-22-09",
+      "pollingUnits": [
+        {
+          "code": "17-22-09-001",
+          "name": "YANDUNA PRI. SCH. C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-09-002",
+          "name": "JAGALARI/JAGALARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-09-003",
+          "name": "MALIKAWA/MALIKAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-09-004",
+          "name": "ADUCUWA PRI. SCH. ADUCUWA-C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-09-005",
+          "name": "ROMAWA PRI. SCH. ADUCUWA-ROMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-09-006",
+          "name": "YANDUNA C/GARI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "ZAREKU",
+      "inecCode": "10",
+      "registrationAreaCode": "17-22-10",
+      "pollingUnits": [
+        {
+          "code": "17-22-10-001",
+          "name": "ZAREKU PRI. SCH. ZAREKU C/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-002",
+          "name": "ZAREKU DABAKA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-003",
+          "name": "ZAREKU GANUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-004",
+          "name": "ZAREKU KIRNANDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-005",
+          "name": "ZAREKU MAKWALLA/ZAREKU P.S  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-006",
+          "name": "ZAREKU MAKWALLA/ZAREKU P.S  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-007",
+          "name": "ZAREKU  SALAMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-008",
+          "name": "ZAREKU  ZANGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-22-10-009",
+          "name": "ZAREKU DABAKA II",
+          "remark": "EXISTING PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 113,
+    "existingPuCount": 86,
+    "newPuCount": 27
+  }
+}

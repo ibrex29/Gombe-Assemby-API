@@ -1,0 +1,125 @@
+INDEPENDENT NATIONAL ELECTORAL COMMISSION
+2026 OSUN STATE GOVERNORSHIP ELECTION
+STATEMENT OF RESULT OF POLL FROM POLLING UNIT
+LINES
+INDEPENDENT NATIONAL
+ELECTORAL COMMISSION
+FORM EC 8A
+S/N 0001727
+OSUN
+29
+State.
+Code
+#1 Number of Voters on the Register
+#2 Number of Accredited Voters
+289
+210
+#3
+Number of Ballot Papers Issued
+to the Polling Unit
+289
+IFE NORTH
+15
+Local Government Area........
+Code
+#4 Number of Unused Ballot Papers
+#5 Number of Spolled Ballot Papers
+79
+0
+IPETUMODU II
+Registration Area
+Code 07
+#6 Number of Rejected Ballots
+3
+OPEN SPACE AT HERITAGE COOL
+SPOT JUNCTION ALAPATA,
+#7
+Polling Unit.
+IPETUMODU
+.Code
+0 19
+#8
+S/N
+POLITICAL
+PARTY
+VOTES SCORED
+IN FIGURES
+IN WORDS
+1
+A
+159
+2
+AA
+3
+AAC
+4
+ADC
+4
+5
+ADP
+6
+APC
+7
+APGA
+8
+APM
+9
+APP
+10
+BP
+11
+NNPP
+12
+PRP
+13
+SDP
+14
+YPP
+15
+ZLP
+500 to foo000-003
+Number of Total Valid Votes
+(Total Valid Votes cast for all parties) 207
+Total Number of Used Ballot Papers
+(Total of #5+#6+ #7 above)
+NAME/SIGNATURE OF
+POLLING AGENT
+ONE HUNDRED AND FIFTININE Afolab, Abayom T
+210
+ZERO
+ZERO
+Adewale Evenicep
+FOUR
+ZERO
+40
+FOURTY
+Oman17 colagen
+ZERO
+Arowesakin sodit
+508
+ZERO
+ZERO
+omote She-Timileyin Bon
+ZEBO
+ZERO
+ONE
+ZERO
+ZERO
+THREE
+loret Hamme
+TOTAL VALID VOTES
+TWO HUNDRED
+LECTORA
+(Record Total Valld Votes under #7 above)
+207
+AND SEVEN
+LEKPE, NAIMARO OVAT (Name of Presiding Officer) herparty at the information
+contained in this form is a true and accurate account of votes cast in this polling Unit and that the election was
+CONTESTED/NOT CONTESTED
+15/08/2026
+Date
+INEC
+PRESIDING OFFICER
+NAME TAXE
+SigniStamp of Presiding Officer
+DATE

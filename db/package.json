@@ -1,0 +1,44 @@
+{
+  "name": "@electromon/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && node -e \"const fs=require('fs');fs.rmSync('dist/generated',{recursive:true,force:true});fs.cpSync('src/generated','dist/generated',{recursive:true})\"",
+    "prebuild": "prisma generate",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "seed": "cross-env SEED_FULL_INEC=true tsx --env-file=.env --env-file=../.env prisma/seed.ts",
+    "seed:demo": "cross-env SEED_FULL_INEC=false tsx --env-file=.env --env-file=../.env prisma/seed.ts",
+    "seed:full": "cross-env SEED_FULL_INEC=true tsx --env-file=.env --env-file=../.env prisma/seed.ts",
+    "seed:production:apc": "tsx --env-file=.env --env-file=../.env prisma/seed-production-apc.ts",
+    "seed:production:national": "tsx --env-file=.env --env-file=../.env prisma/seed-production-national.ts",
+    "seed:production:pantamiyya": "tsx --env-file=.env --env-file=../.env prisma/seed-production-pantamiyya.ts",
+    "clear:collation": "tsx --env-file=.env --env-file=../.env prisma/clear-collation.ts",
+    "fetch:inec:jigawa": "tsx prisma/scripts/fetch-jigawa-inec.ts",
+    "fetch:inec:nigeria": "tsx prisma/scripts/fetch-nigeria-inec.ts",
+    "patch:inec:gombe-cache": "tsx prisma/scripts/patch-gombe-inec-cache.ts",
+    "patch:inec:gombe": "tsx --env-file=.env --env-file=../.env prisma/scripts/patch-gombe-inec-pus.ts",
+    "sha:validate": "tsx --env-file=.env --env-file=../.env prisma/scripts/sha-validate.ts --allow-partial",
+    "sha:apply": "tsx --env-file=.env --env-file=../.env prisma/scripts/sha-apply.ts --allow-partial",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.9.0",
+    "@prisma/client": "^7.9.0",
+    "@prisma/client-runtime-utils": "^7.9.0",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/pg": "^8.11.11",
+    "bcrypt": "^5.1.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.4.7",
+    "prisma": "^7.9.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

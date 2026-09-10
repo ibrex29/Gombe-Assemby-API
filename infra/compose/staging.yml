@@ -1,0 +1,46 @@
+# Staging — API stack (web deployed separately; Caddy edge terminates TLS)
+
+services:
+  postgres:
+    container_name: electromon-staging-postgres
+    mem_limit: 1g
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+  redis:
+    container_name: electromon-staging-redis
+    mem_limit: 512m
+
+  rabbitmq:
+    container_name: electromon-staging-rabbitmq
+    mem_limit: 512m
+
+  minio:
+    container_name: electromon-staging-minio
+    mem_limit: 512m
+
+  minio-init:
+    container_name: electromon-staging-minio-init
+
+  migrate:
+    container_name: electromon-staging-migrate
+    environment:
+      RUN_SEED: ${RUN_SEED:-true}
+
+  api:
+    container_name: electromon-staging-api
+    # Reachable via Caddy on the shared network — do not publish Node ports publicly.
+    expose:
+      - "3001"
+    environment:
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?JWT_ACCESS_SECRET is required}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?JWT_REFRESH_SECRET is required}
+      METRICS_TOKEN: ${METRICS_TOKEN:?METRICS_TOKEN is required}
+      CORS_ORIGIN: ${CORS_ORIGIN:-https://staging.electromon.ng}
+    mem_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 512M

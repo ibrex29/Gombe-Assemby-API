@@ -1,0 +1,18 @@
+# Local: publish observability ports to the host for DX
+
+services:
+  prometheus:
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+
+  alertmanager:
+    ports:
+      - "${ALERTMANAGER_PORT:-9093}:9093"
+
+  loki:
+    ports:
+      - "${LOKI_PORT:-3100}:3100"
+
+  grafana:
+    ports:
+      - "${GRAFANA_PORT:-3030}:3000"

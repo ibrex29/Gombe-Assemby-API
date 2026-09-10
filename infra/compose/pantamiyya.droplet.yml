@@ -1,0 +1,261 @@
+# Pantamiyya — fully isolated Gombe governorship stack (own DB, Redis, RabbitMQ, MinIO).
+# Does NOT share infra with the national API.
+#
+#   ./infra/scripts/deploy-pantamiyya-droplet.sh
+#   PANTAMIYYA_RUN_SEED=true ./infra/scripts/deploy-pantamiyya-droplet.sh  # first boot
+
+name: electromon-pantamiyya
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+x-api-env: &api-env
+  NODE_ENV: ${NODE_ENV:-production}
+  DEPLOYMENT_STATE_CODE: GO
+  DEPLOYMENT_CLIENT_PARTY_CODE: PDP
+  IREV_ELECTION_ID: "6407d9bfce35006e92156f2e"
+  IREV_ELECTION_LABEL: Gombe Governorship Election
+  IREV_ELECTION_TYPE: GOVERNORSHIP
+  IREV_FETCH_QUEUE: irev.fetch.pantamiyya
+  DATABASE_URL: postgresql://${PANTAMIYYA_POSTGRES_USER:-electromon}:${PANTAMIYYA_POSTGRES_PASSWORD}@postgres:5432/${PANTAMIYYA_POSTGRES_DB:-electromon_pantamiyya}?schema=public
+  REDIS_URL: redis://redis:6379
+  RABBITMQ_URL: amqp://${PANTAMIYYA_RABBITMQ_USER:-electromon}:${PANTAMIYYA_RABBITMQ_PASSWORD}@rabbitmq:5672
+  JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?JWT_ACCESS_SECRET is required}
+  JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?JWT_REFRESH_SECRET is required}
+  JWT_ACCESS_EXPIRY: ${JWT_ACCESS_EXPIRY:-15m}
+  JWT_REFRESH_EXPIRY: ${JWT_REFRESH_EXPIRY:-7d}
+  S3_ENDPOINT: http://minio:9000
+  S3_ACCESS_KEY: ${PANTAMIYYA_S3_ACCESS_KEY:-electromon_pantamiyya}
+  S3_SECRET_KEY: ${PANTAMIYYA_S3_SECRET_KEY:?PANTAMIYYA_S3_SECRET_KEY is required}
+  S3_BUCKET: ${PANTAMIYYA_S3_BUCKET:-electromon-pantamiyya}
+  S3_REGION: ${S3_REGION:-us-east-1}
+  API_PORT: "3001"
+  API_PUBLIC_URL: ${PANTAMIYYA_API_PUBLIC_URL:-http://127.0.0.1:${PANTAMIYYA_API_PORT:-5301}}
+  CORS_ORIGIN: ${PANTAMIYYA_CORS_ORIGIN:-${CORS_ORIGIN:-http://localhost:3000}}
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+  METRICS_TOKEN: ${METRICS_TOKEN:-}
+  FCM_SERVICE_ACCOUNT_JSON: ${FCM_SERVICE_ACCOUNT_JSON:-}
+  FCM_DRY_RUN: ${FCM_DRY_RUN:-false}
+  GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT:-}
+  GOOGLE_CLOUD_VISION_CREDENTIALS: ${GOOGLE_CLOUD_VISION_CREDENTIALS:-}
+  GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS:-}
+  OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+  AI_MODEL: ${AI_MODEL:-}
+  AI_OCR_MODEL: ${AI_OCR_MODEL:-}
+  AI_READONLY_DATABASE_URL: ${AI_READONLY_DATABASE_URL:-}
+  SOCIAL_INGEST_TOKEN: ${SOCIAL_INGEST_TOKEN:-}
+  PULSEFORGE_API_KEY: ${PULSEFORGE_API_KEY:-}
+  PULSEFORGE_BASE_URL: ${PULSEFORGE_BASE_URL:-https://pulseforge.vercel.app/api/v1}
+  AI_SOCIAL_MODEL: ${AI_SOCIAL_MODEL:-}
+  SITUATION_ROOM_CACHE_TTL_SEC: ${SITUATION_ROOM_CACHE_TTL_SEC:-10}
+  CLOUDINARY_URL: ${CLOUDINARY_URL:-}
+  CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+  CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+  CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+  CLOUDINARY_FOLDER: ${PANTAMIYYA_CLOUDINARY_FOLDER:-electromon/pantamiyya/uploads}
+  SUPPORTED_STATE_CODES: GO
+  TRIAGE_SWEEP_ENABLED: ${TRIAGE_SWEEP_ENABLED:-false}
+  TRIAGE_SWEEP_INTERVAL_SEC: ${TRIAGE_SWEEP_INTERVAL_SEC:-900}
+  TRIAGE_ELECTION_MODE: ${TRIAGE_ELECTION_MODE:-true}
+  IREV_ENABLED: ${IREV_ENABLED:-true}
+  IREV_BASE_URL: ${IREV_BASE_URL:-}
+  IREV_PORTAL_URL: ${IREV_PORTAL_URL:-}
+  IREV_FETCH_RATE_LIMIT: ${IREV_FETCH_RATE_LIMIT:-45}
+  IREV_SWEEP_INTERVAL_MS: ${IREV_SWEEP_INTERVAL_MS:-3600000}
+  IREV_CATALOG_INTERVAL_MS: ${IREV_CATALOG_INTERVAL_MS:-15000}
+  IREV_CATALOG_WARD_BATCH: ${IREV_CATALOG_WARD_BATCH:-50}
+  IREV_CATALOG_STALE_MS: ${IREV_CATALOG_STALE_MS:-21600000}
+  IREV_STATS_CACHE_MS: ${IREV_STATS_CACHE_MS:-300000}
+  IREV_BOOTSTRAP_ON_START: ${IREV_BOOTSTRAP_ON_START:-true}
+  IREV_BOOTSTRAP_WARD_BATCH: ${IREV_BOOTSTRAP_WARD_BATCH:-200}
+  IREV_BOOTSTRAP_OCR_BATCH: ${IREV_BOOTSTRAP_OCR_BATCH:-500}
+  IREV_OCR_AFTER_CATALOG: ${IREV_OCR_AFTER_CATALOG:-true}
+  IREV_OCR_BACKFILL_INTERVAL_MS: ${IREV_OCR_BACKFILL_INTERVAL_MS:-10000}
+  IREV_OCR_BACKFILL_BATCH: ${IREV_OCR_BACKFILL_BATCH:-100}
+
+services:
+  postgres:
+    container_name: electromon-pantamiyya-postgres
+    image: postgis/postgis:16-3.4
+    platform: linux/amd64
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${PANTAMIYYA_POSTGRES_USER:-electromon}
+      POSTGRES_PASSWORD: ${PANTAMIYYA_POSTGRES_PASSWORD:?PANTAMIYYA_POSTGRES_PASSWORD is required}
+      POSTGRES_DB: ${PANTAMIYYA_POSTGRES_DB:-electromon_pantamiyya}
+    volumes:
+      - pantamiyya_postgres_data:/var/lib/postgresql/data
+      - ./infra/scripts/init-postgres.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${PANTAMIYYA_POSTGRES_USER:-electromon} -d ${PANTAMIYYA_POSTGRES_DB:-electromon_pantamiyya}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging: *default-logging
+    networks:
+      - pantamiyya
+
+  redis:
+    container_name: electromon-pantamiyya-redis
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - pantamiyya_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging: *default-logging
+    networks:
+      - pantamiyya
+
+  rabbitmq:
+    container_name: electromon-pantamiyya-rabbitmq
+    image: rabbitmq:3.13-management-alpine
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: ${PANTAMIYYA_RABBITMQ_USER:-electromon}
+      RABBITMQ_DEFAULT_PASS: ${PANTAMIYYA_RABBITMQ_PASSWORD:?PANTAMIYYA_RABBITMQ_PASSWORD is required}
+    volumes:
+      - pantamiyya_rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    logging: *default-logging
+    networks:
+      - pantamiyya
+
+  minio:
+    container_name: electromon-pantamiyya-minio
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${PANTAMIYYA_S3_ACCESS_KEY:-electromon_pantamiyya}
+      MINIO_ROOT_PASSWORD: ${PANTAMIYYA_S3_SECRET_KEY:?PANTAMIYYA_S3_SECRET_KEY is required}
+    volumes:
+      - pantamiyya_minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    logging: *default-logging
+    networks:
+      - pantamiyya
+
+  minio-init:
+    container_name: electromon-pantamiyya-minio-init
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_USER: ${PANTAMIYYA_S3_ACCESS_KEY:-electromon_pantamiyya}
+      MINIO_ROOT_PASSWORD: ${PANTAMIYYA_S3_SECRET_KEY:?PANTAMIYYA_S3_SECRET_KEY is required}
+      S3_BUCKET: ${PANTAMIYYA_S3_BUCKET:-electromon-pantamiyya}
+    entrypoint: /bin/sh
+    command: /scripts/init-minio.sh
+    volumes:
+      - ./infra/scripts/init-minio.sh:/scripts/init-minio.sh:ro
+    restart: "no"
+    networks:
+      - pantamiyya
+
+  migrate:
+    container_name: electromon-pantamiyya-migrate
+    build:
+      context: .
+      dockerfile: infra/dockerfiles/migrate.Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${PANTAMIYYA_POSTGRES_USER:-electromon}:${PANTAMIYYA_POSTGRES_PASSWORD}@postgres:5432/${PANTAMIYYA_POSTGRES_DB:-electromon_pantamiyya}?schema=public
+      RUN_SEED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+    networks:
+      - pantamiyya
+
+  seed:
+    profiles: ["bootstrap"]
+    container_name: electromon-pantamiyya-seed
+    build:
+      context: .
+      dockerfile: infra/dockerfiles/pantamiyya-seed.Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${PANTAMIYYA_POSTGRES_USER:-electromon}:${PANTAMIYYA_POSTGRES_PASSWORD}@postgres:5432/${PANTAMIYYA_POSTGRES_DB:-electromon_pantamiyya}?schema=public
+      SEED_ADMIN_PASSWORD: ${PANTAMIYYA_SEED_ADMIN_PASSWORD:?PANTAMIYYA_SEED_ADMIN_PASSWORD is required for bootstrap seed}
+      SEED_DETAIL_STATES: GO
+      SEED_CAMPAIGN_NAME: ${PANTAMIYYA_SEED_CAMPAIGN_NAME:-Pantamiyya · Gombe Governorship}
+      SEED_CAMPAIGN_SLUG: ${PANTAMIYYA_SEED_CAMPAIGN_SLUG:-pantamiyya-gombe-governorship}
+      SEED_ADMIN_EMAIL: ${PANTAMIYYA_SEED_ADMIN_EMAIL:-director@pantamiyya.ng}
+      SEED_ADMIN_PHONE: ${PANTAMIYYA_SEED_ADMIN_PHONE:-+2348000000101}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+    networks:
+      - pantamiyya
+
+  api:
+    container_name: electromon-pantamiyya-api
+    build:
+      context: .
+      dockerfile: infra/dockerfiles/api.Dockerfile
+    env_file:
+      - .env.pantamiyya
+    environment:
+      <<: *api-env
+    ports:
+      - "${PANTAMIYYA_API_PORT:-5301}:3001"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/api/v1/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      - pantamiyya_uploads:/app/uploads
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      minio-init:
+        condition: service_completed_successfully
+      migrate:
+        condition: service_completed_successfully
+    networks:
+      - pantamiyya
+
+networks:
+  pantamiyya:
+    name: electromon-pantamiyya
+    driver: bridge
+
+volumes:
+  pantamiyya_postgres_data:
+  pantamiyya_redis_data:
+  pantamiyya_rabbitmq_data:
+  pantamiyya_minio_data:
+  pantamiyya_uploads:

@@ -1,0 +1,1589 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "GWARAM",
+    "inecCode": "11",
+    "delimiterPrefix": "17-11"
+  },
+  "wards": [
+    {
+      "name": "BASIRKA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-11-01",
+      "pollingUnits": [
+        {
+          "code": "17-11-01-001",
+          "name": "KOFAR FADA/ BASIRKA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-002",
+          "name": "WUDILAWA/WUDILAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-003",
+          "name": "BASIRKA PRI. SCH/SABALARI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-004",
+          "name": "BASIRKA PRI. SCH/SABALARI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-005",
+          "name": "KOFAR FADA/KUNDUM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-006",
+          "name": "KOFAR FADA/DIGIJIN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-007",
+          "name": "KOFAR FADA/DIGIJIN NASARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-008",
+          "name": "KOFAR FADA/MALALLUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-009",
+          "name": "KOFAR FADA/MALALLUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-010",
+          "name": "KOFAR FADA/CHEDIYA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-011",
+          "name": "KOFAR FADA/JARKASA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-012",
+          "name": "KOFAR FADA/MATSANGU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-013",
+          "name": "KOFAR FADA/ MAJALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-014",
+          "name": "KOFAR FADA/ DAKWARO REDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-015",
+          "name": "KOFAR FADA/ RUWAN KARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-016",
+          "name": "KOFAR FADA/KIJIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-017",
+          "name": "KOFAR FADA/TANGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-018",
+          "name": "KOFAR FADA/ZUMBURIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-019",
+          "name": "KOFAR FADA/TUDUN WADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-020",
+          "name": "KOFAR FADA/REDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-021",
+          "name": "KOFAR FADA/SABON GARI MATSANGU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-01-022",
+          "name": "MAHAUTA KOFAR FADA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-01-023",
+          "name": "WUDILAWA GANGARE II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-01-024",
+          "name": "BASIRKA PRI. SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-01-025",
+          "name": "BASIRKA CHAKWAMA PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-01-026",
+          "name": "BASIRKA PRI. SCH. III",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DINGAYA",
+      "inecCode": "02",
+      "registrationAreaCode": "17-11-02",
+      "pollingUnits": [
+        {
+          "code": "17-11-02-001",
+          "name": "KOFAR FADA/ DINGAYA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-002",
+          "name": "KOFAR FADA/ KILAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-003",
+          "name": "UNGUWAR MALAM YUSUF",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-004",
+          "name": "KOFAR  MAIUNGUWA/SABON GARIN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-005",
+          "name": "KOFAR  MAIUNGUWA/BANGON  FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-006",
+          "name": "KOFAR  MAIUNGUWA/BANGON  AUYAKAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-007",
+          "name": "TSANGAYAR DINGAYA/TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-008",
+          "name": "RABADI PRI. SCH./RABADI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-009",
+          "name": "RABADI PRI. SCH./RABADI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-010",
+          "name": "SABON GARIN RABADI/SABON GARIN RABADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-011",
+          "name": "RABADI LUGADA/SABON GARIN RABADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-012",
+          "name": "KOFAR MAIUNGUWA/ KAWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-013",
+          "name": "KOFAR MAIUNGUWA/ SAGI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-014",
+          "name": "KOFAR FADA/MAFUDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-015",
+          "name": "KOFAR MAIUNGUWA/KAFIN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-016",
+          "name": "GADABUR PRI. SCH./GADABUR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-017",
+          "name": "LAFIYA KUDU/LAFIYA CIKIN GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-018",
+          "name": "LAFIYA AREWA/LAFIYA AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-019",
+          "name": "KOFAR MAI UNGUWA KUYUNGU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-020",
+          "name": "CHADAKO/CHADAKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-021",
+          "name": "KOFAR FADA/ SABON GARIN BAGADAZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-022",
+          "name": "KOFAR MAIUNGUWA/LAFIYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-02-023",
+          "name": "BONGON AUYAKAWA PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "FAGAM",
+      "inecCode": "03",
+      "registrationAreaCode": "17-11-03",
+      "pollingUnits": [
+        {
+          "code": "17-11-03-001",
+          "name": "K/MAIUNGUWA-K/TUGGA/MANAKOL K. TUGGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-002",
+          "name": "KOFAR MAIUUNGUWA/FAGAM YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-003",
+          "name": "KOFAR MAIGARI/WOSOZAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-004",
+          "name": "VETINARY CLINIC/FAGAM ASIBITI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-005",
+          "name": "KOFAR FADA/KALASU BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-006",
+          "name": "KOFAR MAIUNGUWA/WOSO BORO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-007",
+          "name": "SHARIFORI/JORIJAN SHARIFORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-008",
+          "name": "KOFAR FADA/RUNGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-009",
+          "name": "KAFIN NASALLA/KAFIN NASALLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-010",
+          "name": "GWANI PRI. SCH./GWANI YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-011",
+          "name": "TSANGAYA/GWANI TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-012",
+          "name": "K/MAIUNGUWA/GWARANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-013",
+          "name": "K/MAIUNGUWA/ DUKKWANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-014",
+          "name": "KOFAR FADA LAYA/LAYA DANGULAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-015",
+          "name": "KOFAR FADA/TAMBO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-016",
+          "name": "KOFAR FADA/DABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-017",
+          "name": "K/MAI UNGAWA/LARABAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-018",
+          "name": "KOFAR MAI UNGUWA/MANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-019",
+          "name": "KOFAR FADA/GADARAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-020",
+          "name": "KOFAR MAI UNGUWA/ROSO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-021",
+          "name": "HAYA DISPENSARY/HAYA SHAFATA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-022",
+          "name": "KOFAR FADA/BARIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-023",
+          "name": "KOFAR GABAS/GIRAJENI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-024",
+          "name": "KOFAR MAI UNGUWA/UNGUWA GABAS DAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-025",
+          "name": "KOFAR MAI UNGUWA/TSA KWARAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-026",
+          "name": "KOFAR MAI UNGUWA/NASARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-027",
+          "name": "KOFAR FADA/TSIRTANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-028",
+          "name": "KOFAR MAI UNGUWA/LATA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-029",
+          "name": "K/MAI UNGUWA LELAKWAYI/LELAKWAYI RAHAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-030",
+          "name": "K/MAI UNGUWA/KUKAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-031",
+          "name": "KOFAR FADA/KALASU MAI SARKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-032",
+          "name": "KOFAR FADA/DANGULAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-033",
+          "name": "KOFAR FADA/SHAFATA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-03-034",
+          "name": "FAGAM PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-03-035",
+          "name": "VIEWING CENTER FAGAM II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-03-036",
+          "name": "KUMBOTSO LAYA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-03-037",
+          "name": "DIRYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-03-038",
+          "name": "BAGIYA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-03-039",
+          "name": "KALASU YAMMA ASIBITI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "FARIN DUTSE",
+      "inecCode": "04",
+      "registrationAreaCode": "17-11-04",
+      "pollingUnits": [
+        {
+          "code": "17-11-04-001",
+          "name": "F/DUTSE PRI. SCH/ MAKARANTA B/ KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-002",
+          "name": "F/DUTSE PRI. SCH/ UNGUWAR KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-003",
+          "name": "K/MAIUNGUWA/LABI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-004",
+          "name": "K / MAIUNGUWA NASARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-005",
+          "name": "WUTSINGIR PRI. SCH./WUTSINGIR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-006",
+          "name": "GANJI PRI. SCH./GANJI GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-007",
+          "name": "KOFAR FADA/ GANTAMAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-008",
+          "name": "KOFAR MAIUNGUWA/ZAGAMANDIRI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-009",
+          "name": "GALAMBI PRI. SCH /GALAMBI FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-010",
+          "name": "GALAMBI PRI. SCH /UNGUWAR MADAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-011",
+          "name": "GALAMBI PRI. SCH /KOFAR S/FAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-012",
+          "name": "KOFAR MAIUNGUWA/BIRNIN KIRYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-013",
+          "name": "KOFAR FADA/ YARFI GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-014",
+          "name": "KOFAR MAIGARI/BURO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-015",
+          "name": "KOFAR MAIUNGUWA/ LARKAN BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-016",
+          "name": "KOFAR FADA/KATSINAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-04-017",
+          "name": "FARIN-DUTSE PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-04-018",
+          "name": "FARIN-DUTSE PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-04-019",
+          "name": "FARIN DUTSE PRI. SCH. KUDU II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GWARAM TSOHUWA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-11-05",
+      "pollingUnits": [
+        {
+          "code": "17-11-05-001",
+          "name": "KOFAR FADA /UNGUWAR FADA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-002",
+          "name": "SPECIAL PRI. SCH./UNGUWAR  FADA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-003",
+          "name": "SPECIAL PRI. SCH./ KWARIN NAWILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-004",
+          "name": "GADALA/GADALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-005",
+          "name": "KOFAR MAIUNGUWA / UDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-006",
+          "name": "INNAKAWA/INNAKAWA JABUGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-007",
+          "name": "KOFAR MAIUNGUWA/TSAHIRO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-008",
+          "name": "KOFAR MAIUNGUWA/UNGUWAR FA'A",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-009",
+          "name": "KOFAR  S. GWARAM/KAWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-010",
+          "name": "G.D.S.S GWARAM/DIRIMIN DISHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-011",
+          "name": "LEMAYI / TSOHUWAR GAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-012",
+          "name": "DANDALIN GALA/DANDALIN GALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-013",
+          "name": "TITIN TAMBO/TAMBO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-014",
+          "name": "AUYAKAWA GALAMBI /GALAMBI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-015",
+          "name": "KOFAR MAIUNGUWA/SABON GARIN GADALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-016",
+          "name": "KOFAR FADA/BARE BARI FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-017",
+          "name": "KURNA/BARE BARI KURNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-018",
+          "name": "TSANGAYAR GANJI/TSANGAYAR GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-019",
+          "name": "BARE BARI GAGARA YAGA/BARE BARI G.G YAGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-020",
+          "name": "KAWAI GANA/KAWAI GANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-021",
+          "name": "GAGARA YAGA PRI. SCH./GAGARA K /  FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-022",
+          "name": "GAGARA YAGA PRI. SCH./GAGARA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-023",
+          "name": "GAGARA YAGA PRI. SCH./GAGARA YAGA S/LAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-024",
+          "name": "KAFI PRI. SCH./KAFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-025",
+          "name": "KOFAR MAIUNGUWA/SUMANGARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-026",
+          "name": "UNGUWAR KANYA/UNGUWAR KANYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-027",
+          "name": "LAMBUNA/LAMBUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-028",
+          "name": "K/MADAKIN ASKA/GAGARA YAGA WURIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-029",
+          "name": "K/MAIUNGUWA/ZIKIRA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-030",
+          "name": "KOFAR FADA/UN/GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-05-031",
+          "name": "FADA GABAS JUNIOR DAY SEC. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-032",
+          "name": "SPECIAL PRI. SCH. UNGUWAR FADA YAMMA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-033",
+          "name": "MODEL PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-034",
+          "name": "SPECIAL PRI. SCH. KWARIN NAWILI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-035",
+          "name": "LAMAYI TSOHUWA GAYA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-036",
+          "name": "R/SHADAL AULAD ISLAMIYYA GALAMBI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-037",
+          "name": "KURNA BARE-BARI PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-038",
+          "name": "TSANGAYA GAMJI PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-039",
+          "name": "BARE-BARI GAGUARAYAGA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-040",
+          "name": "GAGUARAYAGA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-041",
+          "name": "K/MADAKIN ASKA GAGUARAYAGAPRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-05-042",
+          "name": "KOFAR  S. GWARAM/KAWARI II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KILA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-11-06",
+      "pollingUnits": [
+        {
+          "code": "17-11-06-001",
+          "name": "KILA PRI. SCH/HAWAN MADAKI MAKARANTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-002",
+          "name": "K/MAIUNGUWA/KULLIN KOTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-003",
+          "name": "GALADANCHI/GALADANCHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-004",
+          "name": "KILA AREWA/KILA KOFAR AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-005",
+          "name": "KOFAR MAIUNGUWA/DARA WAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-006",
+          "name": "KOFAR MAIUNGUWA/BURBURWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-007",
+          "name": "ZAGWANGWADO PRI. SCH./ZAGWANGWANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-008",
+          "name": "KOFAR WUNT I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-009",
+          "name": "HEWA SINDAWA/LEWA SINDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-010",
+          "name": "NASARAWA/NASARAWA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-011",
+          "name": "CIKIN GARI/NASARAWA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-012",
+          "name": "FALAI GARI/FALAI GARI WAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-013",
+          "name": "TSANGAYA/NASARAWA TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-014",
+          "name": "KOFAR FADA/LUNGWA CIKIN GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-015",
+          "name": "KOFAR FADA/JIGWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-016",
+          "name": "KOFAR FADA/ZIKIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-017",
+          "name": "KOFRA FADA/ZAZZANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-018",
+          "name": "KILA PRY SCH/HAWAN DAWAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-019",
+          "name": "KILA AREWA/KILA KOFAR AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-020",
+          "name": "KOFAR FADA / GARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-06-021",
+          "name": "KILA PRI. SCH. HAWAN DAWAKI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-06-022",
+          "name": "GALADANCHI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-06-023",
+          "name": "KILA KOFAR AREWA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-06-024",
+          "name": "ZAGWANGWANDO PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KWANDIKO",
+      "inecCode": "07",
+      "registrationAreaCode": "17-11-07",
+      "pollingUnits": [
+        {
+          "code": "17-11-07-001",
+          "name": "KWANDIKO PRI. SCH. KWANDIKO GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-002",
+          "name": "KOFAR FADA CAKARA/CAKARA YELWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-003",
+          "name": "KOFAR MAIUNGUWA/LAFIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-004",
+          "name": "KOFAR FADA/SIMIYAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-005",
+          "name": "KOFAR FADA/GYALAMAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-006",
+          "name": "KOFAR FADA/YAR YANTA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-007",
+          "name": "KOFAR FADA/JAR YANTA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-008",
+          "name": "GADAMA PRI. SCH.  GADAMA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-009",
+          "name": "KOFAR FADA/FIRIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-010",
+          "name": "KOFAR FADA/JINGINO FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-011",
+          "name": "GADAMA PRI. SCH. GADAMA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-012",
+          "name": "KOFAR FADA/MARTABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-013",
+          "name": "UNGUWAR RIMI/UNGUWAR RIMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-014",
+          "name": "GUSAU/GUSAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-015",
+          "name": "KOFAR MAIUNGUWA/DALAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-016",
+          "name": "KOFAR MAIUNGUWA/KAHO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-07-017",
+          "name": "KWANDIKO PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-07-018",
+          "name": "UNGUWAR RIMI KIRYA ASIBITI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MARUTA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-11-08",
+      "pollingUnits": [
+        {
+          "code": "17-11-08-001",
+          "name": "MARUTA PRI. SCH. MARUTA K. GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-002",
+          "name": "SABUWAR TSANGAYA/SABUWAR TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-003",
+          "name": "KOFAR YAMMA/MARUTA KOFAR YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-004",
+          "name": "MARUTA BAKIN KASUWA/BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-005",
+          "name": "JIKAS PRI. SCH. JIKAS GABAS  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-006",
+          "name": "JIKAS PRI. SCH. JIKAS GABAS  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-007",
+          "name": "JIKAS PRI. SCH. JIKAS AREWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-008",
+          "name": "JIKAS PRI. SCH. JIKAS AREWA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-009",
+          "name": "KOFAR FADA/FALAI MAI BABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-010",
+          "name": "BAYAN GARI/BAYAN GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-011",
+          "name": "KOFAR FADA/MUSARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-012",
+          "name": "DUMURI/BATORI KUDUBO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-013",
+          "name": "K/MAIUNGUWA/DABAJA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-014",
+          "name": "KOFAR GABAS/ISAWA KOFAR GABAS  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-015",
+          "name": "KOFAR GABAS/ISAWA KOFAR GABAS  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-016",
+          "name": "KOFAR GABAS/ISAWA LAFIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-017",
+          "name": "KOFAR FADA/GOGGURA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-018",
+          "name": "KOFAR FADA/GOGGURA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-019",
+          "name": "KOFAR FADA/NAHUCEN  FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-020",
+          "name": "KOFAR MAIUNGUWA/BURMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-021",
+          "name": "MAKWALLA/ABORAWA NAHUCE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-022",
+          "name": "KOFAR FADA/KUKKUZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-08-023",
+          "name": "JUNIOR DAY SECONDARY SCHOOLMARUTA KUDU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-08-024",
+          "name": "JIKAS PRIMARY SCHOOL JIKAS AREWA II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SARA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-11-09",
+      "pollingUnits": [
+        {
+          "code": "17-11-09-001",
+          "name": "KOFAR FADA/UNGUWAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-002",
+          "name": "JATA PRI. SCH JATA-KUKA-NAHUCE  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-003",
+          "name": "JATA PRI. SCH JATA-KUKA-NAHUCE  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-004",
+          "name": "KOFAR MAIUNGUWA/GANTAMAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-005",
+          "name": "YELWA/YELWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-006",
+          "name": "YELWA/YELWA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-007",
+          "name": "KOFAR MAIUNGUWA/UNGUWAR KATURJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-008",
+          "name": "TSANGAYA ISLAMIYYA/TSANGAYA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-009",
+          "name": "TSANGAYA ISLAMIYYA/TSANGAYA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-010",
+          "name": "KOFAR MAIUNGUWA/UNGUWAR GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-011",
+          "name": "GINDIN DINYA/GIRAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-012",
+          "name": "KOFAR GIRBI/UNGUWAR GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-013",
+          "name": "KOFAR I.GOBA/MAKERA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-014",
+          "name": "BAKIN KASUWA/BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-015",
+          "name": "KOFAR MAIUNGUWA/KAFIN FULANI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-016",
+          "name": "KOFAR MAIUNGUWA/KAFIN FULANI  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-017",
+          "name": "KOFAR MAIUNGUWA/ABENA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-018",
+          "name": "KOFAR MAIUNGUWA/LUKUTU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-019",
+          "name": "KOFAR MAIUNGUWA SHIWO/KAFIN GALADIMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-020",
+          "name": "KOFAR MAIUNGUWA/SAKUWA CIKIN GARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-021",
+          "name": "KOFAR MAIUNGUWA/SAKUWA CIKIN GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-022",
+          "name": "KOFAR MAIUNGUWA/KARANGIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-023",
+          "name": "KOFAR MAIUNGUWA/KAFIN DOKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-024",
+          "name": "DUBAU PRI. SCH. DUBAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-025",
+          "name": "KOFAR MAIUNGUWA/BIJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-026",
+          "name": "KOFAR FADA/DALAY",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-027",
+          "name": "KOFAR FADA/NAHUCE KAFIN TORO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-028",
+          "name": "KOFAR FADA/KAGADAMA/U/ZAUKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-09-029",
+          "name": "SATELLITE VIEW CENTER SARA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-09-030",
+          "name": "JATA PRI. SCH. KUKA NAHUCE II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-09-031",
+          "name": "YELWA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-09-032",
+          "name": "SARA AREWA PRI. SCH. I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-09-033",
+          "name": "SARA AREWA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-09-034",
+          "name": "KOFAR MAI KAFIN-DOKI PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TSANGARWA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-11-10",
+      "pollingUnits": [
+        {
+          "code": "17-11-10-001",
+          "name": "TSANGARWA FADA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-002",
+          "name": "TSANGARWA AREWA  PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-003",
+          "name": "TSANGARWA AREWA  PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-004",
+          "name": "CIKIN GARI/DANDIRIMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-005",
+          "name": "KOFAR MAIUNGUWA/LAFIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-006",
+          "name": "GIDAN TSAMIYA/SHABEWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-007",
+          "name": "BUDINGA PRI. SCH. BUDINGA YAMMA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-008",
+          "name": "BUDINGA PRI. SCH. BUDINGA YAMMA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-009",
+          "name": "KOFAR MAIUNGUWA/BUDINGA BAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-010",
+          "name": "KOFAR MAIUNGUWA/FASAGANGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-011",
+          "name": "KOFAR FADA/RAMBAZAU MIDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-012",
+          "name": "TSANGAYA GABAS/TSANGAYA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-013",
+          "name": "TSANGAYA YAMMA /TSANGAYA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-014",
+          "name": "KOFAR GABAS/KOFAR GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-015",
+          "name": "KOFAR FADA/YEDDA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-016",
+          "name": "KOFAR YAMMA/YEDDA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-017",
+          "name": "KOFAR FAD/WUIWUI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-018",
+          "name": "KOFAR MAIUNGUWA/LARDUGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-019",
+          "name": "KOFAR FADA/TAGAMA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-020",
+          "name": "KOFAR FADA/TAGAMA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-10-021",
+          "name": "TSANGARWA PRIMARYM SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-10-022",
+          "name": "TSANGARWA PRIMARYM SCHOOL III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-10-023",
+          "name": "TSANGARWA AREWA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-10-024",
+          "name": "BUDINGA PRI. SCH., YAMMA II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "ZANDAN NAGOGO",
+      "inecCode": "11",
+      "registrationAreaCode": "17-11-11",
+      "pollingUnits": [
+        {
+          "code": "17-11-11-001",
+          "name": "Z/NAGOGO PRI. SCH/ZANDAM NAGOGO I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-002",
+          "name": "Z/NAGOGO PRI. SCH/ZANDAM NAGOGO II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-003",
+          "name": "TSANGAYA YAMMA/S/GWARAM YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-004",
+          "name": "TSANGAYA  GABAS/ TSANGAYA  GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-005",
+          "name": "KUKA MAINONO/KUKA MAINONO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-006",
+          "name": "SABUWAR GWARAM/SABUWAR GWARAM  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-007",
+          "name": "SABUWAR GWARAM/SABUWAR GWARAM  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-008",
+          "name": "KOFAR MAIUNGUWA/YELWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-009",
+          "name": "KOFAR MAIUNGUWA/RIGAR MAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-010",
+          "name": "KOFAR FADA/KOFAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-011",
+          "name": "BABBAN KAFI/BABBAN KAFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-012",
+          "name": "MAKWALLA/MAKWALLA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-013",
+          "name": "MAKWALLA/MAKWALLA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-014",
+          "name": "KOFAR MAIUNGUWA/KUNDU WAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-015",
+          "name": "TSANGAYA/TSANGAYA Z/GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-016",
+          "name": "MALAJI PRI. SCH./MALAJI GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-017",
+          "name": "MALAJI PRI. SCH./MALAJI  YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-018",
+          "name": "SALMANDE/SALMANDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-019",
+          "name": "KOFAR MAIUNGUWA/GUDUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-020",
+          "name": "KOFAR MAIUNGUWA GUDUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-11-11-021",
+          "name": "ZANDAN NAGOGO PRI. SCH. GABAS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-11-022",
+          "name": "ZANDAN NAGOGO PRI. SCH. YAMMA III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-11-023",
+          "name": "TSANGAYA YAMMA S/GWARAM KOFAR DAGACHI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-11-024",
+          "name": "SABUWAR GWARAM PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-11-11-025",
+          "name": "KOFAR FADA II",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 298,
+    "existingPuCount": 248,
+    "newPuCount": 50
+  }
+}

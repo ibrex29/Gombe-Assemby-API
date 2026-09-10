@@ -1,0 +1,10 @@
+dist/
+node_modules/
+prisma.config.js
+prisma.config.js.map
+prisma.config.d.ts
+src/generated/
+.env
+.env.*
+*.tsbuildinfo
+prisma/seed-data/cache/

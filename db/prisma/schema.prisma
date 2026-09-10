@@ -1,0 +1,1350 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum CampaignRole {
+  CANDIDATE
+  CAMPAIGN_DIRECTOR
+  STATE_COORDINATOR
+  LGA_COORDINATOR
+  WARD_COORDINATOR
+  SUPPORT_GROUP_LEADER
+  VOLUNTEER_COORDINATOR
+  POLLING_AGENT_COORDINATOR
+  DATA_ANALYST
+  MEDIA_TEAM
+  POLLING_AGENT
+  VOLUNTEER
+  POLLING_UNIT_OFFICER
+  WARD_RA_OFFICER
+  LGA_COLLATION_OFFICER
+  STATE_COLLATION_OFFICER
+  NATIONAL_COLLATION_OFFICER
+}
+
+enum ScopeType {
+  CAMPAIGN
+  STATE
+  SENATORIAL_DISTRICT
+  LGA
+  CONSTITUENCY
+  WARD
+  POLLING_UNIT
+  NATIONAL
+}
+
+enum CollationLevel {
+  POLLING_UNIT
+  WARD
+  LGA
+  CONSTITUENCY
+  STATE
+  NATIONAL
+}
+
+enum ContestType {
+  GOVERNORSHIP
+  ASSEMBLY
+}
+
+enum CollationResultStatus {
+  DRAFT
+  SUBMITTED
+  APPROVED
+  REJECTED
+}
+
+enum CollationActionType {
+  SUBMITTED
+  APPROVED
+  REJECTED
+  COMMENTED
+}
+
+enum SupportGroupCategory {
+  YOUTH
+  WOMEN
+  FARMERS
+  PROFESSIONALS
+  STUDENTS
+  RELIGIOUS
+  COMMUNITY
+}
+
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  ACTIVE
+  REJECTED
+}
+
+enum FieldReportType {
+  SECURITY_CONCERN
+  COMMUNITY_REQUEST
+  OPPOSITION_ACTIVITY
+  CAMPAIGN_PROGRESS
+  DAILY_SITREP
+  INCIDENT
+}
+
+enum IncidentType {
+  VOTER_INTIMIDATION
+  BALLOT_SNATCHING
+  BALLOT_STUFFING
+  VOTE_BUYING
+  VIOLENCE_THUGGERY
+  MATERIALS_SHORTAGE
+  LATE_OR_FAILED_OPENING
+  BVAS_MALFUNCTION
+  UNAUTHORIZED_PERSONNEL
+  OVERVOTING
+  OPPOSITION_DISRUPTION
+  OTHERS
+}
+
+enum IncidentSeverity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum FieldReportStatus {
+  OPEN
+  ESCALATED
+  RESOLVED
+}
+
+enum PollingUnitStrength {
+  STRONG
+  SWING
+  WEAK
+}
+
+enum PollingUnitStatus {
+  ACTIVE
+  INACTIVE
+  NEEDS_ATTENTION
+}
+
+enum SituationStatus {
+  OPEN
+  REPORTING
+  CLOSED
+  INCIDENT
+}
+
+enum ElectionDayPhase {
+  CHECKED_IN
+  MATERIALS_READY
+  OPENED
+  VOTING
+  CLOSED
+  COUNTING
+}
+
+enum PulseAtmosphere {
+  CALM
+  TENSE
+  DISRUPTED
+}
+
+enum PulseBvasStatus {
+  WORKING
+  SLOW
+  DOWN
+  NOT_SEEN
+}
+
+enum PulseQueue {
+  NONE
+  SHORT
+  LONG
+}
+
+enum PulseTurnoutBand {
+  LOW
+  NORMAL
+  HIGH
+}
+
+enum RivalMobilization {
+  NONE
+  LIGHT
+  HEAVY
+}
+
+enum CrowdLean {
+  OURS
+  THEIRS
+  MIXED
+  THIN
+}
+
+enum WhoLooksAhead {
+  US
+  RIVAL
+  UNCLEAR
+}
+
+enum RivalTactic {
+  INDUCEMENT
+  INTIMIDATION
+  QUEUE_STACKING
+  UNAUTHORIZED_PERSONNEL
+  PARALLEL_STRUCTURE
+  LEGAL_MEDIA_PRESENT
+  DISRUPTION
+}
+
+enum ObservedConfidence {
+  WATCHING
+  PARTIAL
+  NEAR_FINAL
+}
+
+enum PulseSource {
+  MANUAL
+  CHECK_IN
+  HEARTBEAT
+  RESULT
+  INCIDENT
+}
+
+enum CommitmentStatus {
+  DRAFT
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum VolunteerTaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum NotificationType {
+  RESULT_SUBMITTED
+  RESULT_APPROVED
+  RESULT_RETURNED
+  RESULT_COMMENTED
+  WARD_RETURNED_BY_LGA
+  WARD_FORWARDED_TO_LGA
+  INCIDENT_REPORTED
+  INCIDENT_RESOLVED
+  INCIDENT_ESCALATED
+  SITUATION_UPDATE
+  TRIAGE_RISK_RAISED
+  TRIAGE_RISK_CLEARED
+  PULSE_REMINDER
+}
+
+enum NotificationPriority {
+  LOW
+  NORMAL
+  HIGH
+}
+
+enum DevicePlatform {
+  ANDROID
+  IOS
+}
+
+// ─── Auth & Users ────────────────────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email        String  @unique
+  phoneNumber  String? @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  otherNames   String?
+  isActive     Boolean @default(true)
+
+  mfaEnabled Boolean @default(false)
+  mfaSecret  String?
+
+  memberships              CampaignMembership[]
+  activityLogs             ActivityLog[]
+  refreshTokens            RefreshToken[]
+  fieldReports             FieldReport[] @relation("FieldReportReporter")
+  fieldReportsHandled      FieldReport[] @relation("FieldReportHandler")
+  situationUpdates         SituationUpdate[]
+  pollingUnitPulses        PollingUnitPulse[] @relation("PulseReporter")
+  collationResultsSubmitted CollationResult[] @relation("CollationSubmitted")
+  collationResultsApproved  CollationResult[] @relation("CollationApproved")
+  collationActions          CollationActionLog[] @relation("CollationActionActor")
+  deviceTokens              DeviceToken[]
+  notificationsReceived     Notification[] @relation("NotificationRecipient")
+  notificationsActed        Notification[] @relation("NotificationActor")
+  triageAcknowledgements    TriageAcknowledgement[] @relation("TriageAckAuthor")
+  aiChatThreads             AiChatThread[]
+
+  @@index([email])
+  @@index([phoneNumber])
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  revokedAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+  @@map("refresh_tokens")
+}
+
+model ActivityLog {
+  id         String   @id @default(cuid())
+  userId     String
+  campaignId String?
+  action     String
+  resource   String?
+  resourceId String?
+  metadata   Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  campaign Campaign? @relation(fields: [campaignId], references: [id])
+
+  @@index([userId])
+  @@index([campaignId])
+  @@index([createdAt])
+  @@map("activity_logs")
+}
+
+// ─── Campaign ────────────────────────────────────────────────────────────────
+
+model Campaign {
+  id               String   @id @default(cuid())
+  name             String
+  slug             String   @unique
+  stateId          String
+  /// When true, collation/situation-room cover all 36 states + FCT (national campaign).
+  isNational       Boolean  @default(false)
+  clientPartyCode  String?
+  trackedParties   Json?
+  isActive         Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  state          State                @relation(fields: [stateId], references: [id])
+  memberships    CampaignMembership[]
+  supportGroups  SupportGroup[]
+  commitments    Commitment[]
+  volunteers     Volunteer[]
+  fieldReports     FieldReport[]
+  activityLogs     ActivityLog[]
+  situationUpdates SituationUpdate[]
+  pollingUnitPulses PollingUnitPulse[]
+  collationResults CollationResult[]
+  collationActions CollationActionLog[]
+  notifications    Notification[]
+  socialSources      SocialSource[]
+  socialPosts        SocialPost[]
+  sentimentSnapshots SentimentSnapshot[]
+  triageScores       TriageScore[]
+  triageSnapshots    TriageSnapshot[]
+  triageTransitions  TriageTransition[]
+  triageAcks         TriageAcknowledgement[]
+  irevElectionConfigs IrevElectionConfig[]
+  irevPuSnapshots     IrevPuSnapshot[]
+  aiChatThreads       AiChatThread[]
+  contests            Contest[]
+
+  @@index([stateId])
+  @@map("campaigns")
+}
+
+model Contest {
+  id                String      @id @default(cuid())
+  campaignId        String
+  type              ContestType
+  slug              String
+  label             String
+  irevElectionId    String?
+  irevElectionLabel String?
+  isDefault         Boolean     @default(false)
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  campaign           Campaign            @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  collationResults   CollationResult[]
+  irevElectionConfig IrevElectionConfig?
+  irevPuSnapshots    IrevPuSnapshot[]
+
+  @@unique([campaignId, type])
+  @@unique([campaignId, slug])
+  @@index([campaignId, isDefault])
+  @@map("contests")
+}
+
+model CampaignMembership {
+  id         String       @id @default(cuid())
+  userId     String
+  campaignId String
+  role       CampaignRole
+  scopeType  ScopeType?
+  scopeId    String?
+  isActive   Boolean      @default(true)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  /// One user per campaign. Field seats are not contest-scoped: the same PU
+  /// agent covers Governorship and Assembly. One active PU occupant is enforced
+  /// by campaign_memberships_one_active_pu_agent (see migrations).
+  @@unique([userId, campaignId])
+  @@index([campaignId])
+  @@index([role])
+  @@index([campaignId, scopeType, scopeId])
+  @@map("campaign_memberships")
+}
+
+model CampaignInvitation {
+  id         String       @id @default(cuid())
+  email      String
+  campaignId String
+  role       CampaignRole
+  scopeType  ScopeType?
+  scopeId    String?
+  token      String       @unique
+  expiresAt  DateTime
+  acceptedAt DateTime?
+  createdAt  DateTime     @default(now())
+
+  @@index([token])
+  @@index([email])
+  @@map("campaign_invitations")
+}
+
+// ─── Geographic Hierarchy ────────────────────────────────────────────────────
+
+model State {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  code      String   @unique
+  zone      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  senatorialDistricts SenatorialDistrict[]
+  lgas                LGA[]
+  campaigns           Campaign[]
+  socialPosts         SocialPost[]
+  constituencies      StateAssemblyConstituency[]
+
+  @@index([zone])
+  @@map("states")
+}
+
+model SenatorialDistrict {
+  id        String   @id @default(cuid())
+  name      String
+  stateId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  state State @relation(fields: [stateId], references: [id], onDelete: Cascade)
+  lgas  LGA[]
+
+  @@unique([name, stateId])
+  @@index([stateId])
+  @@map("senatorial_districts")
+}
+
+model LGA {
+  id                   String   @id @default(cuid())
+  name                 String
+  stateId              String
+  senatorialDistrictId String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  state              State                       @relation(fields: [stateId], references: [id], onDelete: Cascade)
+  senatorialDistrict SenatorialDistrict?         @relation(fields: [senatorialDistrictId], references: [id])
+  wards              Ward[]
+  supportGroups      SupportGroup[]
+  socialPosts        SocialPost[]
+  constituencies     StateAssemblyConstituency[]
+
+  @@unique([name, stateId])
+  @@index([stateId])
+  @@index([senatorialDistrictId])
+  @@map("lgas")
+}
+
+model StateAssemblyConstituency {
+  id             String   @id @default(cuid())
+  stateId        String
+  lgaId          String?
+  name           String
+  code           String
+  aliases        String[] @default([])
+  irevElectionId String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  state State @relation(fields: [stateId], references: [id], onDelete: Cascade)
+  lga   LGA?  @relation(fields: [lgaId], references: [id], onDelete: SetNull)
+  wards Ward[]
+
+  @@unique([code, stateId])
+  @@unique([name, stateId])
+  @@index([stateId])
+  @@index([lgaId])
+  @@map("state_assembly_constituencies")
+}
+
+model Ward {
+  id                   String   @id @default(cuid())
+  name                 String
+  registrationAreaCode String?
+  lgaId                String
+  constituencyId       String?
+  latitude             Float?
+  longitude            Float?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  lga            LGA                         @relation(fields: [lgaId], references: [id], onDelete: Cascade)
+  constituency   StateAssemblyConstituency?  @relation(fields: [constituencyId], references: [id], onDelete: SetNull)
+  pollingUnits   PollingUnit[]
+  volunteers     Volunteer[]
+  fieldReports   FieldReport[]
+  irevGeoMapping IrevGeoMapping?
+
+  @@unique([name, lgaId])
+  @@index([lgaId])
+  @@index([constituencyId])
+  @@map("wards")
+}
+
+model PollingUnit {
+  id                  String              @id @default(cuid())
+  code                String              @unique
+  name                String
+  wardId              String
+  latitude            Float?
+  longitude           Float?
+  strengthAssessment  PollingUnitStrength?
+  status              PollingUnitStatus   @default(ACTIVE)
+  assignedAgentId     String?
+  historicalResults   Json?
+  notes               String?
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+
+  ward             Ward              @relation(fields: [wardId], references: [id], onDelete: Cascade)
+  fieldReports     FieldReport[]
+  situationUpdates SituationUpdate[]
+  pulses           PollingUnitPulse[]
+  irevSnapshots    IrevPuSnapshot[]
+
+  @@index([wardId])
+  @@index([status])
+  @@map("polling_units")
+}
+
+// ─── Support Groups ──────────────────────────────────────────────────────────
+
+model SupportGroup {
+  id                 String               @id @default(cuid())
+  campaignId         String
+  name               String
+  category           SupportGroupCategory
+  leaderName         String
+  leaderPhone        String
+  leaderEmail        String?
+  memberCount        Int                  @default(0)
+  lgaId              String?
+  areaOfOperation    String?
+  latitude           Float?
+  longitude          Float?
+  verificationStatus VerificationStatus   @default(PENDING)
+  coordinatorId      String?
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime             @updatedAt
+
+  campaign    Campaign     @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  lga         LGA?         @relation(fields: [lgaId], references: [id])
+  commitments Commitment[]
+
+  @@index([campaignId])
+  @@index([category])
+  @@index([verificationStatus])
+  @@map("support_groups")
+}
+
+// ─── Commitments ─────────────────────────────────────────────────────────────
+
+model Commitment {
+  id             String           @id @default(cuid())
+  campaignId     String
+  supportGroupId String
+  title          String
+  description    String?
+  targetValue    Int
+  currentValue   Int              @default(0)
+  deadline       DateTime
+  status         CommitmentStatus @default(DRAFT)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  campaign     Campaign              @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  supportGroup SupportGroup          @relation(fields: [supportGroupId], references: [id], onDelete: Cascade)
+  progress     CommitmentProgress[]
+
+  @@index([campaignId])
+  @@index([supportGroupId])
+  @@map("commitments")
+}
+
+model CommitmentProgress {
+  id           String   @id @default(cuid())
+  commitmentId String
+  value        Int
+  notes        String?
+  evidenceUrl  String?
+  approved     Boolean  @default(false)
+  submittedBy  String
+  createdAt    DateTime @default(now())
+
+  commitment Commitment @relation(fields: [commitmentId], references: [id], onDelete: Cascade)
+
+  @@index([commitmentId])
+  @@map("commitment_progress")
+}
+
+// ─── Volunteers ──────────────────────────────────────────────────────────────
+
+model Volunteer {
+  id               String   @id @default(cuid())
+  campaignId       String
+  firstName        String
+  lastName         String
+  phoneNumber      String
+  email            String?
+  wardId           String?
+  role             String?
+  coordinatorId    String?
+  performanceScore Float    @default(0)
+  isVerified       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  campaign    Campaign            @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  ward        Ward?               @relation(fields: [wardId], references: [id])
+  assignments VolunteerAssignment[]
+  tasks       VolunteerTask[]
+
+  @@index([campaignId])
+  @@index([wardId])
+  @@map("volunteers")
+}
+
+model VolunteerAssignment {
+  id          String   @id @default(cuid())
+  volunteerId String
+  wardId      String?
+  role        String
+  assignedAt  DateTime @default(now())
+
+  volunteer Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+
+  @@index([volunteerId])
+  @@map("volunteer_assignments")
+}
+
+model VolunteerTask {
+  id          String              @id @default(cuid())
+  volunteerId String
+  title       String
+  description String?
+  status      VolunteerTaskStatus @default(PENDING)
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdAt   DateTime            @default(now())
+
+  volunteer Volunteer @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
+
+  @@index([volunteerId])
+  @@index([status])
+  @@map("volunteer_tasks")
+}
+
+// ─── Field Reporting ─────────────────────────────────────────────────────────
+
+model FieldReport {
+  id            String            @id @default(cuid())
+  campaignId    String
+  reportedById  String
+  type             FieldReportType
+  incidentType     IncidentType?
+  incidentSeverity IncidentSeverity?
+  title            String
+  description   String
+  wardId        String?
+  pollingUnitId String?
+  latitude      Float?
+  longitude     Float?
+  photoUrls     String[]
+  audioUrl           String?
+  sourceLanguage     String?
+  originalTranscript String?
+  isUrgent      Boolean           @default(false)
+  status        FieldReportStatus @default(OPEN)
+  wardComment   String?
+  handledById   String?
+  handledAt     DateTime?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  campaign    Campaign     @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  reporter    User         @relation("FieldReportReporter", fields: [reportedById], references: [id])
+  handledBy   User?        @relation("FieldReportHandler", fields: [handledById], references: [id])
+  ward        Ward?        @relation(fields: [wardId], references: [id])
+  pollingUnit PollingUnit? @relation(fields: [pollingUnitId], references: [id])
+
+  @@index([campaignId])
+  @@index([type])
+  @@index([incidentType])
+  @@index([incidentSeverity])
+  @@index([status])
+  @@index([wardId])
+  @@index([createdAt])
+  @@map("field_reports")
+}
+
+// ─── Election Day ────────────────────────────────────────────────────────────
+
+model SituationUpdate {
+  id            String            @id @default(cuid())
+  campaignId    String?
+  pollingUnitId String
+  reportedById  String
+  status        SituationStatus
+  phase         ElectionDayPhase?
+  atmosphere    PulseAtmosphere?
+  bvasStatus    PulseBvasStatus?
+  queue         PulseQueue?
+  materialsComplete Boolean?
+  securityPresent   Boolean?
+  turnoutBand       PulseTurnoutBand?
+  estimatedAccredited Int?
+  rivalAgentPresent Boolean?
+  rivalMobilization RivalMobilization?
+  crowdLean         CrowdLean?
+  whoLooksAhead     WhoLooksAhead?
+  rivalTactics      RivalTactic[]      @default([])
+  observedPartyResults Json?
+  observedConfidence   ObservedConfidence?
+  photoUrls     String[]          @default([])
+  notes         String?
+  latitude      Float?
+  longitude     Float?
+  isUrgent      Boolean           @default(false)
+  source        PulseSource       @default(MANUAL)
+  createdAt     DateTime          @default(now())
+
+  campaign    Campaign?   @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  pollingUnit PollingUnit @relation(fields: [pollingUnitId], references: [id], onDelete: Cascade)
+  reporter    User        @relation(fields: [reportedById], references: [id])
+
+  @@index([pollingUnitId])
+  @@index([campaignId])
+  @@index([status])
+  @@index([phase])
+  @@index([createdAt])
+  @@map("situation_updates")
+}
+
+/// Latest election-day pulse per polling unit. History lives on SituationUpdate.
+model PollingUnitPulse {
+  id            String           @id @default(cuid())
+  campaignId    String
+  pollingUnitId String
+  reportedById  String
+  status        SituationStatus
+  phase         ElectionDayPhase
+  atmosphere    PulseAtmosphere?
+  bvasStatus    PulseBvasStatus?
+  queue         PulseQueue?
+  materialsComplete Boolean?
+  securityPresent   Boolean?
+  turnoutBand       PulseTurnoutBand?
+  estimatedAccredited Int?
+  rivalAgentPresent Boolean?
+  rivalMobilization RivalMobilization?
+  crowdLean         CrowdLean?
+  whoLooksAhead     WhoLooksAhead?
+  rivalTactics      RivalTactic[]      @default([])
+  observedPartyResults Json?
+  observedConfidence   ObservedConfidence?
+  photoUrls     String[]          @default([])
+  notes         String?
+  latitude      Float?
+  longitude     Float?
+  isUrgent      Boolean           @default(false)
+  source        PulseSource       @default(MANUAL)
+  lastPulseAt   DateTime          @default(now())
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  campaign    Campaign    @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  pollingUnit PollingUnit @relation(fields: [pollingUnitId], references: [id], onDelete: Cascade)
+  reporter    User        @relation("PulseReporter", fields: [reportedById], references: [id])
+
+  @@unique([campaignId, pollingUnitId])
+  @@index([campaignId, phase, lastPulseAt])
+  @@index([pollingUnitId])
+  @@map("polling_unit_pulses")
+}
+
+// ─── IReV (official INEC results) ────────────────────────────────────────────
+
+enum IrevPuSnapshotStatus {
+  NOT_ON_IREV
+  FETCHED
+  OCR_READY
+  OCR_FAILED
+}
+
+model IrevElectionConfig {
+  id             String    @id @default(cuid())
+  campaignId     String
+  contestId      String    @unique
+  irevElectionId String
+  electionLabel  String?
+  enabled        Boolean   @default(true)
+  lastSyncAt     DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  contest  Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  @@index([campaignId])
+  @@map("irev_election_configs")
+}
+
+model IrevGeoMapping {
+  id                   String    @id @default(cuid())
+  wardId               String    @unique
+  irevWardId           String
+  irevLgaId            String?
+  irevStateId          String?
+  lastCatalogedAt      DateTime?
+  lastCatalogAttemptAt DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  ward Ward @relation(fields: [wardId], references: [id], onDelete: Cascade)
+
+  @@index([irevWardId])
+  @@index([lastCatalogedAt])
+  @@index([lastCatalogAttemptAt])
+  @@map("irev_geo_mappings")
+}
+
+model IrevPuSnapshot {
+  id            String               @id @default(cuid())
+  campaignId    String
+  contestId     String
+  pollingUnitId String
+  irevPuId      String?
+  documentUrl   String?
+  documentHash  String?
+  uploadedAt    DateTime?
+  ocrExtract    Json?
+  status        IrevPuSnapshotStatus @default(FETCHED)
+  fetchedAt     DateTime             @default(now())
+  createdAt     DateTime             @default(now())
+  updatedAt     DateTime             @updatedAt
+
+  campaign    Campaign           @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  contest     Contest            @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  pollingUnit PollingUnit        @relation(fields: [pollingUnitId], references: [id], onDelete: Cascade)
+  revisions   IrevScanRevision[]
+
+  @@unique([campaignId, contestId, pollingUnitId])
+  @@index([campaignId, contestId, status])
+  @@index([pollingUnitId])
+  @@map("irev_pu_snapshots")
+}
+
+model IrevScanRevision {
+  id           String    @id @default(cuid())
+  snapshotId   String
+  documentUrl  String?
+  documentHash String?
+  uploadedAt   DateTime?
+  ocrExtract   Json?
+  observedAt   DateTime  @default(now())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  snapshot IrevPuSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  @@index([snapshotId])
+  @@index([snapshotId, observedAt])
+  @@map("irev_scan_revisions")
+}
+
+// ─── Collation & Results ─────────────────────────────────────────────────────
+
+model CollationResult {
+  id               String                @id @default(cuid())
+  campaignId       String
+  contestId        String
+  level            CollationLevel
+  scopeType        ScopeType
+  scopeId          String
+  /// EC8A: Number of Voters on the Register
+  registeredVoters Int?
+  /// EC8A: Number of Accredited Voters
+  accreditedVoters Int?
+  /// EC8A: Number of Ballot Papers Issued to the Polling Unit
+  ballotPapersIssued Int?
+  /// EC8A: Number of Unused Ballot Papers
+  unusedBallotPapers Int?
+  /// EC8A: Number of Spoiled Ballot Papers
+  spoiledBallotPapers Int?
+  /// EC8A: Number of Rejected Ballots
+  invalidVotes     Int?
+  /// EC8A: Number of Total Valid Votes (sum of party scores)
+  votesCast        Int?
+  /// EC8A: Total Number of Used Ballot Papers (spoiled + rejected + valid)
+  usedBallotPapers Int?
+  partyResults     Json?
+  ec8aPhotoUrls    String[]              @default([])
+  approvalComment  String?
+  status           CollationResultStatus @default(DRAFT)
+  submittedById    String?
+  submittedAt      DateTime?
+  approvedById     String?
+  approvedAt       DateTime?
+  rejectionReason  String?
+  /// When LGA returns a ward, optional PU ids the LGA flagged for ward follow-up
+  flaggedPollingUnitIds String[] @default([])
+  /// When State returns an LGA, optional ward ids flagged for LGA follow-up
+  flaggedWardIds        String[] @default([])
+  /// Arithmetic (and later OCR) recommendation for ward/LGA review. Never auto-approves.
+  ocrVerification  Json?
+  ocrVerifiedAt    DateTime?
+  /// Agent figures vs official IReV scan (OCR). Never auto-approves.
+  irevVerification Json?
+  irevVerifiedAt   DateTime?
+  parentResultId   String?
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime              @updatedAt
+
+  campaign    Campaign          @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  contest     Contest           @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  submittedBy User?             @relation("CollationSubmitted", fields: [submittedById], references: [id])
+  approvedBy  User?             @relation("CollationApproved", fields: [approvedById], references: [id])
+  parent      CollationResult?  @relation("CollationChain", fields: [parentResultId], references: [id])
+  children    CollationResult[] @relation("CollationChain")
+  actionLogs  CollationActionLog[]
+
+  @@unique([campaignId, contestId, level, scopeType, scopeId])
+  @@index([campaignId, contestId, level, status])
+  @@index([scopeType, scopeId])
+  @@index([parentResultId])
+  @@map("collation_results")
+}
+
+/// Append-only audit trail for collation approve / reject / submit events.
+model CollationActionLog {
+  id                String              @id @default(cuid())
+  campaignId        String
+  collationResultId String
+  action            CollationActionType
+  actorId           String
+  fromStatus        CollationResultStatus?
+  toStatus          CollationResultStatus
+  comment           String?
+  metadata          Json?
+  createdAt         DateTime            @default(now())
+
+  campaign        Campaign        @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  collationResult CollationResult @relation(fields: [collationResultId], references: [id], onDelete: Cascade)
+  actor           User            @relation("CollationActionActor", fields: [actorId], references: [id])
+
+  @@index([collationResultId, createdAt])
+  @@index([campaignId, createdAt])
+  @@index([actorId])
+  @@map("collation_action_logs")
+}
+
+model DeviceToken {
+  id         String         @id @default(cuid())
+  userId     String
+  token      String         @unique
+  platform   DevicePlatform
+  campaignId String?
+  isActive   Boolean        @default(true)
+  lastSeenAt DateTime       @default(now())
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isActive])
+  @@map("device_tokens")
+}
+
+model Notification {
+  id              String               @id @default(cuid())
+  campaignId      String
+  recipientUserId String
+  actorUserId     String?
+  type            NotificationType
+  priority        NotificationPriority @default(NORMAL)
+  title           String
+  body            String
+  entityType      String
+  entityId        String
+  sourceEventId   String
+  data            Json
+  readAt          DateTime?
+  createdAt       DateTime             @default(now())
+
+  campaign  Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  recipient User     @relation("NotificationRecipient", fields: [recipientUserId], references: [id], onDelete: Cascade)
+  actor     User?    @relation("NotificationActor", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@unique([campaignId, type, entityId, recipientUserId, sourceEventId], map: "notifications_dedupe_key")
+  @@index([recipientUserId, createdAt])
+  @@index([recipientUserId, readAt])
+  @@index([campaignId, createdAt])
+  @@map("notifications")
+}
+
+// ─── Social Listening ────────────────────────────────────────────────────────
+// Scaffold for the AI engine's social module. The ingest API, queue, and
+// analysis writes are live; the platform fetcher that fills these tables is
+// implemented separately (see docs/AI-SOCIAL.md).
+
+enum SocialPlatform {
+  FACEBOOK
+  X
+  TIKTOK
+  WHATSAPP
+  OTHER
+}
+
+enum SocialSentiment {
+  POSITIVE
+  NEUTRAL
+  NEGATIVE
+  MIXED
+  UNKNOWN
+}
+
+/// A page, handle, or feed being monitored for one campaign.
+model SocialSource {
+  id          String         @id @default(cuid())
+  campaignId  String
+  platform    SocialPlatform
+  /// Page id or username on the platform.
+  handle      String
+  displayName String
+  isActive    Boolean        @default(true)
+  /// Fetcher configuration — poll interval, keywords, credential references.
+  /// Never store raw secrets here; keep them in environment variables.
+  config      Json?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  campaign Campaign     @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  posts    SocialPost[]
+
+  @@unique([campaignId, platform, handle])
+  @@index([campaignId, isActive])
+  @@map("social_sources")
+}
+
+/// One captured post or comment. Analysis columns stay null until the worker runs.
+model SocialPost {
+  id           String         @id @default(cuid())
+  sourceId     String
+  /// Denormalised so every AI query keys on campaignId rather than joining out.
+  campaignId   String
+  platform     SocialPlatform
+  /// Platform's own id. Unique per campaign so re-ingesting is idempotent.
+  externalId   String
+  authorHandle String?
+  text         String
+  lang         String?
+  postedAt     DateTime
+  permalink    String?
+  mediaUrls    String[]       @default([])
+  raw          Json?
+  fetchedAt    DateTime       @default(now())
+
+  sentiment      SocialSentiment?
+  /// -1 (most negative) to 1 (most positive).
+  sentimentScore Float?
+  topics         String[]         @default([])
+  /// { parties: [], candidates: [], places: [] }
+  entities       Json?
+  stateId        String?
+  lgaId          String?
+  relevance      Float?
+  analyzedAt     DateTime?
+  modelMeta      Json?
+
+  source   SocialSource @relation(fields: [sourceId], references: [id], onDelete: Cascade)
+  campaign Campaign     @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  state    State?       @relation(fields: [stateId], references: [id])
+  lga      LGA?         @relation(fields: [lgaId], references: [id])
+
+  @@unique([campaignId, platform, externalId])
+  @@index([campaignId, postedAt])
+  @@index([campaignId, sentiment, postedAt])
+  @@index([sourceId, postedAt])
+  @@map("social_posts")
+}
+
+/// Rolled-up sentiment for a time window. Read by the triage engine (phase 2)
+/// as its sentiment input; absent snapshots score zero rather than penalising.
+model SentimentSnapshot {
+  id            String    @id @default(cuid())
+  campaignId    String
+  /// Reserved for the future Contest model; nullable and outside the unique key.
+  contestId     String?
+  scopeType     ScopeType
+  scopeId       String
+  windowStart   DateTime
+  windowEnd     DateTime
+  postCount     Int       @default(0)
+  positiveCount Int       @default(0)
+  neutralCount  Int       @default(0)
+  negativeCount Int       @default(0)
+  mixedCount    Int       @default(0)
+  unknownCount  Int       @default(0)
+  avgScore      Float?
+  topTopics     Json?
+  engineVersion String
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, scopeType, scopeId, windowStart])
+  @@index([campaignId, scopeType, scopeId, windowEnd])
+  @@map("sentiment_snapshots")
+}
+
+// ─── Triage Analyzer ─────────────────────────────────────────────────────────
+// Scores every scope as winning / losing / at-risk from results, incidents,
+// reporting coverage, turnout, verification flags and staleness. Deterministic:
+// the model never authors a score or a driver.
+
+enum TriageOutlook {
+  WINNING
+  LEANING_WIN
+  TOSSUP
+  LEANING_LOSS
+  LOSING
+  UNKNOWN
+}
+
+/// Computed risk. Deliberately NOT IncidentSeverity — a human-picked incident
+/// severity and a machine-computed risk level must never be conflated.
+enum TriageRiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+/// Latest score per scope. Mirrors CollationResult's key shape: scopeId is an
+/// untyped id whose target depends on level.
+model TriageScore {
+  id         String         @id @default(cuid())
+  campaignId String
+  level      CollationLevel
+  scopeType  ScopeType
+  scopeId    String
+  /// Denormalised for national queries that group by state without walking up.
+  stateId    String?
+
+  outlook        TriageOutlook   @default(UNKNOWN)
+  riskLevel      TriageRiskLevel @default(LOW)
+  /// 0-100. Higher is worse.
+  compositeScore Float           @default(0)
+  /// Per-component 0-100 scores, for explaining the composite.
+  componentScores Json?
+  /// Ordered human-readable reasons, generated from the components by code.
+  drivers        Json?
+  /// Full per-factor breakdown: score, weight, contribution, and why a factor
+  /// was not measured. Stored rather than derived because the board reads
+  /// scores without re-collecting the inputs the explanations are built from.
+  factors        Json?
+
+  /// Hash of the inputs; unchanged hash means nothing material moved.
+  inputsHash    String
+  engineVersion String
+
+  previousOutlook   TriageOutlook?
+  previousRiskLevel TriageRiskLevel?
+  lastTransitionAt  DateTime?
+
+  computedAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, level, scopeType, scopeId])
+  @@index([campaignId, level, riskLevel])
+  @@index([campaignId, stateId])
+  @@index([campaignId, compositeScore])
+  @@map("triage_scores")
+}
+
+/// Append-only history. Ward and above are written on material change; polling
+/// units only on an outlook or risk transition, or 176k rows per sweep would
+/// swamp the table.
+model TriageSnapshot {
+  id         String         @id @default(cuid())
+  campaignId String
+  level      CollationLevel
+  scopeType  ScopeType
+  scopeId    String
+
+  outlook         TriageOutlook
+  riskLevel       TriageRiskLevel
+  compositeScore  Float
+  componentScores Json?
+  engineVersion   String
+  computedAt      DateTime      @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@index([campaignId, scopeType, scopeId, computedAt])
+  @@index([campaignId, computedAt])
+  @@map("triage_snapshots")
+}
+
+/// Append-only record of every risk band or outlook change.
+///
+/// `persistScores` already detects transitions in order to stamp
+/// previousRiskLevel; before this table that detection was thrown away in a log
+/// line. Names are denormalised so the movement feed needs no joins.
+model TriageTransition {
+  id          String          @id @default(cuid())
+  campaignId  String
+  level       CollationLevel
+  scopeType   ScopeType
+  scopeId     String
+  scopeName   String
+  stateId     String?
+  fromRisk    TriageRiskLevel
+  toRisk      TriageRiskLevel
+  fromOutlook TriageOutlook
+  toOutlook   TriageOutlook
+  compositeScore Float
+  createdAt   DateTime        @default(now())
+
+  campaign Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@index([campaignId, createdAt])
+  @@index([campaignId, scopeType, scopeId, createdAt])
+  @@map("triage_transitions")
+}
+
+/// Who has taken responsibility for a hot scope, and when.
+///
+/// Append-only: "currently acknowledged" is derived by comparing the latest ack
+/// against the score's lastTransitionAt, so a fresh transition automatically
+/// voids an old acknowledgement rather than needing a nullable flag reset.
+model TriageAcknowledgement {
+  id             String          @id @default(cuid())
+  campaignId     String
+  level          CollationLevel
+  scopeType      ScopeType
+  scopeId        String
+  riskLevel      TriageRiskLevel
+  compositeScore Float
+  note           String?
+  createdById    String
+  createdAt      DateTime        @default(now())
+
+  campaign  Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  createdBy User     @relation("TriageAckAuthor", fields: [createdById], references: [id])
+
+  @@index([campaignId, scopeType, scopeId, createdAt])
+  @@map("triage_acknowledgements")
+}
+
+// ─── AI Assistant Chat ───────────────────────────────────────────────────────
+
+enum AiChatMessageRole {
+  USER
+  ASSISTANT
+}
+
+/// One conversation per user within a campaign. Messages are stored server-side
+/// so history survives browser restarts and syncs across devices for the same account.
+model AiChatThread {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String
+  title      String   @default("New chat")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  campaign Campaign         @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  user     User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages AiChatMessage[]
+
+  @@index([campaignId, userId, updatedAt])
+  @@map("ai_chat_threads")
+}
+
+model AiChatMessage {
+  id        String            @id @default(cuid())
+  threadId  String
+  role      AiChatMessageRole
+  content   String            @db.Text
+  replyToId String?
+  meta      Json?
+  spoken    String?           @db.Text
+  attachments Json?
+  charts    Json?
+  contacts  Json?
+  createdAt DateTime          @default(now())
+
+  thread  AiChatThread   @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  replyTo AiChatMessage? @relation("AiChatMessageReply", fields: [replyToId], references: [id], onDelete: SetNull)
+  replies AiChatMessage[] @relation("AiChatMessageReply")
+
+  @@index([threadId, createdAt])
+  @@map("ai_chat_messages")
+}
+

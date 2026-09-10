@@ -1,0 +1,532 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "GAGARAWA",
+    "inecCode": "08",
+    "delimiterPrefix": "17-08"
+  },
+  "wards": [
+    {
+      "name": "GAGARAWA GARI",
+      "inecCode": "01",
+      "registrationAreaCode": "17-08-01",
+      "pollingUnits": [
+        {
+          "code": "17-08-01-001",
+          "name": "GARIN /PRI. SCH  GARIN GOTO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-002",
+          "name": "GURFELI GARI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-003",
+          "name": "GAGARAWA GARI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-004",
+          "name": "JAFTAR PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-005",
+          "name": "KOFAR FADA/ GAGARAWA GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-006",
+          "name": "KOFAR FADA/ UNGUWAR LIMAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-01-007",
+          "name": "GARIN GOTO II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GAGARAWA TASHA",
+      "inecCode": "02",
+      "registrationAreaCode": "17-08-02",
+      "pollingUnits": [
+        {
+          "code": "17-08-02-001",
+          "name": "KOFAR MAIGARI / MALA KWANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-002",
+          "name": "UNGUWAR WAKILI/UNGUWAR WAKILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-003",
+          "name": "P.T.F STORE/UNGUWAR MAIGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-004",
+          "name": "UNGUWAR YANHOTO/YAN-HOTO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-005",
+          "name": "DANDALIN DAN WANDARA/UNGUWAR  DAN WANDARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-006",
+          "name": "KOFAR MAI MAKERA/TUDUNGANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-007",
+          "name": "KOFAR FADA/NASARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-02-008",
+          "name": "ISLAMIYYA PRI SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-02-009",
+          "name": "BAKIN KASUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-02-010",
+          "name": "RAILWAY STATION GAGARAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-02-011",
+          "name": "IBRAHIM YA'U SSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-02-012",
+          "name": "NEW GEN HOSPITAL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GARIN CHIROMA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-08-03",
+      "pollingUnits": [
+        {
+          "code": "17-08-03-001",
+          "name": "GAYAWAR MALAM/PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-002",
+          "name": "GARIN CHIROMA/PRI SCH I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-003",
+          "name": "GARIN CHIROMA/PRI SCH II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-004",
+          "name": "KOFAR MAIGARI/MALKADERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-005",
+          "name": "KORE SABUWA/ PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-006",
+          "name": "KARYA KAHO P.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-007",
+          "name": "KOFAR MAIGARI/GODA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-008",
+          "name": "KOFAR MAIGARI/GARIN BAUSHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-03-009",
+          "name": "KOFAR MAIGARI/ GAYAWAR TUDU",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "KORE BALATU",
+      "inecCode": "04",
+      "registrationAreaCode": "17-08-04",
+      "pollingUnits": [
+        {
+          "code": "17-08-04-001",
+          "name": "KORE BALATU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-04-002",
+          "name": "KOFAR BULAMA/KORE BALATU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-04-003",
+          "name": "DANMADAI/PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-04-004",
+          "name": "KOFAR FADA/DANMADAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-04-005",
+          "name": "KANYU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-04-006",
+          "name": "KOFAR FADA/DANNANI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "MADAKA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-08-05",
+      "pollingUnits": [
+        {
+          "code": "17-08-05-001",
+          "name": "KOFAR FADA/DAN AMARYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-002",
+          "name": "BARAYE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-003",
+          "name": "MALAM BAKI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-004",
+          "name": "MADAKA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-005",
+          "name": "DANDALIN KABEWA/KABEWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-006",
+          "name": "KOFAR FADA/DAN ADAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-05-007",
+          "name": "MADAKA CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAIADUWA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-08-06",
+      "pollingUnits": [
+        {
+          "code": "17-08-06-001",
+          "name": "MAKERABU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-002",
+          "name": "KOFAR FADA/MAKERABU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-003",
+          "name": "KOFAR FADA/LIMAN ADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-004",
+          "name": "KOFAR FADA/MAISHADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-005",
+          "name": "MAITSINTSIYA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-006",
+          "name": "MAI'ADUWA PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-007",
+          "name": "DANDALIN DAMASKI/DAMASKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-008",
+          "name": "MAI'ADUWA PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-06-009",
+          "name": "MAITSINTSIYA PRI SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-06-010",
+          "name": "DOGON DAWA PRI SCH",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAIKILILI",
+      "inecCode": "07",
+      "registrationAreaCode": "17-08-07",
+      "pollingUnits": [
+        {
+          "code": "17-08-07-001",
+          "name": "KANGARWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-002",
+          "name": "ZINGARAN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-003",
+          "name": "KOFAR FADA/NAHUCE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-004",
+          "name": "ALASAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-005",
+          "name": "MAIKILILI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-006",
+          "name": "KOFAR FADA/MAIKILILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-007",
+          "name": "KOFAR FADA/BULA SHAMAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-008",
+          "name": "BULA BABBA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-009",
+          "name": "KOFAR FADA/GARIN LAMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-07-010",
+          "name": "GARIN MADO PRI. SCH.",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "MEDU",
+      "inecCode": "08",
+      "registrationAreaCode": "17-08-08",
+      "pollingUnits": [
+        {
+          "code": "17-08-08-001",
+          "name": "MEDIN LABAN PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-002",
+          "name": "HABATSAI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-003",
+          "name": "KOFAR FADA/FURYA GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-004",
+          "name": "MEDI GARI PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-005",
+          "name": "MEDI GARI PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-006",
+          "name": "MEDI GARI KOFA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-007",
+          "name": "DANDALIN ZARO/ZARO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-008",
+          "name": "KOFAR FADA/GARIN DUTSE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-009",
+          "name": "MAIJERUWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-08-010",
+          "name": "KADAITA PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-08-011",
+          "name": "MEDU KUDU ISLAMIYYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-08-012",
+          "name": "MEDU DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YALAWA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-08-09",
+      "pollingUnits": [
+        {
+          "code": "17-08-09-001",
+          "name": "YALAWA GARI PRI. SCH  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-09-002",
+          "name": "YALAWA GARI PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-09-003",
+          "name": "DANDIDI PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-08-09-004",
+          "name": "KOFAR FADA/MATUMBI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-09-005",
+          "name": "KOFAR FADA / JAGINDI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "ZARADA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-08-10",
+      "pollingUnits": [
+        {
+          "code": "17-08-10-001",
+          "name": "ZARADA SABUWA PRI. SCH.  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-002",
+          "name": "ZARADA SABUWA PRI. SCH.  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-003",
+          "name": "SARKIN DARE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-004",
+          "name": "KOFAR FADA/SARKIN DARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-005",
+          "name": "GIJIGAMI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-006",
+          "name": "GANJI GARI  PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-007",
+          "name": "DANDALIN MAGAJIGARI/MAGAJI GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-008",
+          "name": "KOFAR FADA/MAJIA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-009",
+          "name": "AKWAI ALLAH PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-08-10-010",
+          "name": "KOFAR FADA/MEDIN SALE",
+          "remark": "EXISTING PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 88,
+    "existingPuCount": 75,
+    "newPuCount": 13
+  }
+}

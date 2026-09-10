@@ -1,0 +1,839 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "BIRNIWA",
+    "inecCode": "04",
+    "delimiterPrefix": "17-04"
+  },
+  "wards": [
+    {
+      "name": "BATU",
+      "inecCode": "01",
+      "registrationAreaCode": "17-04-01",
+      "pollingUnits": [
+        {
+          "code": "17-04-01-001",
+          "name": "BATU PRI. SCH/BATU GARI/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-002",
+          "name": "BATU DISPENSARY/BATU KOKOMARI/ILALLAH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-003",
+          "name": "KUKA-IN KIWA PRI. SCH/KUKA-IN KIWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-004",
+          "name": "ISFARI PRI. SCH. ISFARI/K.BAMBARA/GG",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-005",
+          "name": "WARGALE PRI. SCH./WARGALE/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-006",
+          "name": "KOFAR FADA FULATANNAN/FULATANNAN/FW",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-007",
+          "name": "KOFAR FADA NARKEWA KARAMA/MARKEWA K.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-008",
+          "name": "KOFAR FADA/ KASARAWA/FULANI .K",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-009",
+          "name": "DAGACERI PRI. SCH/DAGACERI/LARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-010",
+          "name": "KOFAR MAIGARI/MABAM/MARKEWA  B.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-01-011",
+          "name": "KUKA IKIWA PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-01-012",
+          "name": "DAGACERI PRI SCH",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "BIRNIWA",
+      "inecCode": "02",
+      "registrationAreaCode": "17-04-02",
+      "pollingUnits": [
+        {
+          "code": "17-04-02-001",
+          "name": "KOFAR FADA/BRNIWA KOFAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-002",
+          "name": "BIRNIWA KOTAR  FADA A1A",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-003",
+          "name": "BIRNIWA SPE PRI. SCH/BIRNIWA K/FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-004",
+          "name": "BIRNIWA KOTAR  FADA A2B",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-005",
+          "name": "BIRNIWA B / KASUWA BIRNIWA B / KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-006",
+          "name": "JSS BIRNIWA/BIRNIWA TSANGAYAR K.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-007",
+          "name": "KOFAR ALH NA MAISA / BIRNIWA.T. LIMAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-008",
+          "name": "MASALLACIIN LIMAN/BIRNIWA T/LIMAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-009",
+          "name": "BIRNIWA TASHA PRI. SCH. /BIRNIWA TASHA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-010",
+          "name": "KOFAR MAIGARI/BIRNIWA TASHA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-011",
+          "name": "KOFAR MAIGARI/YARDA BABBA/KAKORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-012",
+          "name": "NOMADI PRI. SCH. TARJARI / GUGURUW / G.A.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-013",
+          "name": "KOFAR MAIGARI/MAISO/FULANI. MAISO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-014",
+          "name": "KOFAR MAIGARI / FAJIGINARI / G .MUSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-015",
+          "name": "KOFAR MAIGARI / YARDA KANOMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-02-018",
+          "name": "BIRNIWA KOFAR FADA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-019",
+          "name": "BIRNIWA SPEC SCH K/FADA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-020",
+          "name": "BIRNIWA KOFAR FADA COURT",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-021",
+          "name": "BIRNIWA BAKIN KASUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-022",
+          "name": "JSS BIRNIWA TSANGAYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-023",
+          "name": "KOFAR ALH NAMATSA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-024",
+          "name": "UNG ALH MUAZU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-02-025",
+          "name": "BIRNIWA TASHA PHC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DANGWALERI",
+      "inecCode": "03",
+      "registrationAreaCode": "17-04-03",
+      "pollingUnits": [
+        {
+          "code": "17-04-03-001",
+          "name": "DANGWALERI PRI. SCH / DANGWALERI / D BULA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-002",
+          "name": "DANGWALERI /DUNGUMBULA/BULA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-003",
+          "name": "KUBUNA PRI. SCH. KUBUNA BABBA / K / K",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-004",
+          "name": "KOFAR MAIGARI / MALORIN KASIM / ARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-005",
+          "name": "MUNKAWO PRI. SCH./ MUNKAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-006",
+          "name": "KOFAR MAIGARI/DANKORI/S.GARI/FULRAK I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-007",
+          "name": "KOFAR MAIGARI/DANKORI/S.GARI/FULRAK II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-008",
+          "name": "TSAMIYARI ZAKI PRI. SCH. TSAMIYAR ZAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-009",
+          "name": "KOFAR MAIGARI/ZIGINDIMI/RAKUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-010",
+          "name": "KOFAR MAIGARI/TIMBIRI/DANERI/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-03-011",
+          "name": "RAKUMIN ARI PRI SCH./ RAKUMINARI / RAFA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "DIGINSA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-04-04",
+      "pollingUnits": [
+        {
+          "code": "17-04-04-001",
+          "name": "KOFAR FADA DIGINSA KOFAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-002",
+          "name": "DIGINSA KOFAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-003",
+          "name": "JSS DIGINSA/DIGINSA BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-004",
+          "name": "TSANGAYA/DIGINSA TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-005",
+          "name": "SUMBURTU PRI. SCH/ SUMBURTU/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-006",
+          "name": "KOFAR MAIGARI/ ANTURU/FULANI DALLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-007",
+          "name": "KOFAR MAIGARI/ KWAGGA/MAIZARIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-008",
+          "name": "KOFAR MAIGARI/ABARI CILIN/ADAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-009",
+          "name": "KOFAR MAIGARI/CHILARO/FULANI DIGINSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-010",
+          "name": "KOFAR MAIGARI/ARI ADAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-011",
+          "name": "KISHIWADE PRI. SCH/KISHINDE/JATORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-012",
+          "name": "BARBURAMI PRI. SCH/ BARBURAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-013",
+          "name": "KOFAR MAIGARI/MARA/GARI KARAMI/FUL-DUF",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-014",
+          "name": "KOFAR MAIGARI/KANTARI/BARAUDI/CHI UWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-015",
+          "name": "KUZO YARA PRI SCH./KUZO-YARA/GALLIMA G.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-016",
+          "name": "KOFAR MAIGARI/MAJANNA/MASHANWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-04-017",
+          "name": "KOFAR MAIGARI/ ANTAUWA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "FAGI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-04-05",
+      "pollingUnits": [
+        {
+          "code": "17-04-05-001",
+          "name": "FAGI PRI. SCH. FAGI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-002",
+          "name": "TSINKAINA PRI. SCH./TSINKAINA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-003",
+          "name": "KIRILLA PRI. SCH. /KIRILLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-004",
+          "name": "KOFAR MAIGARI/DARAMOWA/ZAIWI/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-005",
+          "name": "KOFAR ZAININ BAREBARI/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-006",
+          "name": "KOFAR MAIGARI/KADERI KARANGA SABUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-007",
+          "name": "MADUGUNSUMI PRI. SCH / MADUGUNSUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-008",
+          "name": "KOFAR MAIGARI/BUHUNNI/GAMBURWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-009",
+          "name": "KOFAR MAIGARI/GOMARI/MAKKARI/FIL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-05-010",
+          "name": "TAMSUGU DOGO PRI. SCH./ TAMSUGU DOGO",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "KACHALLARI",
+      "inecCode": "06",
+      "registrationAreaCode": "17-04-06",
+      "pollingUnits": [
+        {
+          "code": "17-04-06-001",
+          "name": "KACHALLARI PRI. SCH/KACHALLARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-002",
+          "name": "KACHALLARI PRI. SCH/KACHALLARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-003",
+          "name": "TATAJIYA PRI SCH./ TATAJIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-004",
+          "name": "KOFAR MAIGARI/LARABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-005",
+          "name": "KANYA BABBA PRI. SCH/ KANYA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-006",
+          "name": "KOFAR MAIGARI/MALORI/DAKIMBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-007",
+          "name": "KOFAR MAIGARI/KOGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-008",
+          "name": "BABANKWARI PRI. SCH/ BABANKWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-009",
+          "name": "KOFAR MAIGARI/DARGAZAWA/ALHAJERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-06-010",
+          "name": "KOFAR MAIGARI/KANYA KARAMA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "KARANKA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-04-07",
+      "pollingUnits": [
+        {
+          "code": "17-04-07-001",
+          "name": "KOFAR FADA/KARANKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-002",
+          "name": "KARANKA UNGUWAR KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-003",
+          "name": "KARANKA PRI. SCH./ KARANKA TSANGAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-004",
+          "name": "KOFAR MAIGARI/ KABIWAN FALKU BAGANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-005",
+          "name": "KOFAR MAIGARI/ MASAIWA MAIKU/ KAMBAR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-006",
+          "name": "BUSUKU PRIMARY SCHOOL BUSUKU ABDU/ABANDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-007",
+          "name": "KOFAR MAIGARI/ DALAKAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-008",
+          "name": "KOFAR MAIGARI/ GAJIRAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-009",
+          "name": "KUNDI PRI. SCH. / KUNDI / TUKUI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-010",
+          "name": "KOFAR MAIGARI/JOLKIRI/K. GWAURO/K.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-011",
+          "name": "KILBU PRI. SCH/KILBU/SHARWA/KARDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-012",
+          "name": "KOFAR MAIGARI/ MAINARI/R.GATA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-07-013",
+          "name": "KOFAR MAIGARI/MAIWARI/R.GATA  II",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "KAZURA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-04-08",
+      "pollingUnits": [
+        {
+          "code": "17-04-08-001",
+          "name": "KAZURA PRI. SCH KAZURA/JARUWA/GILAGI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-002",
+          "name": "KOFAR MAIGARI/KAZARAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-003",
+          "name": "KOFAR MAIGARI/GARIN-GWANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-004",
+          "name": "KOFAR GARIN GWANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-005",
+          "name": "KOFAR MAIGARI /MATARA GURA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-006",
+          "name": "GATARE  PRI.  SCH. GATARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-007",
+          "name": "KOFAR MAIGARI/BULACHANDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-008",
+          "name": "BEGUWA PRI. SCH /BEGUWA/MUNKAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-009",
+          "name": "KUKAWA PRI. SCH. / KUKAWA GETSEMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-010",
+          "name": "DOLE PRI.SCH /DOLEN ABDU/KOROJIA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-011",
+          "name": "LAWANDI PRI. SCH / LAWANDI/MATTAFARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-012",
+          "name": "ADAMRI PRI. SCH/ADAMRI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-013",
+          "name": "KOFAR MAIGARI/SHADAWANKA/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-014",
+          "name": "KOFAR MAIGARI/GARIN M. JIBOI GELJAMNI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-08-015",
+          "name": "KAZURA PRI SCH  II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MACHINAMARI",
+      "inecCode": "09",
+      "registrationAreaCode": "17-04-09",
+      "pollingUnits": [
+        {
+          "code": "17-04-09-001",
+          "name": "KOFAR MAIGARI/MACHIWAMARI/GARIN TUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-002",
+          "name": "K.WURIYA PRI. SCH/K. WURIYA/MAMMAWA/GST",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-003",
+          "name": "KOFAR MAIGARI/KUPSA CHIROMA-KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-004",
+          "name": "KUPSA PRI. SHC/KUPSA ABDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-005",
+          "name": "GORUBA PRI. SCH/GORUBA/FULANI/KETAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-006",
+          "name": "MARYE MAISAJE PRI. SCH./MARYE MAISAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-007",
+          "name": "KOFAR MAIGARI/GARIN SADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-008",
+          "name": "KOFAR MAIGARI/TSIYA FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-009",
+          "name": "BURSELI PRI. SCH./ BURSELI - FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-010",
+          "name": "KOFAR MAIGARI/KOREWA BATUMA /  KACHALLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-011",
+          "name": "JARGIWA PRI. SCH./JARGIWA FULUNI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-012",
+          "name": "MARYE BULAMALUM PRI. SCH./MARYE BULAMALUM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-013",
+          "name": "KOFAR MAIGAR/ GWARGAI FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-09-014",
+          "name": "MASALLACIN MALAM MAGAJI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-09-015",
+          "name": "KUSPA PHC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-04-09-016",
+          "name": "BURSELI DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MATAMU",
+      "inecCode": "10",
+      "registrationAreaCode": "17-04-10",
+      "pollingUnits": [
+        {
+          "code": "17-04-10-001",
+          "name": "MATAMU PRI. SCH./MATAMU KULI GUYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-002",
+          "name": "KOFAR MAIGARI/CHILM FITARI GILJAMMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-003",
+          "name": "KOFAR MAIGARI/HAUSHINDOLE / MAINADUGUNI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-004",
+          "name": "KOFAR HAUSHIN DOLE/MAINEDUGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-005",
+          "name": "MATARA BABBA PRI. SCH./MATARA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-006",
+          "name": "KOFAR MAIGARI/ MATARA GUDOMA/BULTUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-007",
+          "name": "KOFAR MAIGARI/KAKORI WAJI/MALUMA/D",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-008",
+          "name": "DAGILFANI PRI. SCH./ DAGILFAN / FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-009",
+          "name": "KOFAR MAIGARI/KASABUR/ABINIYAMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-010",
+          "name": "KOFAR MAIGARI/GWANDARI/LAWANDI/K/K",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-011",
+          "name": "KOFAR MAIGARI/DOMARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-10-012",
+          "name": "KOFAR MAIGARI/ZANGAYAM",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "NGUWA",
+      "inecCode": "11",
+      "registrationAreaCode": "17-04-11",
+      "pollingUnits": [
+        {
+          "code": "17-04-11-001",
+          "name": "NGUWA PRI. SCH./NGUWA/NGUWA M. BRAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-002",
+          "name": "NGUWA DISPENSARY/NGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-003",
+          "name": "KOFAR MAIGARI/MEDERI/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-004",
+          "name": "DIKUKAWA PRI. SCH./D. KUKAWA/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-005",
+          "name": "ARI ADAM PRI. SCH./ARI ADAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-006",
+          "name": "KOFAR MAIGARI/GAJARMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-007",
+          "name": "KOFAR MAIGARI/GURA-GURA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-008",
+          "name": "KOFAR MAIGARI/WALAWA/TIKUDKAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-04-11-009",
+          "name": "GABASMARI PRI. SCH./GABASMARI / DALARI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 148,
+    "existingPuCount": 134,
+    "newPuCount": 14
+  }
+}

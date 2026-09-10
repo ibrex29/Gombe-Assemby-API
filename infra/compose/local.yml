@@ -1,0 +1,27 @@
+# Local development — infrastructure only (API/Web run on host via pnpm dev)
+
+services:
+  postgres:
+    container_name: electromon-local-postgres
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+  redis:
+    container_name: electromon-local-redis
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+
+  rabbitmq:
+    container_name: electromon-local-rabbitmq
+    ports:
+      - "${RABBITMQ_PORT:-5672}:5672"
+      - "${RABBITMQ_MGMT_PORT:-15672}:15672"
+
+  minio:
+    container_name: electromon-local-minio
+    ports:
+      - "${MINIO_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+
+  minio-init:
+    container_name: electromon-local-minio-init

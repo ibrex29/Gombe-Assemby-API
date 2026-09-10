@@ -1,0 +1,777 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "AUYO",
+    "inecCode": "01",
+    "delimiterPrefix": "17-01"
+  },
+  "wards": [
+    {
+      "name": "AUYO",
+      "inecCode": "01",
+      "registrationAreaCode": "17-01-01",
+      "pollingUnits": [
+        {
+          "code": "17-01-01-001",
+          "name": "AUYO SPECIAL PRI. SCH. AUYO KUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-002",
+          "name": "AUYO VETNARY - VETNARY",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-003",
+          "name": "AUYO BAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-004",
+          "name": "KOFAR AMADU AUYO KIRA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-005",
+          "name": "AUYO GABAS PRI. SCH. AUYO GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-006",
+          "name": "AUYO DISPENSARY, AUYO DISPENSARY",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-007",
+          "name": "JAMAAR AIKALI MAIBAURE, MAI BAURE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-008",
+          "name": "KAZIYETA K. FADA, KAZIYETA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-009",
+          "name": "TSURUTAWA, TSURUTAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-010",
+          "name": "HADIYO PRI. SCH HADIYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-011",
+          "name": "MAKERAYI VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-012",
+          "name": "GIDAN DALLAH PRI. SCH., GIDAN DALLAH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-013",
+          "name": "ZABARO PRI. SCH. ZABARO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-01-014",
+          "name": "AUYO SPECIAL PRI. SCHOOL YAMMA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-015",
+          "name": "AUYO SPECIAL PRI. SCHOOL KUDU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-016",
+          "name": "AUYO WOMEN CENTER",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-017",
+          "name": "E.P.I OFFICE AUYO",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-018",
+          "name": "UPPER SHARIA COURT AUYO",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-019",
+          "name": "AUYO SABUWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-020",
+          "name": "AUYO BULUKAI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-021",
+          "name": "AUYO CENTRAL JUNIOR SECONDARY SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-022",
+          "name": "AUYO ISLAMIYYA PRIMARY SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-023",
+          "name": "HADIYO PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-01-024",
+          "name": "ZABARO PRIMARY SCHOOL KUDU",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "AUYAKAYI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-01-02",
+      "pollingUnits": [
+        {
+          "code": "17-01-02-001",
+          "name": "AUYAKAYI PRI. SCH, AUYAKAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-002",
+          "name": "KUDIGIN PRI. SCH. KUDIGIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-003",
+          "name": "AKUBUSHIN PRI. SCH., AKUBISHIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-004",
+          "name": "RIGAR MAAJI K.FADA, RIGAR NA'AJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-005",
+          "name": "SHAWARA PRI. SCH, SHAWARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-006",
+          "name": "CHIROMAWA PRI. SCH., CHIROMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-007",
+          "name": "KARSHA DUNKUN K.FADA, KARSHA DUNKUN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-008",
+          "name": "MATAKUWA K. FADA, AYATAKUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-009",
+          "name": "MARAKAWA FADA, MARAKAWA VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-02-010",
+          "name": "UNGUWAR TUWANA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-02-011",
+          "name": "GIDAN JIGAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-02-012",
+          "name": "KUDIGIN ANKU",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "AYAMA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-01-03",
+      "pollingUnits": [
+        {
+          "code": "17-01-03-001",
+          "name": "AYAMA PRI. SCH. AYAMA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-002",
+          "name": "AYAMA PRI. SCH. AYAMA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-003",
+          "name": "ANAUYA K. FADA ANUAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-004",
+          "name": "KIGIN PRI. SCH., KIGIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-005",
+          "name": "UZA PRI. SCH. UZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-006",
+          "name": "SAFA PRI. SCH. SAFA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-007",
+          "name": "SAFA PRY SCH, SAFA KARFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-008",
+          "name": "SHAMARMA PRI. SCH. SHAMARMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-009",
+          "name": "GIDAN BAKWARE K. FADA GIDAN BAKWARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-010",
+          "name": "ASUDUWA K. FADA ASUDUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-011",
+          "name": "MAGARYA K. FADA MAGARYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-012",
+          "name": "DOGARA VILLAGE, DOGARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-03-013",
+          "name": "AYAMA DISPENSARY",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-03-014",
+          "name": "JSS AYAMA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-03-015",
+          "name": "SHAMARMA MARO",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-03-016",
+          "name": "SAFA DISPENSARY BABBA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "AYAN",
+      "inecCode": "04",
+      "registrationAreaCode": "17-01-04",
+      "pollingUnits": [
+        {
+          "code": "17-01-04-001",
+          "name": "AYAN PRI. SCH AYAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-002",
+          "name": "GASTIFI K. FADA , GASTIFI VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-003",
+          "name": "DAWAYA K. FADA DAWAYA/MAINARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-004",
+          "name": "ATURA K. FADA ATURA JAMAAR AYAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-005",
+          "name": "KATAUDI PRI. SCH. KATAUDI 'A'",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-006",
+          "name": "AYAMASKUKA K. FADA AYAMASKUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-007",
+          "name": "MAJE PRI. SCH. MAJE HAUSAWA/FUL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-008",
+          "name": "ATAKAJIYA K. FADA ATAKAJIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-009",
+          "name": "JAMAAR GABAS K. FADA JAMAAR GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-04-010",
+          "name": "KATAUDI PRY SCH, KATAUDI 'B'",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "GAMAFOI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-01-05",
+      "pollingUnits": [
+        {
+          "code": "17-01-05-001",
+          "name": "GAMAFOI PRI. SCH GAMAFOI KWAZIMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-002",
+          "name": "AGAMO K. FADA AGAMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-003",
+          "name": "JURA K. FADA JURA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-004",
+          "name": "BIRITAN K. FADA BIRITAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-005",
+          "name": "GANDUN KADIR K. FADA GANDUN KADIR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-006",
+          "name": "KATAIJE K. FADA KATAIJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-007",
+          "name": "GIDAN MAITANDU K. FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-008",
+          "name": "GASANYA PRI. SCH. GASANYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-009",
+          "name": "KWAZIMO, KWAZIMO VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-05-010",
+          "name": "GASANYA PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GAMSARKA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-01-06",
+      "pollingUnits": [
+        {
+          "code": "17-01-06-001",
+          "name": "GAMSARKA PRI. SCH GAMSARKA TAGIR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-002",
+          "name": "GAMSARKA PRI. SCH. GAMSARKA ZUMONI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-003",
+          "name": "HAKUDAU PRI. SCH. HAKUDAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-004",
+          "name": "KALGWAI PRI. SCH. KALGWAI A.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-005",
+          "name": "KAFARDAU PRI. SCH. KAFARDAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-006",
+          "name": "GURAJAWA PRI. SCH. GURAJAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-007",
+          "name": "ADAHA PRI. SCH. ADAHA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-008",
+          "name": "MADO PRI. SCH. MADO I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-009",
+          "name": "MADO PRI. SCH. MADO II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-010",
+          "name": "ARAKO K. FADA ARAKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-011",
+          "name": "MARINA K. FADA MARINA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-012",
+          "name": "KALGWAI B. KALGWAI PRY SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-06-013",
+          "name": "TAGIR CIKIN GARI/B-MASALLACI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-06-014",
+          "name": "MAKWALLA KALGWAI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-06-015",
+          "name": "HAKUDAU PHC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-06-016",
+          "name": "ZUMONI CIKIN GARI/B-MASSALLACI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GATAFA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-01-07",
+      "pollingUnits": [
+        {
+          "code": "17-01-07-001",
+          "name": "GATAFA PRI. SCH. GATFA YALWA 'A'",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-002",
+          "name": "GATAFA PRI. SCH. GATAF MADAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-003",
+          "name": "GATAFA DISPENSARY GATAFA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-004",
+          "name": "TSAKA K. FADA TSAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-005",
+          "name": "ARGINA PRI. SCH. ARGINA MAJIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-006",
+          "name": "GATAFA YELWA 'B', GATAFA  VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-07-007",
+          "name": "GATAFA PRI. SCH. I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-07-008",
+          "name": "GATAFA KAROFI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-07-009",
+          "name": "GATAFA PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KAFUR",
+      "inecCode": "08",
+      "registrationAreaCode": "17-01-08",
+      "pollingUnits": [
+        {
+          "code": "17-01-08-001",
+          "name": "KAFUR PRI. SCH KAFUR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-002",
+          "name": "MAWA K. FADA, MAWA VILLAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-003",
+          "name": "ARAWA K. FADA ARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-004",
+          "name": "GATAKASHE K. FADA GATAKASHE WAILARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-005",
+          "name": "JIBA GANDU K. FADA JIBA GANDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-006",
+          "name": "MASKANGAYU K. FADA MASKANGAYU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-007",
+          "name": "SABON GIDAN AYANDUWA K. FADA, SABON GIDAN AYANDUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-008",
+          "name": "GANUWAR KUKA PRI. SCH., GANUWAR KUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-009",
+          "name": "GUDITO PRI. SCH. GUDITO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-010",
+          "name": "YAMIDI K. FADA YAMIDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-08-011",
+          "name": "JSS KAFUR",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-08-012",
+          "name": "GANUWAR KUKU DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TSIDIR",
+      "inecCode": "09",
+      "registrationAreaCode": "17-01-09",
+      "pollingUnits": [
+        {
+          "code": "17-01-09-001",
+          "name": "TSIDIR PRI. SCH. TSIDIR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-002",
+          "name": "FUGE K. FADA FUGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-003",
+          "name": "MURAN PRI. SCH.  MURAN/ARBUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-004",
+          "name": "FURAWA PRY SCH, FURAWA HAUSA/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-005",
+          "name": "FURAWA PRI. SCH. FURAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-006",
+          "name": "KURE K. FADA KURE/TUDUNWADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-007",
+          "name": "AFIYAU K. FADA AFIUYAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-008",
+          "name": "AGUZA K. FADA  AGUZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-009",
+          "name": "BANGELI PRI. SCH. BANGEL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-09-010",
+          "name": "OLD DISPENASRY TSIDIR",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-01-09-011",
+          "name": "MURAN PRIMARY SCHOOL I",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "UNIK",
+      "inecCode": "10",
+      "registrationAreaCode": "17-01-10",
+      "pollingUnits": [
+        {
+          "code": "17-01-10-001",
+          "name": "UNIK PRI. SCH. UNIK BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-002",
+          "name": "UNIK DISPENSARY UNIK GANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-003",
+          "name": "SHINGEN GABAS K. FADA, SHINGEN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-004",
+          "name": "SHINGEN YAMMA K. FADA SHINGEN YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-005",
+          "name": "GALDIMARI K. FADA GALDIMRI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-006",
+          "name": "KATAN GAR TSIMIYA K. FADA K. TSAMIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-007",
+          "name": "SHINYO PRI. SCH. SHINYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-008",
+          "name": "GUYU PRI. SCH. GUYU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-009",
+          "name": "AFARMO K. FADA AFARMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-010",
+          "name": "DOGON MARKE  K. FADA DOGON MARKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-011",
+          "name": "KABAN PRI. SCH. KABAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-012",
+          "name": "BAKARI K. FADA, BAKA RI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-013",
+          "name": "TIGIMA K. FADA TIGIMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-014",
+          "name": "ZUGO K. FADA ZUGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-015",
+          "name": "SATERI KALAURI K. FADA SATERI KALAURI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-016",
+          "name": "KAIGAMARI PRI. SCH. KAIGAMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-01-10-017",
+          "name": "JAMA'AR GUYU VILLAGE, JAMA'AR GUYU",
+          "remark": "EXISTING PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 137,
+    "existingPuCount": 107,
+    "newPuCount": 30
+  }
+}

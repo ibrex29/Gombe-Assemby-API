@@ -1,0 +1,477 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "YANKWASHI",
+    "inecCode": "27",
+    "delimiterPrefix": "17-27"
+  },
+  "wards": [
+    {
+      "name": "ACHILAFIYA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-27-01",
+      "pollingUnits": [
+        {
+          "code": "17-27-01-001",
+          "name": "DISPENSARY/ACHILAFIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-002",
+          "name": "BANDAWA PRI. SCH./ BANDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-003",
+          "name": "BURJI PRIMARY SCHOOL / BURJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-004",
+          "name": "OPEN SPACE/DARARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-005",
+          "name": "OPEN SPACE/DUMNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-006",
+          "name": "DURBE PRI. SCH./DURBE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-007",
+          "name": "OPEN/KWARARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-008",
+          "name": "UNGUWAR TUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-01-009",
+          "name": "KANTUDU GABAS/ISLAMIYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-01-010",
+          "name": "BAKIN DANDALI ISLAMIYA BANDAWA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "BELAS",
+      "inecCode": "02",
+      "registrationAreaCode": "17-27-02",
+      "pollingUnits": [
+        {
+          "code": "17-27-02-001",
+          "name": "SADA-DAN BAUSHE PRI. SCH./SADA DAN BAUSSHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-02-002",
+          "name": "SADA DADI P.S (OPEN SPACE/SADA DADI)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-02-003",
+          "name": "DANKARI P.S. (OPEN SPACE/DAN KARI)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-02-004",
+          "name": "JALLAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-02-005",
+          "name": "SADA DADI SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-02-006",
+          "name": "DANKARI DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DAWAN-GAWO",
+      "inecCode": "03",
+      "registrationAreaCode": "17-27-03",
+      "pollingUnits": [
+        {
+          "code": "17-27-03-001",
+          "name": "DAN KAMA PRIMARY SCHOOL/ DAN KAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-03-002",
+          "name": "DAWAN GAWO PRIMARY SCHOOL/ DAWAN GAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-03-003",
+          "name": "MURDEN GANGARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-03-004",
+          "name": "OPEN SPACE/UNGUWAR MAGAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-03-005",
+          "name": "OPEN SPACE/MURDEN SAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-03-006",
+          "name": "DANKAMA ISLAMIYA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GWARTA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-27-04",
+      "pollingUnits": [
+        {
+          "code": "17-27-04-001",
+          "name": "GWARTA BABBA PRI. SCH./GWARTA BABBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-002",
+          "name": "OPEN SPACE/GWARTA KARAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-003",
+          "name": "RAUDA GABAS/ PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-004",
+          "name": "OPEN SPACE/RAUDA YAN GANDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-005",
+          "name": "OPEN SPACE/RAUDA LOKON DUTSE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-006",
+          "name": "SHADAMAI / PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-007",
+          "name": "OPEN SPACE/UNGUWAR ARAB",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-008",
+          "name": "OPEN SPACE/WAILAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-04-009",
+          "name": "GWARTA ISLAMIYA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GURJIYA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-27-05",
+      "pollingUnits": [
+        {
+          "code": "17-27-05-001",
+          "name": "ADDANI ABDU PRI. SCH./ ADDANI ABAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-002",
+          "name": "OPEN SPACE/ADDANIN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-003",
+          "name": "JEKA FADA PRI. SCH./ JEKAFADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-004",
+          "name": "KWARIN KALGO PRI. SCH./ KWARIN KALGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-005",
+          "name": "OPEN SPACE/KWARIN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-006",
+          "name": "SABUWA KUDU PRI. SCH./SABUWA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-007",
+          "name": "OPEN SPACE/ SABUWA AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-008",
+          "name": "OPEN SPACE/ZUGUM FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-009",
+          "name": "DOLE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-05-010",
+          "name": "KWARIN KALGO PRI SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KARKARNA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-27-06",
+      "pollingUnits": [
+        {
+          "code": "17-27-06-001",
+          "name": "KARKARNA AREWA /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-06-002",
+          "name": "KARKARNA GABAS  /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-06-003",
+          "name": "KARKARNA YAMMA  /PRIMARY  SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-06-004",
+          "name": "OPEN SPACE/RUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-06-005",
+          "name": "OPEN SPACE/GINDIN DUTSE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-06-006",
+          "name": "SHARIA COURT KARKARNA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-06-007",
+          "name": "MODEL  SCH KARKARNA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-06-008",
+          "name": "SENIOR SEC SCH KARKARNA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-06-009",
+          "name": "SENIOR SEC SCH KARKARNA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-06-010",
+          "name": "KARKARNA YAMMA  /PRIMARY  SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-06-011",
+          "name": "JUNIOR SCI SEC SCH KARKARNA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KUDA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-27-07",
+      "pollingUnits": [
+        {
+          "code": "17-27-07-001",
+          "name": "KAWAYE /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-002",
+          "name": "OPEN SPACE/KIYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-003",
+          "name": "KUDA AREWA /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-004",
+          "name": "OPEN SPACE/KUDA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-005",
+          "name": "OPEN SPACE/MAGAMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-006",
+          "name": "OPEN SPACE/JAMA'AR MALLAM BALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-07-007",
+          "name": "KUDA WALAWA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "RINGIM",
+      "inecCode": "08",
+      "registrationAreaCode": "17-27-08",
+      "pollingUnits": [
+        {
+          "code": "17-27-08-001",
+          "name": "DUMBU PRI. SCH/DUMBU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-08-002",
+          "name": "RINGIM PRI. SCH./RINGIM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-08-003",
+          "name": "OPEN SPACE/RURUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-08-004",
+          "name": "OPEN SPACE/UNGUWAR KALGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-08-005",
+          "name": "DUMBU PRI SCH 1",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-08-006",
+          "name": "MAHAUYA NOMADIC SCH",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YANKWASHI",
+      "inecCode": "09",
+      "registrationAreaCode": "17-27-09",
+      "pollingUnits": [
+        {
+          "code": "17-27-09-001",
+          "name": "JAMA'AR MAL. HASSAN /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-09-002",
+          "name": "YANKWASHI /PRIMARY  SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-09-003",
+          "name": "ZOTO PRI. SCH. (OPEN SPACE/ZOTO)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-09-004",
+          "name": "ZOTO FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-09-005",
+          "name": "YANKWASHI PRI SCH I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-09-006",
+          "name": "YANKWASHI PRI SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-09-007",
+          "name": "HEALTH POST ZOTO",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "ZUNGUMBA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-27-10",
+      "pollingUnits": [
+        {
+          "code": "17-27-10-001",
+          "name": "DISPENSARY/UNGUWAR MAL. ADAMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-10-002",
+          "name": "OPEN SPACE/YA'R CHIDAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-10-003",
+          "name": "OPEN SPACE/ZUNGUMBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-27-10-004",
+          "name": "ZUNGUMBA PRI SCH I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-27-10-005",
+          "name": "ZUNGUMBA SENIOR SEC SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 77,
+    "existingPuCount": 57,
+    "newPuCount": 20
+  }
+}

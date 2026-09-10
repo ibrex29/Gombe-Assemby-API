@@ -1,0 +1,649 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "RONI",
+    "inecCode": "24",
+    "delimiterPrefix": "17-24"
+  },
+  "wards": [
+    {
+      "name": "AMARYAWA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-24-01",
+      "pollingUnits": [
+        {
+          "code": "17-24-01-001",
+          "name": "AMARYAWA PRI. SCH./ AMARYAWA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-002",
+          "name": "AMARYAWA PRI. SCH. /AMARYAWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-003",
+          "name": "AMARYAWA PRI. SCH. /AMARYAWA  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-004",
+          "name": "DABAWA CIKIN GARI/DABAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-005",
+          "name": "KURMI G.MAI'UNGUWA/KURMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-006",
+          "name": "JIGAWA DANDALI/JIGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-007",
+          "name": "JARINGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-008",
+          "name": "KARI CIKIN GARI/KARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-009",
+          "name": "GIDAN S/FULANI YALDE/KARI & YALDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-010",
+          "name": "MAMUDAWA CIKIN GARI/MAMUDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-011",
+          "name": "ZAGABU G. MAIUNGUWA/ZAGABU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-012",
+          "name": "MAMUDAWA S/GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-01-013",
+          "name": "TSOHUWAR TASHA ISLAMIYYA SCH.",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "BARAGUMI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-24-02",
+      "pollingUnits": [
+        {
+          "code": "17-24-02-001",
+          "name": "BARAGUMI PRI. SCH. /BARAGUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-002",
+          "name": "GIDAN S/FULANI/JAMA'AR FULANI  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-003",
+          "name": "GIDAN S/FULANI/JAMA'AR FULANI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-004",
+          "name": "MAKO GIDIAN/M UNGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-005",
+          "name": "MARKE CIKIN GARI/MARKE I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-006",
+          "name": "MARKE CIKIN GARI/MARKE II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-007",
+          "name": "MAKERA DANDALI/MAKERA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-008",
+          "name": "MAHUTA PRI. SCH./ MAHUTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-009",
+          "name": "NANUMAWA PRI. SCH./ NANUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-02-010",
+          "name": "TSAUNIN GOGA/GINDINTAHUNA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "DANSURE",
+      "inecCode": "03",
+      "registrationAreaCode": "17-24-03",
+      "pollingUnits": [
+        {
+          "code": "17-24-03-001",
+          "name": "BULA G.MAIUNGUWA/BULA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-002",
+          "name": "DALEJI CIKIN GARI/DALEJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-003",
+          "name": "DANSURE CIKIN GARI/DANSURE GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-004",
+          "name": "DANSURE CIKIN GARI/DANSURE GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-005",
+          "name": "DANTEMU DANDALI/DANTEMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-006",
+          "name": "DIDDIGAU CIKIN GARI/DIDDIGAU I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-007",
+          "name": "DIDDIGAU CIKIN GARI/DIDDIGAU II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-008",
+          "name": "DANSURE PRI. SCH. /SABON GARI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-009",
+          "name": "DANSURE PRI. SCH. / SABON GARI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-03-010",
+          "name": "DANSURE PRI. SCH. /SABON GARI III",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "FARA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-24-04",
+      "pollingUnits": [
+        {
+          "code": "17-24-04-001",
+          "name": "FARA-BARAGUMI DANDALI/BARAGUMI-FARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-04-002",
+          "name": "BARINJE KAIWA DANDALI/BARINJEN-KAIWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-04-003",
+          "name": "DANTAIMU CIKIN GARI/DANTAIMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-04-004",
+          "name": "BARINJE PRI. SCH./ FARA-BARINJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-04-005",
+          "name": "U/ASHE PRI. SCH./ KAGADAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-04-006",
+          "name": "GINDIN DORAWA/ZANGUNA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "GORA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-24-05",
+      "pollingUnits": [
+        {
+          "code": "17-24-05-001",
+          "name": "GIDAN MAIUNGUWA/BILLAS HABE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-002",
+          "name": "CIKI KAINI DANDALI/ CIKI KAINI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-003",
+          "name": "GANGARE CIKIN GARI/GANGARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-004",
+          "name": "GORA PRI. SCH./ GORA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-005",
+          "name": "GORA PRI. SCH. /GORA M/KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-006",
+          "name": "GIDAN  MAIUNGUWA/TUDUN-GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-007",
+          "name": "GIDAN S/FULANI/TUNTUBE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-008",
+          "name": "UNG.DASHI CIKIN GARI/UNGUWA DASHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-009",
+          "name": "ZURAI DANDALI/ZURAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-05-010",
+          "name": "YANKEWA C/GARI/YANKEWA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "KWAITA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-24-06",
+      "pollingUnits": [
+        {
+          "code": "17-24-06-001",
+          "name": "GIDAN SARKIN FULANI/BULA-KWAITA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-002",
+          "name": "DANTAIMU CIKIN GARI/DANTAIMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-003",
+          "name": "JABIYAWA DANDALI/JABIYAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-004",
+          "name": "KAYA PRI. SCH./ KAYA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-005",
+          "name": "KWAITA PRI. SCH. KWAITA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-006",
+          "name": "GIDAN SARKIN FULANI/TSAKANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-007",
+          "name": "RUMAWA CIKIN GARI/RUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-06-008",
+          "name": "KAYA PRY SCH/KAYA YAMMA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "RONI",
+      "inecCode": "07",
+      "registrationAreaCode": "17-24-07",
+      "pollingUnits": [
+        {
+          "code": "17-24-07-001",
+          "name": "KOFAR MALAM DANGWANI/SABON GARI (KOFAR M. DANGWANI) I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-002",
+          "name": "BAKIN MASALLACI/TASHAR IDO (KOFAR M. DANGWANI/TASHAR IDO)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-003",
+          "name": "KOFAR MALAM DANGWANI/SABON GARI (KOFAR M. DANGWANI) II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-004",
+          "name": "KUDU PRI. SCH. KOFAR KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-005",
+          "name": "T.T.C RONI/T.C.C RONI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-006",
+          "name": "KOFAR GABAS/WAJEN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-007",
+          "name": "DANDALI / WAJEN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-07-008",
+          "name": "KOFAR MALAM DANGWANI/SABON GARI (KOFAR M. DANGWANI) II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-24-07-009",
+          "name": "KOFAR MALAM DANGWANI/SABON GARI (KOFAR M. DANGWANI) III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-24-07-010",
+          "name": "BAKIN MASALLACI/TASHAR IDO (KOFAR M. DANGWANI/TASHAR IDO) II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-24-07-011",
+          "name": "KOFAR KUDU JANBULO JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-24-07-012",
+          "name": "WAJEN GABAS KWATSATSA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SANKAU",
+      "inecCode": "08",
+      "registrationAreaCode": "17-24-08",
+      "pollingUnits": [
+        {
+          "code": "17-24-08-001",
+          "name": "BALLE DANDALI/BALLE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-002",
+          "name": "DANDALI CIKIN GARI/DANDALI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-003",
+          "name": "FAIFAIKU CIKIN GARI/FAIFAIKU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-004",
+          "name": "JATAKA CIKIN GARI/JATAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-005",
+          "name": "KUDU PRI. SCH./ KOFAR-KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-006",
+          "name": "KWATSATSA DANDALI/KWATSATSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-007",
+          "name": "SANKAU G. MAIUNGUWA/SANKAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-008",
+          "name": "GIDAN MAIUNGUWA/RUWAN DUTSE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-009",
+          "name": "MAJE/FAIFAIKU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-08-010",
+          "name": "DANDALI CIKIN GARI/DANDALI II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TUNAS",
+      "inecCode": "09",
+      "registrationAreaCode": "17-24-09",
+      "pollingUnits": [
+        {
+          "code": "17-24-09-001",
+          "name": "DANDALI / SANTAR TSAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-002",
+          "name": "SHIMFIDA CIKIN GARI / SHIMFIDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-003",
+          "name": "TAKWARDAWA PRI. SCH., TAKWARDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-004",
+          "name": "TAKWARDAWA PRI. SCH., TAKWARDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-005",
+          "name": "UNG. BUNDU DANDALI / UNG. BUNDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-006",
+          "name": "UNG. MANI CIKIN GARI / UNG. MANI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-007",
+          "name": "UNG. MANI CIKIN GARI / UNG. MANI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-008",
+          "name": "GIDAN MAI UNGUWA / WUDDI (D/GADI)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-009",
+          "name": "WUDDI DANDALI / WUDDI M. MARINA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-09-010",
+          "name": "SHIMFIDA LIMAWA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YANZAKI",
+      "inecCode": "10",
+      "registrationAreaCode": "17-24-10",
+      "pollingUnits": [
+        {
+          "code": "17-24-10-001",
+          "name": "DAGE CIKIN GARI/DAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-002",
+          "name": "GIDAN MAIUNGUWA/DOGAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-003",
+          "name": "GIDAN DAWA CIKIN GARI/GIDAN DAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-004",
+          "name": "GIDAN MAIUNGUWA/GUMUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-005",
+          "name": "GIDAN MAIUNGUWA/JANGEFE I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-006",
+          "name": "GIDAN MAIUNGUWA/JANGEFE II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-007",
+          "name": "GIDAN SARKIN FULANI/UNG. DINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-008",
+          "name": "U/DINYA DANDALI/UNG.DINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-009",
+          "name": "GIDAN S/FULANI/UNG, SARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-010",
+          "name": "GIDAN MAIUNGUWA/YANZAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-10-011",
+          "name": "KAROFIN-TSAMIYA/K-TSAMIYA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "ZUGAI",
+      "inecCode": "11",
+      "registrationAreaCode": "17-24-11",
+      "pollingUnits": [
+        {
+          "code": "17-24-11-001",
+          "name": "BAN IYAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-002",
+          "name": "BAN IYAKA CIKIN GARI/BANI YAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-003",
+          "name": "GIDAN MAIUNGUWA/DAURAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-004",
+          "name": "GIDAN MAIUNGUWA/DAURAWA JAMA'A",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-005",
+          "name": "GIDAN S/FULANI/GANGARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-006",
+          "name": "KAKI MAIWANDO DANDALI/KAKI M.WANDO I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-007",
+          "name": "KAKI MAIWANDO DANDALI/KAKI M.WANDO II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-008",
+          "name": "GIDAN MAIUNGUWA/LUDA & ZUGAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-009",
+          "name": "ZUGAI PRI. SCH. ZUGAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-24-11-010",
+          "name": "LUDA CIKIN GARI/LUDA",
+          "remark": "EXISTING PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 110,
+    "existingPuCount": 102,
+    "newPuCount": 8
+  }
+}

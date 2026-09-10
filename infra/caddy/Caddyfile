@@ -1,0 +1,41 @@
+# Electromon edge — TLS termination + reverse proxy
+# Requires api + web on the shared Docker network (COMPOSE_NETWORK_NAME).
+#
+# Env:
+#   WEB_HOST   e.g. staging.electromon.ng / app.electromon.ng / :80 for local path mode
+#   API_HOST   e.g. api-staging.electromon.ng / api.electromon.ng
+#   ACME_EMAIL Let's Encrypt contact (staging/prod)
+
+{
+	email {$ACME_EMAIL:ops@electromon.ng}
+}
+
+{$WEB_HOST:localhost} {
+	encode gzip zstd
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+
+	reverse_proxy web:3000
+}
+
+{$API_HOST:api.localhost} {
+	encode gzip zstd
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+
+	# Nest + Socket.IO / WS upgrades
+	reverse_proxy api:3001 {
+		header_up Host {host}
+		header_up X-Real-IP {remote_host}
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Forwarded-Proto {scheme}
+	}
+}

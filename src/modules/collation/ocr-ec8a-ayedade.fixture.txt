@@ -1,0 +1,107 @@
+INDEPENDENT NATIONAL ELECTORAL COMMISSION
+2026 OSUN STATE GOVERNORSHIP ELECTION
+FORM EC 8A
+STATEMENT OF RESULT OF POLL FROM POLLING UNIT
+OSUN
+29
+State.
+Code
+AYEDAADE
+03
+Local Government Area
+Code
+GBONGAN RURAL
+07
+Registration Area
+Code
+ELEURIN BALOGUN OMOLE
+016
+Polling Unit
+Code
+#1 Number of Voters on the Register
+315
+#2 Number of Accredited Voters
+181
+#3 Number of Ballot Papers Issued to the Polling Unit
+315
+#4 Number of Unused Ballot Papers
+134
+#5 Number of Spoiled Ballot Papers
+0
+#6 Number of Rejected Ballots
+0
+#7 Number of Total Valid Votes
+172
+#8 Total Number of Used Ballot Papers
+181
+S/N
+POLITICAL
+PARTY
+VOTES SCORED
+IN FIGURES
+IN WORDS
+NAME/SIGNATURE OF POLLING AGENT
+1
+A
+95
+NINETY FIVE
+2
+AA
+0
+ZERO
+3
+AAC
+0
+ZERO
+4
+ADC
+4
+ZERO
+5
+ADP
+2
+TWO
+6
+APC
+7
+SEVENTY-FOUR
+7
+APGA
+0
+ZERO
+8
+APM
+0
+ZERO
+9
+APP
+0
+ZERO
+10
+BP
+0
+ZERO
+11
+NNPP
+0
+ZERO
+12
+PRP
+0
+ZERO
+13
+SDP
+0
+ZERO
+14
+YPP
+0
+ZERO
+15
+ZLP
+1
+ONE
+Number of Total Valid Votes
+(Total Valid Votes cast for all parties) 172
+TOTAL VALID VOTES
+ONE HUNDRED AND SEVENTY TWO

@@ -1,0 +1,877 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "TAURA",
+    "inecCode": "26",
+    "delimiterPrefix": "17-26"
+  },
+  "wards": [
+    {
+      "name": "AJAURA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-26-01",
+      "pollingUnits": [
+        {
+          "code": "17-26-01-001",
+          "name": "AJAURA YAMMA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-002",
+          "name": "AJAURA YAMMA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-003",
+          "name": "AJAURA AREWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-004",
+          "name": "WAYU KARAMA  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-005",
+          "name": "WAYU BABBA  GABAS PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-006",
+          "name": "WAYU BABA YAMMA PRY SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-007",
+          "name": "VILLLAGE GROUND /GIDAN TUDUN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-008",
+          "name": "KOKOCI YADDA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-009",
+          "name": "K/DUSU & K/MALLAM ALI/ VILLAGE SQUARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-010",
+          "name": "KOKOCI  MAIKASUWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-011",
+          "name": "BARDO YAMMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-012",
+          "name": "BARDO GABAS PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-013",
+          "name": "BARDO GABAS PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-014",
+          "name": "BARDO AREWA  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-015",
+          "name": "NAHUCE YAMMA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-016",
+          "name": "NAHUCE YAMMA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-017",
+          "name": "NAHUCE GABAS PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-018",
+          "name": "VILLAGE HEAD GROUND / DOMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-01-019",
+          "name": "BICHI PRI. SCH.",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "CHAKWAIKWAIWA",
+      "inecCode": "02",
+      "registrationAreaCode": "17-26-02",
+      "pollingUnits": [
+        {
+          "code": "17-26-02-001",
+          "name": "CHAKWAIKWAIWA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-002",
+          "name": "CHAKWAIKWAIWA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-003",
+          "name": "MAHONI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-004",
+          "name": "VILLAGE HEAD GROUND /GIDAN KILIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-005",
+          "name": "VILLAGE HEAD GROUND/ BARANWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-006",
+          "name": "YANYANGA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-007",
+          "name": "DANKARAYE PRI SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-008",
+          "name": "ZARGA/KAUYEN ZARGA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-009",
+          "name": "VILLAGE HEAD GROUND /YANBUKUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-02-010",
+          "name": "CHAKWAIKWAIWA PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-02-011",
+          "name": "CHAKWAIKWAIWA PRI. SCH. IV",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "CHUKUTO",
+      "inecCode": "03",
+      "registrationAreaCode": "17-26-03",
+      "pollingUnits": [
+        {
+          "code": "17-26-03-001",
+          "name": "CHUKUTO PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-002",
+          "name": "VILLAGE HEAD GROUND /ASAYAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-003",
+          "name": "LARABAR TIRA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-004",
+          "name": "KUKUI/GOGORI  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-005",
+          "name": "VILLAGE HEAD GROUND / DANZAINA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-006",
+          "name": "VILLAGE HEAD GROUND / KATARIKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-007",
+          "name": "BIDAWA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-008",
+          "name": "VILLAGE HEAD G/BUTURANAWA/KEMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-009",
+          "name": "KWAJALI YAMMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-010",
+          "name": "KWAJALI GABAS  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-011",
+          "name": "TOFAR KWAJALI PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-012",
+          "name": "VILLAGE HEAD GROUND /AKASAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-013",
+          "name": "VILLAGE HEAD GROUND /WALAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-014",
+          "name": "KAYAR GAZARA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-015",
+          "name": "VILLAGE HEAD GROUND /RAFIN KANYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-03-016",
+          "name": "CHUKUTO PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-03-017",
+          "name": "BIDAWA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-03-018",
+          "name": "TOFAR KWAJALI PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GUJUNGU",
+      "inecCode": "04",
+      "registrationAreaCode": "17-26-04",
+      "pollingUnits": [
+        {
+          "code": "17-26-04-001",
+          "name": "GUJUNGU YAMMA/ PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-002",
+          "name": "GUJUNGU YAMMA /PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-003",
+          "name": "GUJUNGU GABAS/ PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-004",
+          "name": "GUJUNGU GABAS /PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-005",
+          "name": "GUJUNGU GABAS /PRI. SCH. III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-006",
+          "name": "GUJUNGU AREWA/ PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-007",
+          "name": "MAIZUWO/PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-008",
+          "name": "VILLAGE HEAD GROUND/(MALAMAWAR MAIZUWO)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-009",
+          "name": "IDON ZAKARA /PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-010",
+          "name": "GUJUNGU AREWA /PRY SCH II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-04-011",
+          "name": "GDJSS GUJUNGU I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-04-012",
+          "name": "GDJSS GUJUNGU II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KIRI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-26-05",
+      "pollingUnits": [
+        {
+          "code": "17-26-05-001",
+          "name": "KIRI YAMMA /PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-002",
+          "name": "KIRI GABAS /PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-003",
+          "name": "KIRI GABAS/ PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-004",
+          "name": "KIRI AREWA /PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-005",
+          "name": "KIRI PRI. SCH. /TSAKIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-006",
+          "name": "TSINAHO/ PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-007",
+          "name": "VILLAGE HEAD GROUND AFITAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-008",
+          "name": "KIRI AREWA /PRY SCH II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-05-009",
+          "name": "TSINAHO/ PRI. SCH. I",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KWALAM",
+      "inecCode": "06",
+      "registrationAreaCode": "17-26-06",
+      "pollingUnits": [
+        {
+          "code": "17-26-06-001",
+          "name": "KWALAM /PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-002",
+          "name": "KWALAM/ PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-003",
+          "name": "KWALAM  CHIRANCI /PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-004",
+          "name": "KWALAM /  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-005",
+          "name": "KWALAM  LIMAWA / PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-006",
+          "name": "CHUWASU/PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-007",
+          "name": "KORAN MATO /PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-008",
+          "name": "GILIMA  YAMMA/ PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-009",
+          "name": "GILIMA  GABAS/PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-010",
+          "name": "GILIMA  GABAS /PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-011",
+          "name": "VILLAGE HEAD GROUND /DAKAWAR DINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-012",
+          "name": "VILLAGE HEAD GROUND /BULA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-013",
+          "name": "VILLAGE HEAD GROUND / DOGON MARKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-014",
+          "name": "VILLAGE HEAD GROUND FULATAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-015",
+          "name": "KAURA GILIMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-016",
+          "name": "VILL. HEAD GROUND /(MAIYADIYA)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-017",
+          "name": "KWALAM /PRY SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-06-018",
+          "name": "PRIMARY HEALTHCARE CENTRE GILIMA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-06-019",
+          "name": "PRIMARY HEALTHCARE CENTRE MAI YADIYA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAJE",
+      "inecCode": "07",
+      "registrationAreaCode": "17-26-07",
+      "pollingUnits": [
+        {
+          "code": "17-26-07-001",
+          "name": "MAJE GABAS /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-002",
+          "name": "MAJE GABAS /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-003",
+          "name": "VILLAGE HEAD GROUND /ZANGOMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-004",
+          "name": "ZANGON MAJE /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-005",
+          "name": "ZANGON MAJE/PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-006",
+          "name": "VILLAGE HEAD GROUND TSUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-007",
+          "name": "VILLAGE HEAD GROUND /ATIYAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-008",
+          "name": "YANGAYAMI /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-009",
+          "name": "YANGAYAMI /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-010",
+          "name": "TSADAWA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-011",
+          "name": "GIDAN - NARUWA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-012",
+          "name": "GIDAN - NARUWA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-013",
+          "name": "TSADAWA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-014",
+          "name": "BARNAWA NORMADIC/ PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-07-015",
+          "name": "ZANGON MAJE /PRIMARY SCHOOL III",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAJIYA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-26-08",
+      "pollingUnits": [
+        {
+          "code": "17-26-08-001",
+          "name": "MAJIYA  YAMMA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-002",
+          "name": "MAJIYA  YAMMA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-003",
+          "name": "MAJIYA  GABAS /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-004",
+          "name": "MAJIYA  GABAS /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-005",
+          "name": "MAJIYA  TASHA /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-006",
+          "name": "VILLAGE HEAD GROUND/ RIGAR ATU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-007",
+          "name": "VILLAGE HEAD GROUND/ GALADIMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-008",
+          "name": "VILLAGE HEAD GROUND /TSAGADU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-009",
+          "name": "GURJAWA  /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-010",
+          "name": "GURJAWA  /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-011",
+          "name": "GURTAWA /PRIMARY SCHOOL III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-012",
+          "name": "NOMI/GAMBAWA /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-013",
+          "name": "VILLAGE HEAD GROUND/ (YANFARI)",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-08-014",
+          "name": "VILLAGE HEAD GROUND /(GANYAWA)",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "S/GARIN YAYA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-26-09",
+      "pollingUnits": [
+        {
+          "code": "17-26-09-001",
+          "name": "SABON GARI YAYA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-002",
+          "name": "SABON GARI YAYA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-003",
+          "name": "SABON GARI YAYA GABAS /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-004",
+          "name": "SABON GARI YAYA YAMMA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-005",
+          "name": "SABON GARI YAYA YAMMA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-006",
+          "name": "SABON GARI YAYA KUDU /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-007",
+          "name": "KUNDU/KAUGAMA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-008",
+          "name": "KUNDU/KAUGAMA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-009",
+          "name": "DAURAWA /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-010",
+          "name": "KANGAL /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-011",
+          "name": "LAFIYA /PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-09-012",
+          "name": "GDASS SG YAYA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-09-013",
+          "name": "GDASS SG YAYA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-09-014",
+          "name": "DAURAWA /PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-09-015",
+          "name": "KANGAL /PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TAURA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-26-10",
+      "pollingUnits": [
+        {
+          "code": "17-26-10-001",
+          "name": "TAURA SPECIAL PRI. SCH. /TAURA AREWA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-002",
+          "name": "TAURA SPECIAL PRI. SCH. /TAURA AREWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-003",
+          "name": "TAURA SPECIAL PRI. SCH. /TAURA AREWA III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-004",
+          "name": "TAURA SPECIAL PRI. SCH. /TAURA GABAS I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-005",
+          "name": "TAURA SPECIAL PRI. SCH. /TAURA GABAS II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-006",
+          "name": "TAURA SPECIAL PRI. SCH. / TAURA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-007",
+          "name": "MALAMAWA TAURA /PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-008",
+          "name": "MALAMAWA TAURA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-009",
+          "name": "VILLAGE HEAD GROUND /KARI-TSALLE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-010",
+          "name": "ABAKURA/PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-011",
+          "name": "ABAKURA /PRIMARY SCHOOL II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-26-10-012",
+          "name": "NURADDEEN ISLAMIYYA TAURA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-013",
+          "name": "NURADDEEN ISLAMIYYA TAURA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-014",
+          "name": "NURADEEN ISLAMIYYA TAURA III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-015",
+          "name": "NURADDEEN ISLAMIYYA TAUAR IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-016",
+          "name": "NURADDEEN ISLAMIYYA V",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-017",
+          "name": "JARKASA ISLAMIYYA PRI SCH I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-018",
+          "name": "JARKASA ISLAMIYYA PRI SCH II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-019",
+          "name": "JARKASA ISLAMIYYA PRI SCH III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-020",
+          "name": "JARKASA ISLAMIYYA PRI SCH IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-021",
+          "name": "JAKARASA ISLAMIYYA PRI SCH V",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-022",
+          "name": "MALAMAWA TAURA PRI SCH III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-023",
+          "name": "MALAMAWA TAURA PRI SCH IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-024",
+          "name": "MALAMAWA TAURA PRI SCH V",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-26-10-025",
+          "name": "KARI TSALLE ISLAMIYYA TAURA",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 157,
+    "existingPuCount": 128,
+    "newPuCount": 29
+  }
+}

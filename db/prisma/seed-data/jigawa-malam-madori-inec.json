@@ -1,0 +1,864 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "MALAM MADORI",
+    "inecCode": "21",
+    "delimiterPrefix": "17-21"
+  },
+  "wards": [
+    {
+      "name": "ARKI",
+      "inecCode": "01",
+      "registrationAreaCode": "17-21-01",
+      "pollingUnits": [
+        {
+          "code": "17-21-01-001",
+          "name": "AGIN PRI. SCH AGIN I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-002",
+          "name": "KOFAR MAIGARI/ GIRDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-003",
+          "name": "KOFAR MAIGARI/KUFURDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-004",
+          "name": "KOFAR MAIGARI/ SHAGARIYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-005",
+          "name": "KOFAR MAIGARI/ SORAKIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-006",
+          "name": "ARKI PRI. SCH.  ARKI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-007",
+          "name": "TOSARAWAN YOLAN PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-008",
+          "name": "TOSARAWAN YOLAN PRI. SCH.  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-009",
+          "name": "KOFAR MAIGARI/MAJIRGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-010",
+          "name": "MATSA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-01-011",
+          "name": "AGIN PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-01-012",
+          "name": "ARKI PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-01-013",
+          "name": "TOSARAWAN YOLAN PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-01-014",
+          "name": "MATSA PRI. SCH. I",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DUNARI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-21-02",
+      "pollingUnits": [
+        {
+          "code": "17-21-02-001",
+          "name": "KOFAR MAGARI/JAJI KURA KUTUM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-002",
+          "name": "BARCHE ABAKADE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-003",
+          "name": "KOFAR GIDAN DAHIRU/GIDAN DAHIRU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-004",
+          "name": "KOFAR GIDAN DAHIRU/GIDAN DAHIRU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-005",
+          "name": "KIRFOWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-006",
+          "name": "DUNARI PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-007",
+          "name": "DUNARI PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-008",
+          "name": "MATARAR BINDI P.S",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-009",
+          "name": "WALMARI PRI SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-010",
+          "name": "KAMPALA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-011",
+          "name": "KAMPALA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-012",
+          "name": "KOFAR GIDAN JATAU/GIDAN JATAU I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-013",
+          "name": "KOFAR GIDAN CHIROMA/GIDAN CHIROMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-014",
+          "name": "KOFAR MAIGARI/MAJERIN KABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-02-015",
+          "name": "DUNARI PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-016",
+          "name": "DUNARI PRI. SCH. IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-017",
+          "name": "DUNARI PRI. SCH. V",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-018",
+          "name": "DUNARI PRI. SCH. VI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-019",
+          "name": "KAMPALA PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-020",
+          "name": "KAMPALA PRI. SCH. IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-021",
+          "name": "KAMPALA PRI. SCH. V",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-02-022",
+          "name": "KOFAR GIDAN JATAU II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "FATEKA AKURYA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-21-03",
+      "pollingUnits": [
+        {
+          "code": "17-21-03-001",
+          "name": "KOFAR GIDA MAIGARI/ASUWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-002",
+          "name": "AKURYA GABAS PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-003",
+          "name": "KOFAR GIDAN MAIGARI/BULAKORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-004",
+          "name": "AKURYA GABAS PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-005",
+          "name": "KOFAR GIDAN MAIGARI/DIRABILAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-006",
+          "name": "FATEKA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-007",
+          "name": "BAGUWAR HABE  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-008",
+          "name": "GIDAN MAIGARI/JIGAWAR MAMMAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-009",
+          "name": "GIDAN MAIGARI/MAWADACHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-010",
+          "name": "CHANCHANDA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-011",
+          "name": "GIDAN MAIGARI/BABBAR RIGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-012",
+          "name": "GIDAN MAIGARI/ RIGAR BARDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-03-013",
+          "name": "AKURYA GABAS PRI. SCH. III",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GARIN GABAS",
+      "inecCode": "04",
+      "registrationAreaCode": "17-21-04",
+      "pollingUnits": [
+        {
+          "code": "17-21-04-001",
+          "name": "UNGUWAR FADA/UNGUWAR FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-002",
+          "name": "GIDAN MAIGARI/CHIRAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-003",
+          "name": "GARI GABAS TSOHUWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-004",
+          "name": "GIDAN MAIGARI/MASKADU BADERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-005",
+          "name": "GIDAN MAIGARI/MAISO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-006",
+          "name": "JALAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-007",
+          "name": "KOFAR MAIGARI/HANAKASHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-008",
+          "name": "DISPENSARY OFFICE/BAKIN KASUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-009",
+          "name": "GIDAN MAI UNGUWA/UNGUWAR MAIDOKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-04-010",
+          "name": "KOFAR HAKIMI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-04-011",
+          "name": "TSOHUWAR PRIMARY SCHOOL I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-04-012",
+          "name": "DISPENSARY BAKIN KASUWA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-04-013",
+          "name": "GIDAN/MAI UNGUWA U/MAIGARI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAIRA KUMI-BARA MUSA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-21-05",
+      "pollingUnits": [
+        {
+          "code": "17-21-05-001",
+          "name": "GIDAN MAI UNGUWA/MANOMI GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-002",
+          "name": "GIDAN MAIGARI/JARNISKI MAIRAKUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-003",
+          "name": "GIDAN MAIGARI/ MATARAR JARNISKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-004",
+          "name": "GIDAN MAIGARI/ BARA MUSA GABASI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-005",
+          "name": "GIDAN MAIGARI/ DIGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-006",
+          "name": "GIDAN MAIGARI/  MALARIN GAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-007",
+          "name": "MAIRAKUMI AREWA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-008",
+          "name": "KASHINDILA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-009",
+          "name": "GIDAN MAIGARI/TAKOKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-010",
+          "name": "GIDAN MAIGARI/AGAYAU GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-05-011",
+          "name": "MAI RAKUMI AREWA P.S. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-05-012",
+          "name": "KASHINDILA PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAKA DDARI",
+      "inecCode": "06",
+      "registrationAreaCode": "17-21-06",
+      "pollingUnits": [
+        {
+          "code": "17-21-06-001",
+          "name": "GIDAN MAIGARI/GARIN MAJIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-002",
+          "name": "GARIN BARMA KUDU PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-003",
+          "name": "GARIN BARMA KUDU PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-004",
+          "name": "MAKADDARI YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-005",
+          "name": "PRY SCH/MAKADDARI AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-006",
+          "name": "GIDAN MAIGARI/FULANIN MAKADDARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-007",
+          "name": "GIDAN MAIGARI/MAMAYEN GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-008",
+          "name": "GIDAN MAIGARI/KARGON DAN BARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-009",
+          "name": "GIDAN MAIGARI/AKURYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-010",
+          "name": "KARGON MAMMAN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-06-011",
+          "name": "GIDAN MAIGARI/MALAMAWAR ZARAMI",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "MALAM MADORI",
+      "inecCode": "07",
+      "registrationAreaCode": "17-21-07",
+      "pollingUnits": [
+        {
+          "code": "17-21-07-001",
+          "name": "KOFAR MALAM HALADU/TITIN HALADU  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-002",
+          "name": "KOFAR MALAM HALADU/TITIN HALADU  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-003",
+          "name": "BAKIN RIJAYA/TUDUN GANA RIJIYA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-004",
+          "name": "GIDAN MAIGARI / BARAMUSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-005",
+          "name": "KOFAR ABDU ATA/GIDAN ABDU ATA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-006",
+          "name": "GIDAN MAI UNGUWA/UNGUWAR SHAMAKI KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-007",
+          "name": "GIDAN SARKIN FAWA/UNGUWAR SARKIN FAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-008",
+          "name": "KOFAR KANTI/KANTIN SANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-009",
+          "name": "KOFAR GIDAN MAISHAYI/GIDAN GAJEN MAISHAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-010",
+          "name": "GIDAN MAIGARI/KWANKWANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-011",
+          "name": "GIDAN MAIYARA/UNGUWAR MAIYARA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-012",
+          "name": "GIDAN MAI UNGUWA/USMAN ADABI ST.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-013",
+          "name": "GIDAN MAIUNGUNWAR USMAN/ADABI ST",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-014",
+          "name": "DAKIDO PRI. SCH./UNGUWAR CHIROMA I SHAMAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-015",
+          "name": "DAKIDO PRI. SCH./UNGUWAR CHIROMA II SHAMAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-016",
+          "name": "GIDAN MAIGARI/GAFAYAN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-07-018",
+          "name": "KOFAR MALAM HALADU/TITIN HALADU  III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-019",
+          "name": "KOFAR MALAM HALADU/TITIN HALADU  IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-020",
+          "name": "BAKIN RIJAYA/TUDUN GANA RIJIYA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-021",
+          "name": "TAHFIZ ISLAMIYYA PRI SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-022",
+          "name": "TAHFIZ ISLAMIYYA PRI SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-023",
+          "name": "GIDAN SARKIN FAWA/UNGUWAR SARKIN FAWA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-024",
+          "name": "GIDAN MAIYARA/UNGUWAR MAIYARA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-07-025",
+          "name": "DAKIDO PRI. SCH. II/UNGUWAR CHIROMA I SHAMAKI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SHAIYA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-21-08",
+      "pollingUnits": [
+        {
+          "code": "17-21-08-001",
+          "name": "GIDAN MAI UNGUWA/KARGON SHAYYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-002",
+          "name": "GIDAN MAI UNGUWA/ SHAYYA TSAKIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-003",
+          "name": "DINFIDUWA PRI. SCH./DINFIDUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-004",
+          "name": "SHAYYA UNGUWAR GABAS PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-005",
+          "name": "GIDAN MAIGARI/MARMA AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-006",
+          "name": "GIDAN MAIGARI/YALWAN  SHAYYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-007",
+          "name": "GIDAN MAIGARI/KWAN DOLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-008",
+          "name": "GIDAN MAIGARI/BURUKU DALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-009",
+          "name": "GIDAN MAIGARI/ZARO YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-08-010",
+          "name": "KOFAR MADAKI",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TAGWARO",
+      "inecCode": "09",
+      "registrationAreaCode": "17-21-09",
+      "pollingUnits": [
+        {
+          "code": "17-21-09-001",
+          "name": "YALWAN BABALE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-002",
+          "name": "KOFAR MAIGARI/YALWAN BUJIRI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-003",
+          "name": "KACHAKAMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-004",
+          "name": "GIDAN MAIGARI/KAFIN GURNO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-005",
+          "name": "TAGWARO PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-006",
+          "name": "GIDAN MAIGARI/DOGON JEJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-007",
+          "name": "GIDAN MAIGARI/JANISKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-008",
+          "name": "GIDAN MAIGARI/KEBBERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-009",
+          "name": "KICHIDUNE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-010",
+          "name": "GIDAN MAIGARI/GORORIN HABE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-09-011",
+          "name": "KOFAR MAIGARI/YALWAN BUJIRI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-09-012",
+          "name": "TAGWARO PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TASHENA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-21-10",
+      "pollingUnits": [
+        {
+          "code": "17-21-10-001",
+          "name": "GIDAN MAIGARI/AGUBU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-002",
+          "name": "KADUME PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-003",
+          "name": "TASHENA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-004",
+          "name": "GIDAN MAIGARI/HADIN MAIKAROFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-005",
+          "name": "GIDAN MAIGARI/DOMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-006",
+          "name": "GIDAN MAIGARI/AZAMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-007",
+          "name": "JAMA'ARE QUARTERS/JAMA'ARE QUARTERS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-10-008",
+          "name": "KADUME PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-10-009",
+          "name": "TASHENA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-10-010",
+          "name": "GIDAN MAI GARI AZAMU I",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TONIKUTARA",
+      "inecCode": "11",
+      "registrationAreaCode": "17-21-11",
+      "pollingUnits": [
+        {
+          "code": "17-21-11-001",
+          "name": "DOGON MARKEN GALADIMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-002",
+          "name": "GIDAN MAIGARI/JIGAWAR MUSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-003",
+          "name": "GIDAN MAIGARI/NASARAWA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-004",
+          "name": "CHIROMARI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-005",
+          "name": "TONIKUTARA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-006",
+          "name": "GIDAN MAIGARI/DOGON MARKEN GASHARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-007",
+          "name": "GIDAN MAIUNGUWA/GANDUN BINDIGOMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-008",
+          "name": "GANDUN SARKI PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-009",
+          "name": "GANDUN SARKI PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-010",
+          "name": "A.T.C. HADEJIA/A.T.C HADEJIA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-21-11-011",
+          "name": "GANDUN SARKI PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-21-11-013",
+          "name": "SAUKI MAI KANTI HADEJIA",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 153,
+    "existingPuCount": 118,
+    "newPuCount": 35
+  }
+}

@@ -1,0 +1,71 @@
+groups:
+  - name: electromon_election_day
+    rules:
+      - alert: HighApiErrorRate
+        expr: |
+          (
+            sum(rate(electromon_http_requests_total{status=~"5.."}[5m]))
+            /
+            sum(rate(electromon_http_requests_total[5m]))
+          ) > 0.05
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: High API error rate (>5%)
+          description: "{{ $value | humanizePercentage }} of API requests are failing with 5xx."
+
+      - alert: HighApiLatency
+        expr: |
+          histogram_quantile(0.95, sum(rate(electromon_http_request_duration_seconds_bucket[5m])) by (le)) > 2
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: High API latency (p95 > 2s)
+          description: "95th percentile API latency is {{ $value | humanizeDuration }}."
+
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Redis is down
+          description: Redis exporter cannot reach Redis — cache and sessions may be unavailable.
+
+      - alert: DatabaseDown
+        expr: electromon_dependency_up{dependency="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: PostgreSQL is unreachable
+          description: API readiness check reports database disconnected.
+
+      - alert: DatabasePoolExhaustion
+        expr: electromon_db_pool_waiting > 5
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: Database connection pool under pressure
+          description: "{{ $value }} requests waiting for a DB connection."
+
+      - alert: ApiNotReady
+        expr: electromon_dependency_up{dependency="redis"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: Redis dependency unhealthy
+          description: API readiness reports Redis disconnected.
+
+      - alert: RabbitMQQueueBacklog
+        expr: rabbitmq_queue_messages > 1000
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: RabbitMQ queue backlog
+          description: "Queue {{ $labels.queue }} has {{ $value }} messages."

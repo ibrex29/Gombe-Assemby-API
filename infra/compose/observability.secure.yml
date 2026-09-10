@@ -1,0 +1,13 @@
+# Staging / prod: Grafana on loopback only; Prom/Loki/AM internal
+
+services:
+  grafana:
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-3030}:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:?GRAFANA_PASSWORD is required}
+      GF_SERVER_ROOT_URL: ${GRAFANA_ROOT_URL:-http://127.0.0.1:3030}
+
+  postgres-exporter:
+    environment:
+      DATA_SOURCE_NAME: ${POSTGRES_EXPORTER_DSN:-postgresql://${POSTGRES_USER:-electromon}:${POSTGRES_PASSWORD:-electromon}@postgres:5432/${POSTGRES_DB:-electromon}?sslmode=disable}

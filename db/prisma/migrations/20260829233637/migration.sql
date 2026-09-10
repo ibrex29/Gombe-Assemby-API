@@ -1,0 +1,2 @@
+-- RenameIndex
+ALTER INDEX "triage_acknowledgements_campaignId_scopeType_scopeId_createdAt_" RENAME TO "triage_acknowledgements_campaignId_scopeType_scopeId_create_idx";

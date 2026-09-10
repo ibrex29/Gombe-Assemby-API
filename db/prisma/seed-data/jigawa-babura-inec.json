@@ -1,0 +1,1169 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "BABURA",
+    "inecCode": "02",
+    "delimiterPrefix": "17-02"
+  },
+  "wards": [
+    {
+      "name": "BABURA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-02-01",
+      "pollingUnits": [
+        {
+          "code": "17-02-01-001",
+          "name": "AREWA PRI. SCH. BABURA AREWA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-002",
+          "name": "AREWA PRI. SCH. BABURA AREWA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-003",
+          "name": "GABAS PRI. SCH. BABURA GABAS  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-004",
+          "name": "GABAS PRI. SCH. BABURA GABAS  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-005",
+          "name": "KUDU ISLAMIYYA PRI. SCH. BABURA KUDU  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-006",
+          "name": "KUDU ISLAMIYYA PRI. SCH. BABURA KUDU  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-007",
+          "name": "KUDU ISLAMIYYA PRI. SCH. BABAURA KUDU III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-008",
+          "name": "CENTRAL PRI. SCH. BABURA YAMMA  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-009",
+          "name": "CENTRAL PRI. SCH. BABURA YAMMA  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-010",
+          "name": "CENTRAL PRI. SCH. BABURA YAMMA  III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-011",
+          "name": "BASKWAR JIJI / BASKWAR JIJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-012",
+          "name": "KAYAHURUMI/KAYA HURUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-013",
+          "name": "MAHUTA PRI. SCH/MAHUTA RAHA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-014",
+          "name": "JARMAI/JARMAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-015",
+          "name": "MALU UNGUWARGAWO PRI. SCH./UNG. GAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-016",
+          "name": "KUDU ISLAMIYA P.S / BABURA KUDU I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-017",
+          "name": "KUDU ISLAMIYA P.S / BABURA KUDU II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-018",
+          "name": "CENTRAL P.S /BABURA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-01-019",
+          "name": "JSS  ARABIC I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-020",
+          "name": "AREWA PRI SCH. IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-021",
+          "name": "JSS ARABIC II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-022",
+          "name": "AREWA PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-023",
+          "name": "OLD LEA ISLAMIYA PS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-024",
+          "name": "GABAS PRI. SCH. III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-025",
+          "name": "AKULA PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-026",
+          "name": "GABAS PRI. SCH. IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-027",
+          "name": "AGENCY FOR MASS EDU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-028",
+          "name": "JGDSS YAU DANZABUWA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-029",
+          "name": "GDSS BABURA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-030",
+          "name": "KUDU PRI. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-031",
+          "name": "GGDSS BABURA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-032",
+          "name": "JSS SANI BABURA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-033",
+          "name": "JGDSS YAU DANZUBUWA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-01-034",
+          "name": "NABAI NOMADIC PRI. SCH.",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "BATALI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-02-02",
+      "pollingUnits": [
+        {
+          "code": "17-02-02-001",
+          "name": "BATALI PRI. SCH. BATALI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-002",
+          "name": "GANGARA/GANGARA HANWARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-003",
+          "name": "HAMMADI/HAMMADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-004",
+          "name": "JAMMUTUM PRI. SCH. JAMMUTUM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-005",
+          "name": "KANDI PRI. SCH./ KANDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-006",
+          "name": "KURTA FULANI/KURTA KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-007",
+          "name": "MALAMAWA PRI. SCH. MALAMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-008",
+          "name": "RIJIYAR DANZANGO/MIDIRIN TINBAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-009",
+          "name": "TASAWA/TASAWAR KANDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-010",
+          "name": "UNGUWAR GANJI/UNGUWAR GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-011",
+          "name": "YARKIRYA PRI. SCH. YARKIRYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-012",
+          "name": "MAISHEKA/ZUNTU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-02-013",
+          "name": "BATALI PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-02-014",
+          "name": "GANGARA HANWARE II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-02-015",
+          "name": "JAN MUTUM PRI SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DORAWA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-02-03",
+      "pollingUnits": [
+        {
+          "code": "17-02-03-001",
+          "name": "AJJAH GARI/AJJAH GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-002",
+          "name": "DANMAKERI/DANMAKERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-003",
+          "name": "DORAWA PRI. SCH. DORAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-004",
+          "name": "DORAWA WAJE/DORAWAWAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-005",
+          "name": "RAFIN TSAMIYA PRI.SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-006",
+          "name": "GIDAN GANJI/GIDAN GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-007",
+          "name": "GIDAN GIDE/GIDAN GIDE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-008",
+          "name": "GIRDO PRI. SCH./GIRDO GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-009",
+          "name": "KUFANSHIRINYA/KUFANSHIRINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-010",
+          "name": "LAUYA/RAFIN TSAMIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-011",
+          "name": "YADAGIRMA/YADAGIRMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-03-012",
+          "name": "DORAWA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-03-013",
+          "name": "RAFIN TSAMIYA II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GARU",
+      "inecCode": "04",
+      "registrationAreaCode": "17-02-04",
+      "pollingUnits": [
+        {
+          "code": "17-02-04-001",
+          "name": "ANDO PRI. SCH./ANDO KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-002",
+          "name": "DORAWA TARA FULANI/DORAWA TARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-003",
+          "name": "GIDAN BARUMA/GIDAN BARUMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-004",
+          "name": "GARU PRI. SCH./GARU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-005",
+          "name": "GIGINYA/GIGINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-006",
+          "name": "JANSA PRI. SCH/JANSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-007",
+          "name": "UNGUWAR GANJI/UNGUWAR GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-008",
+          "name": "UNGUWAR TSAMIYA/UNG. TSAMIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-009",
+          "name": "WADAR KANAWA/WADAR KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-010",
+          "name": "ZURU PRI. SCH./ZURU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-011",
+          "name": "MURSHIYA/MURSHIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-04-012",
+          "name": "GARU PRI. SCH. / GARU",
+          "remark": "EXISTING PU"
+        }
+      ]
+    },
+    {
+      "name": "GASAKOLI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-02-05",
+      "pollingUnits": [
+        {
+          "code": "17-02-05-001",
+          "name": "BALLADA FULANI/BALLADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-002",
+          "name": "DANKABA PRI. SCH./DANKABA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-003",
+          "name": "DANMAGORI/DANMAGORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-004",
+          "name": "DANYAYI PRI. SCH./DANYAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-005",
+          "name": "GAJANGO FULANI/GAJANGO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-006",
+          "name": "GIDAN MAUDIN/GIDAN MAUDIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-007",
+          "name": "GASAKOLI PRI. SCH./GASAKOLI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-008",
+          "name": "DANGADO/GIDAN DANGADO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-009",
+          "name": "KADAGAWA PRI. SCH./ KADAGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-010",
+          "name": "KAFINRABO/KAFINRABO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-011",
+          "name": "MUNDU/MUNDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-012",
+          "name": "RATAYE PRI. SCH./RATAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-013",
+          "name": "RATAYE PRI. SCH./RATAYE YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-014",
+          "name": "SANSAMI/SANSAMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-015",
+          "name": "TASHA PRI. SCH./TASHA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-016",
+          "name": "UNG. GOJE/UNG.GOJE S/G NERA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-05-017",
+          "name": "GASAKOLI PRI. SCH. II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "INSHARUWA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-02-06",
+      "pollingUnits": [
+        {
+          "code": "17-02-06-001",
+          "name": "ADUWARE PRI.SCH./ADUWARE I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-002",
+          "name": "ACHIYAR M. GARKE/ACHIYAR M. GARKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-003",
+          "name": "BABADURO PRI. SCH./BABADURO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-004",
+          "name": "BAKAR KUKA PRI. SCH./BAKAR KUKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-005",
+          "name": "UNGUWAR TORO PRI. SCH./CHIRINBIN GUMUZU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-006",
+          "name": "CHIRINBIN PRI. SCH/CHIRINBIN TSOHUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-007",
+          "name": "TSAMIYAR LAFIYA/DANFISA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-008",
+          "name": "GIGINYA PRI. SCH./ GIGINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-009",
+          "name": "INDIRKUBA/INDIRKUBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-010",
+          "name": "INSHARUWA PRI. SCH./INSHARUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-011",
+          "name": "BOTSOTSUWA/KAFIN RABO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-012",
+          "name": "MADATTA/MADATTA G. FETO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-013",
+          "name": "MARKEN BIKI PRI. SCH./MARKEN BIKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-014",
+          "name": "YANMAULU PRI. SCH./ YANMAULU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-015",
+          "name": "UNG. BAGUDU / UNG. BAGUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-016",
+          "name": "UKU DA SIS I PRI. SCH. /UKU DA SISI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-017",
+          "name": "UNG. TORO PRI. SCH. / UNG. TORO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-06-018",
+          "name": "ADUWARE PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-06-019",
+          "name": "INSHARUWA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-06-020",
+          "name": "MUNI NOMADIC PRI. SCH",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "JIGAWA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-02-07",
+      "pollingUnits": [
+        {
+          "code": "17-02-07-001",
+          "name": "GIDAN MAI DAWA/BABBAR RUGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-002",
+          "name": "BULE PRI. SCH. BULE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-003",
+          "name": "FARU MAITAYA/FARU MAITAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-004",
+          "name": "GARINGANAU PRI. SCH. /GARINGANAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-005",
+          "name": "DORAYI PRI. SCH / GARI UKU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-006",
+          "name": "GURFAI PRI. SCH./ GURFAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-007",
+          "name": "HAYANIYA / HAYANIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-008",
+          "name": "JAUNARE PRI. SCH./ JAUNARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-009",
+          "name": "JIGAWA PRI. SCH. / JIGAWA AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-010",
+          "name": "JIGAWA PRI. SCH. /JIGAWA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-011",
+          "name": "KANKARE/.KANKAREN BULE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-012",
+          "name": "KARA ADE PRI. SCH. /KARA ADE.UNG. GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-013",
+          "name": "KUNYAFA PRI. SCH. / KUNYAFA SABUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-014",
+          "name": "KUNYAFA TSOHUWA/KUNYAFA TSOHUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-015",
+          "name": "MIDIRI PRI. SCH./ KAGARMANYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-016",
+          "name": "KWANDO PRI. SCH./KWANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-017",
+          "name": "MAILEFE PRI. SCH./MAILEFE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-018",
+          "name": "GADI PRI. SCH/MIDIRINGADI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-019",
+          "name": "GIDAN BOKA/ RIBINJIN MANZO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-020",
+          "name": "SABONGARI CHIRIBI/SABON GARI JANZOMO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-021",
+          "name": "SANTARBI PRI. SCH. / SANTARBI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-022",
+          "name": "SANTARBI PRI. SCH. / /UNG. GANJII",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-023",
+          "name": "UNGUWAR SHURI / UNGUWAR SHURI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-024",
+          "name": "GURFAI PRI. SCH. / GURFAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-025",
+          "name": "GIDAN MAJA / G. MAJA U. KEDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-026",
+          "name": "GIDAN LADE / GIDAN LADE DAKATA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-07-027",
+          "name": "MAKADI NOMADIC PS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-07-028",
+          "name": "GDDSS JIGAWA I",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-07-029",
+          "name": "JIGAWA PRI. SCH. KUDU III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-07-030",
+          "name": "GDSS JIGAWA KUDU II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KANYA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-02-08",
+      "pollingUnits": [
+        {
+          "code": "17-02-08-001",
+          "name": "DANBANDO /DANBANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-002",
+          "name": "HALADAWA PRI. SCH. / HALADAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-003",
+          "name": "JEMAWA PRI. SCH./ JEMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-004",
+          "name": "JOLOWA /JOLOWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-005",
+          "name": "BALLADAR KANYA/ KANKAREN WAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-006",
+          "name": "KANYA SPECIAL PRI. SCH. / KANYA AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-007",
+          "name": "J.S.S KANYA /KANYA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-008",
+          "name": "J.S.S KANYA /KANYA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-009",
+          "name": "MAIZUWO/ MAIZUWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-010",
+          "name": "MUNA CIKIN GARI/MUNA GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-011",
+          "name": "MUNAR WAJE PRI. SCH./MUNAR WAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-012",
+          "name": "RAHA PRI. SCH. RAHAR KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-013",
+          "name": "RIGARBUYA/RIGARBUYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-014",
+          "name": "UNG. DOGO PRI. SCH./ TSAMIYARKWANCE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-015",
+          "name": "KANYA GANDU PRI SCH./TSILLIGIDI AREWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-016",
+          "name": "UNG. FADI/UNG. FADI. NASAMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-017",
+          "name": "KANYA WAJE PRI. SCH. / UNG. ZAKI.KEDAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-018",
+          "name": "KANYA SPECIAL PRI. SCH. / KANYA AREW",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-019",
+          "name": "J.S.S KANYA YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-08-020",
+          "name": "KANYA SPE. PRI. SCH III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-021",
+          "name": "KANYA SPE. PRI. SCH IV",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-022",
+          "name": "JSS KANYA KUDU II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-023",
+          "name": "JSS KANYA YAMMA III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-024",
+          "name": "MUNAR WAJE II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-025",
+          "name": "RAHA PRI. SCH. RAHA KANAWA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-026",
+          "name": "JSS ARABIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-027",
+          "name": "DAN BABA PRI SCH",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-08-028",
+          "name": "JSS KANYA YAMMA IV",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KUZUNZUMI",
+      "inecCode": "09",
+      "registrationAreaCode": "17-02-09",
+      "pollingUnits": [
+        {
+          "code": "17-02-09-001",
+          "name": "ADUGUL/ADUGUL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-002",
+          "name": "BURUKUM FULANI/BURUKUM FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-003",
+          "name": "BURUKUM GARI/BURUKUM GARII",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-004",
+          "name": "CHIKAKOSHI/CHIKAKOSHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-005",
+          "name": "DANKARDA/DANKARDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-006",
+          "name": "FADIBARA PRI. SCH. / FADIBARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-007",
+          "name": "GUJUGURUN FULANI/GUJUGURUN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-008",
+          "name": "GUJUGURUN KANAWA/GUJUGURUN KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-009",
+          "name": "JIKANKANAWA/JIKANKANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-010",
+          "name": "KARFAWA GARI/ KARFAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-011",
+          "name": "KOGGA/KOGGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-012",
+          "name": "KUZUNZUMI PRI. SCH./KUZUNZUMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-013",
+          "name": "MIDIRI/MIDIRIN KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-014",
+          "name": "SARKIN BAKA PRI. SCH. /SARKIN BAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-015",
+          "name": "SHASHATU /SHASHATU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-016",
+          "name": "KYANKYARO PRI. SCH/ KYANKYARO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-017",
+          "name": "TIMBAU FULANI/ TIMBAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-018",
+          "name": "UNG. DINYA / UNG. DINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-09-019",
+          "name": "KUZUNZUMI PRI SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KYAMBO",
+      "inecCode": "10",
+      "registrationAreaCode": "17-02-10",
+      "pollingUnits": [
+        {
+          "code": "17-02-10-001",
+          "name": "DANHALILI/DANHALILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-002",
+          "name": "DUZAU PRI. SCH/DUZAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-003",
+          "name": "GATUTA/GATUTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-004",
+          "name": "KYAMBO GARI/KYAMBO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-005",
+          "name": "SHANTAKE/SHANTAKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-006",
+          "name": "LAMINTANI PRI. SCH./ LAMIN TANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-10-007",
+          "name": "DANHALILI    II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-10-008",
+          "name": "DUZAU PRI. SCHOOL  II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-10-009",
+          "name": "KYAMBO GARI  II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-10-010",
+          "name": "SHANTAKE II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-02-10-011",
+          "name": "LAMINTANI II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TAKWASA",
+      "inecCode": "11",
+      "registrationAreaCode": "17-02-11",
+      "pollingUnits": [
+        {
+          "code": "17-02-11-001",
+          "name": "DANAMALE FULANI/DANAMALE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-002",
+          "name": "GAGARAWA / DANGARKUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-003",
+          "name": "DANKANO/DANKANO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-004",
+          "name": "DOGONMARKE/DOGONMARKE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-005",
+          "name": "KAWARI/GAGEN KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-006",
+          "name": "HAUYA PRI. SCH./ HAUYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-007",
+          "name": "JABIRAWAR FULANI/JABIRAWAR KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-008",
+          "name": "KATIRJEN KANAWA/KATIRJEN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-009",
+          "name": "KAYARDAR KANAWA/KAYARDA FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-010",
+          "name": "MANGA PRI. SCH. / MANGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-011",
+          "name": "MASKO PRI. SCH. / MASKON KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-012",
+          "name": "TAKAWASA PRI.. SCH./ TAKWASA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-013",
+          "name": "TAKWASA PRI. SCH./TAKWASA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-014",
+          "name": "UNG.DUNA KANAWA/UNG. DUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-02-11-015",
+          "name": "GAGARAWA RIJIYA",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 214,
+    "existingPuCount": 169,
+    "newPuCount": 45
+  }
+}

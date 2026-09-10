@@ -1,0 +1,56 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.pnp
+.pnp.*
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+!**/*.env.example
+.secrets/
+*.pem
+*.key
+*.crt
+
+# Build outputs
+dist/
+**/dist/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+.tsbuildinfo
+
+# Logs & caches
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.turbo/
+.cache/
+.eslintcache
+tmp/
+temp/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+
+# Docker / local runtime
+uploads/*
+!uploads/.gitkeep
+infra/observability/prometheus/metrics_token
+infra/backups/*
+!infra/backups/.gitkeep
+
+# Prisma local DBs (Postgres is used in this project)
+*.db
+*.db-journal
+db/src/generated/

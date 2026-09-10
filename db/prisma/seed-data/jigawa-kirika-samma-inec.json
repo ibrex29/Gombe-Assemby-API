@@ -1,0 +1,837 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "KIRIKA SAMMA",
+    "inecCode": "18",
+    "delimiterPrefix": "17-18"
+  },
+  "wards": [
+    {
+      "name": "BATURIYA",
+      "inecCode": "01",
+      "registrationAreaCode": "17-18-01",
+      "pollingUnits": [
+        {
+          "code": "17-18-01-001",
+          "name": "BATURIYA PRI. SCH./ BATURIYA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-002",
+          "name": "BATURIYA PRI. SCH./ BATURIYA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-003",
+          "name": "BARMAGUWA PRI. SCH. I/ BARMAGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-004",
+          "name": "IYO PRI. SCH. / IYO I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-005",
+          "name": "IYO PRI. SCH./ IYO II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-006",
+          "name": "MARAWAJI/MARAWAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-007",
+          "name": "GISHINAWO PRI. SCH. / GISHINAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-008",
+          "name": "SAWON YAMMA PRI. SCH./ S/YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-009",
+          "name": "SAWON GABAS PRI. SCH./ S/GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-010",
+          "name": "GABTA PRI. SCH./ GABTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-011",
+          "name": "YABAL/YABAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-012",
+          "name": "SABON GARI/ SABON GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-013",
+          "name": "KOKURO/KOKURO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-014",
+          "name": "GISHINAWO / GISHINAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-01-015",
+          "name": "GABTA JUNIOR SEC. SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-01-016",
+          "name": "BARMAGUWA PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-01-017",
+          "name": "BATURIYA DISPENSARY",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-01-018",
+          "name": "BATURIYA HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-01-019",
+          "name": "IYO JUNIOR SEC. DAY SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-01-020",
+          "name": "GISHINAWO PRIMARY HEALTH CARE",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "BULUNCHAI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-18-02",
+      "pollingUnits": [
+        {
+          "code": "17-18-02-001",
+          "name": "BULUNCHAI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-002",
+          "name": "DILMARI PRI. SCH./ DILMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-003",
+          "name": "DILMARI/GANDARMA PRI SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-004",
+          "name": "SUNKUYE PRI. SCH./ SUNKUYE I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-005",
+          "name": "ALLUWARI/ALLUWARI / JARMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-006",
+          "name": "JARMARI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-007",
+          "name": "BIRIN GUDO/BIRINGUDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-008",
+          "name": "JIBORI/JIBORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-009",
+          "name": "JAJERI/JAJERI PRY SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-02-010",
+          "name": "SUNKUYE PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-02-011",
+          "name": "DILMARI JUNIOR SEC. SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-02-012",
+          "name": "JARMARI BASIC HEALTH CARE",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DOLERI",
+      "inecCode": "03",
+      "registrationAreaCode": "17-18-03",
+      "pollingUnits": [
+        {
+          "code": "17-18-03-001",
+          "name": "DOLERI PRI. SCH./ DOLERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-002",
+          "name": "LIKORI PRI. SCH. I/ LIKORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-003",
+          "name": "LIKORI PRI. SCH. II/ LIKORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-004",
+          "name": "MAIKINTARI PRI. SCH. I/ MAIKINTARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-005",
+          "name": "MAIKINTARI PRI. SCH. II/MAIKINTARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-006",
+          "name": "YARIMARI/ PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-03-007",
+          "name": "DOLERI GOVT. JUNIOR SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-03-008",
+          "name": "DOLERI PRIMARY  HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-03-009",
+          "name": "SAYINADI PRIMARY SCHOOL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "FANDUM",
+      "inecCode": "04",
+      "registrationAreaCode": "17-18-04",
+      "pollingUnits": [
+        {
+          "code": "17-18-04-001",
+          "name": "FANDUM PRI. SCH. /FANDUM / FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-002",
+          "name": "FANDUM PRI. SCH./ FANDUM / JIGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-003",
+          "name": "KAIWARI/KAIWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-004",
+          "name": "ILALLAH PRI. SCH./ ILALLAH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-005",
+          "name": "JAMA'AR SUGA/JJAMA'AR SUGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-006",
+          "name": "MATARAR GALADIMA PRI. SCH. / MATARAR GALADIMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-007",
+          "name": "MATARAR GALADIMA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-008",
+          "name": "SUGA PRI. SCH./ SUGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-009",
+          "name": "MALINTA PRI. SCH./ MALINTA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-010",
+          "name": "TAGE PRI. SCH. /TAGE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-011",
+          "name": "JIYAN PRI. SCH. /JIYAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-012",
+          "name": "JIYAN PRI. SCH. /JIYAN/ MASAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-013",
+          "name": "GANDU/GANDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-014",
+          "name": "MATARAMIN FULANI/M FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-015",
+          "name": "JAMA'AR JIYAN/JAMA'AR JIYAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-016",
+          "name": "GILAKOCHINI /PRI. SCH./ GILAKOCHINI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-017",
+          "name": "MARAGWADO/MARAGWADO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-018",
+          "name": "KUBAYO/KUBAYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-019",
+          "name": "BAUSHE/BAUSHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-020",
+          "name": "JIYAN PRI. SCH. /JIYAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-021",
+          "name": "GARIN WAKILI /GARIN WAKILI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-022",
+          "name": "MASAMA/MASAMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-023",
+          "name": "JIGAWA/JIGAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-024",
+          "name": "MATARAR GALADIMA/MATARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-04-025",
+          "name": "FANDUM/FULANI PRIMARY SCH. HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-04-026",
+          "name": "SUGA JUNIOR SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-04-027",
+          "name": "MATARAR GALADIMA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-04-028",
+          "name": "MALINTA PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GAYIN",
+      "inecCode": "05",
+      "registrationAreaCode": "17-18-05",
+      "pollingUnits": [
+        {
+          "code": "17-18-05-001",
+          "name": "GAYIN PRI. SCH./ GAYIN I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-002",
+          "name": "GAYIN PRI. SCH. /GAYIN II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-003",
+          "name": "GAYIN GANA/GAYIN GANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-004",
+          "name": "DODDORI/DOLEN DODDORI/DODASORI/DODADDORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-005",
+          "name": "MATTAFARI PRI. SCH/ MATTAFARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-006",
+          "name": "GANGABITOWA/BANJARI /PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-007",
+          "name": "KUKADABU PRI. SCH./KUKADABU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-05-008",
+          "name": "MATAFARI PRIMARY HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-05-009",
+          "name": "GAYIN JUNIOR SEC. SCHOOL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KIRIKA SAMMA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-18-06",
+      "pollingUnits": [
+        {
+          "code": "17-18-06-001",
+          "name": "KIRIKA SAMMA PRI. SCH. I/KIRIKASAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-002",
+          "name": "KIRIKA SAMMA PRI. SCH. II/KIRIKASAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-003",
+          "name": "WOMEN CENTRE/KIRIKA SAMMA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-004",
+          "name": "WOMEN CENTRE/KIRIKA SAMMA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-005",
+          "name": "KARGIDA PRI. SCH./ KARGIDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-006",
+          "name": "MAGUWA/MAGUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-007",
+          "name": "MALAKAURI PRI. SCH./ MALAKAURI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-008",
+          "name": "JAJERIN BURA/JAJERIN BURA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-009",
+          "name": "ALHAJERI/ALHAJERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-010",
+          "name": "TUCHIYARI/TUCHIYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-011",
+          "name": "DALADIGE/B.FANNAMI/DALADIGE/B.FANNAMI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-012",
+          "name": "MELERI PRI. SCH./MELERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-013",
+          "name": "GADARI/GADARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-014",
+          "name": "CHUNGULSKI/CHUNGULSKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-015",
+          "name": "KARIGIDI PRY SCH/KARGIDI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-06-016",
+          "name": "KIRIKASAMMA GOVT. JUN. DAY SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-06-017",
+          "name": "KIRIKASAMMA DISPENSARY",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-06-018",
+          "name": "KIRIKASAMMA JUNIOR ARABIC SECONDARY SCHOOL",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-06-019",
+          "name": "MAGISTRATE COURT KIRIKASAMMA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-06-020",
+          "name": "KARGIDI JUNIOR SECONDARY SCHOOL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MADACHI",
+      "inecCode": "07",
+      "registrationAreaCode": "17-18-07",
+      "pollingUnits": [
+        {
+          "code": "17-18-07-001",
+          "name": "MADACHI PRI. SCH. I/MADACHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-002",
+          "name": "MADACHI PRI. SCH. II/MADACHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-003",
+          "name": "DISPENSARY/MADACHI/G. TARNO I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-004",
+          "name": "DISPENSARY/MADACHI/G. TARNO II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-005",
+          "name": "GARIN ALAYE/GARIN ALAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-006",
+          "name": "MAKANYU PRI. SCH./ MAIKANYU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-007",
+          "name": "MALORI PRI. SCH./MALORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-008",
+          "name": "GUMAWA/GUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-009",
+          "name": "CHUNA/CHUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-010",
+          "name": "GARIN ADO PRI. SCH./GARIN ANDO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-07-011",
+          "name": "MADACHI PRIMARY HEALTH CARE",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MARMA",
+      "inecCode": "08",
+      "registrationAreaCode": "17-18-08",
+      "pollingUnits": [
+        {
+          "code": "17-18-08-001",
+          "name": "MARMA PRI. SCH. / MARMA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-002",
+          "name": "MARMA PRI. SCH. /MARMA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-003",
+          "name": "MARMA PRI. SCH. /MARMA III",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-004",
+          "name": "ZAGARI/ZAGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-005",
+          "name": "KATABJI PRI. SCH./KATABJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-006",
+          "name": "MADUGUNARI/MADUGUNARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-007",
+          "name": "KABAK PRI. SCH./KABAK",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-008",
+          "name": "MATARA GARI GANA/MATARA GARIN GANA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-009",
+          "name": "KURADIGE/KURADIGE PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-010",
+          "name": "DILIYARI/DILIYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-08-011",
+          "name": "MARMA DISPENSARY",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-08-012",
+          "name": "MARMA GOVT. ARABIC SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-08-013",
+          "name": "KURADIGE KUKA UKU DISPENSARY",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-08-014",
+          "name": "KABAK PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TSHEGUWA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-18-09",
+      "pollingUnits": [
+        {
+          "code": "17-18-09-001",
+          "name": "TASHEGUWA PRI. SCH./TSHEGUWA I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-002",
+          "name": "TASHEGUWA PRI. SCH. / TSHEGUWA II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-003",
+          "name": "KUIT PRI. SCH./ KUIT",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-004",
+          "name": "GARIN MAGAJI/GARIN MAGAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-005",
+          "name": "KIRAMISAU PRI. SCH./ KIRAMISAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-006",
+          "name": "GARIN DANMAINA/GARIN DANMAINA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-007",
+          "name": "RUBBA/RUBBA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-008",
+          "name": "GARIN TURAKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-009",
+          "name": "MALUMAWA/MALUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-09-010",
+          "name": "KUIT PRIMARY HEALTH CARE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-09-011",
+          "name": "TASHEGUWA DISPENSARY",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "TARABU",
+      "inecCode": "10",
+      "registrationAreaCode": "17-18-10",
+      "pollingUnits": [
+        {
+          "code": "17-18-10-001",
+          "name": "TURABU PRI. SCH. / TURABU I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-002",
+          "name": "TURABU PRI. SCH. /TURABU II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-003",
+          "name": "TURABU DISPENSARY/TURABU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-004",
+          "name": "MATARAR GANJI PRI. SCH. / MATARAR GANJI I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-005",
+          "name": "MATARAR GANJI PRI. SCH. / MATARAR GANJI II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-006",
+          "name": "TUWANKALTA/TUWANKALTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-007",
+          "name": "TANDANU PRI. SCH. / TANDANU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-008",
+          "name": "TANDANU PRI. SCH. / TANDANU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-009",
+          "name": "GUDARI/GUDARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-010",
+          "name": "SUNAMU/SUNAMU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-011",
+          "name": "RIGAR ISAH/RIGAR ISAH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-012",
+          "name": "JANNAKO / JANNAKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-18-10-013",
+          "name": "TURABU GOVT. ARABIC SEC. SCH.",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-10-014",
+          "name": "GOVT. DAY. SEC. SCHOOL TURABU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-18-10-015",
+          "name": "GANJI PRIMARY SCHOOL",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 10,
+    "pollingUnitCount": 149,
+    "existingPuCount": 116,
+    "newPuCount": 33
+  }
+}

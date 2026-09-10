@@ -1,0 +1,654 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "GWIWA",
+    "inecCode": "12",
+    "delimiterPrefix": "17-12"
+  },
+  "wards": [
+    {
+      "name": "BUNTUSU",
+      "inecCode": "01",
+      "registrationAreaCode": "17-12-01",
+      "pollingUnits": [
+        {
+          "code": "17-12-01-001",
+          "name": "BUNTUSUN DUZAU PRI. SCH. BUNTUSU DUZAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-002",
+          "name": "BAZARA KATSI PRI. SCH. BAZARA KATSI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-003",
+          "name": "JAMMAJE PRI. SCH. JAMMAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-004",
+          "name": "JIGAWA HABE PRI. SCH. JIGAWA HABE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-005",
+          "name": "JIGAWA FULANI PRI. SCH. JIGAWA FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-006",
+          "name": "MADURKUSA PRI. SCH. MADURKUSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-007",
+          "name": "UNGUWAR DORAWA PRI. SCH. UNG. DORAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-008",
+          "name": "BUNTUSU KANAWA PRY KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-009",
+          "name": "JAMMAJE MAHARBA DANDALI JAMMAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-01-010",
+          "name": "BUNTUSU CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-01-011",
+          "name": "JIGAWA HABE CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-01-012",
+          "name": "MADURKUSA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-01-013",
+          "name": "UNG. DOROWA JSS",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DABI",
+      "inecCode": "02",
+      "registrationAreaCode": "17-12-02",
+      "pollingUnits": [
+        {
+          "code": "17-12-02-001",
+          "name": "BURMA RUWA DANDALI/BURMA RUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-002",
+          "name": "DABI PRI. SCH. DABI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-003",
+          "name": "DAN-ABZIN CIKIN GARI/DAN ABZIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-004",
+          "name": "HUNNUNGERE PRI. SCH. HUNNUNGERE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-005",
+          "name": "FURTAWA BUGAJE DANDALI/FARA BUGAJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-006",
+          "name": "FURTAWA FULANI G/S/FULANI/FARA FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-007",
+          "name": "WARDAWA PRI. SCH./WARADAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-008",
+          "name": "TSUBUT PRI. SCH. TSUBUT",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-009",
+          "name": "WARDAWA FULANI PRY SCH, WARDAWA F.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-02-011",
+          "name": "BURMA RUWA DANDALI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-02-012",
+          "name": "DABI JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-02-013",
+          "name": "TSUBUT CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-02-014",
+          "name": "FURTAWA CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DARINA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-12-03",
+      "pollingUnits": [
+        {
+          "code": "17-12-03-001",
+          "name": "DARINA HABE CIKIN GARI/DARINA HABE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-002",
+          "name": "GASAKAE G/MAIUNGUWA/GASAKAE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-003",
+          "name": "KETAI GARI DANDALI/KATAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-004",
+          "name": "MARAGANTA PRI. SCH. MARANGANTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-005",
+          "name": "SHADA PRI. SCH. SHADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-006",
+          "name": "UNG/GANJI CIKIN GARI/ UNG/GANJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-03-007",
+          "name": "MARAGANTA PRI SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-03-008",
+          "name": "UNG. GANJI CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "F/YAMMA",
+      "inecCode": "04",
+      "registrationAreaCode": "17-12-04",
+      "pollingUnits": [
+        {
+          "code": "17-12-04-001",
+          "name": "BENGEL/BENGEL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-04-002",
+          "name": "FURJI YAMMA C/GARI/FURJI YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-04-003",
+          "name": "KURMA RUWA PRI. SCH./KURAMAN RUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-04-004",
+          "name": "WAAILARE CIKIN GARI/ WAILARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-04-005",
+          "name": "FIRJI YAMMA II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-04-006",
+          "name": "FIRJI YAMMA III",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GUNTAI",
+      "inecCode": "05",
+      "registrationAreaCode": "17-12-05",
+      "pollingUnits": [
+        {
+          "code": "17-12-05-001",
+          "name": "AGANGARO CIKIN GARI/ AGAN GARO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-002",
+          "name": "DANKAWA KOFAR M/UNGUWA/DANKAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-003",
+          "name": "GALLA DANDALI/GALLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-004",
+          "name": "GUNTAI PRI. SCH. GUNTAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-005",
+          "name": "INDIRAWAB CIKIN  GARI/INDIRAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-006",
+          "name": "JIGAWA GARI C/GARI/  JIGAWAGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-007",
+          "name": "KASAKA DANDALI/KASAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-008",
+          "name": "KURNEJI DANDALI/KURNEJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-05-009",
+          "name": "GUNTAI CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-05-010",
+          "name": "KURNEJI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-05-011",
+          "name": "INDIRAWA PRI. SCHOOL",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GWIWA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-12-06",
+      "pollingUnits": [
+        {
+          "code": "17-12-06-001",
+          "name": "DANSALA CIKIN GARI/DANSALA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-06-002",
+          "name": "DANSALA DADIN SARKI/DANSALA CIKIN GARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-06-003",
+          "name": "DARAGIN FULANI/DARAGIN FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-06-004",
+          "name": "GWIWA PRI. SCH. GWIWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-06-005",
+          "name": "GWIWA KUDU DANDALI/GWIWA KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-06-006",
+          "name": "GWIWA JSS",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-06-007",
+          "name": "GWIWA KUDU TAHFRUL QURAN ISLAMIYYA",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KORAYEL",
+      "inecCode": "07",
+      "registrationAreaCode": "17-12-07",
+      "pollingUnits": [
+        {
+          "code": "17-12-07-001",
+          "name": "BAZARA DAURAWA PRI. SCH DAURAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-07-002",
+          "name": "BAZARA KANAWA PRI. SCH. BAZARA KANAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-07-003",
+          "name": "DATSA PRI. SCH DATSA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-07-004",
+          "name": "KORAYAL PRI. SCH. KORAYAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-07-005",
+          "name": "UNG./DINYA PRI. SCH. UNG./DINYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-07-006",
+          "name": "DOROWA ISLAMIYYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-07-007",
+          "name": "KOROYEL CLINIC",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-07-008",
+          "name": "KORAYEL JSS",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "RORAU",
+      "inecCode": "08",
+      "registrationAreaCode": "17-12-08",
+      "pollingUnits": [
+        {
+          "code": "17-12-08-001",
+          "name": "R/MAGUZAWA PRI. SCH. R/MAGUZAWA KARSHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-08-002",
+          "name": "R/MALAMAI PRI. SCH. R/MALAMAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-08-003",
+          "name": "R//FULANI G/S FULANI  R/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-08-004",
+          "name": "SHATARE CIKIN GARI/SHATARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-08-005",
+          "name": "RORAU DAGE ISLAMIYYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-08-006",
+          "name": "R/MALAMAI CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SHAFE",
+      "inecCode": "09",
+      "registrationAreaCode": "17-12-09",
+      "pollingUnits": [
+        {
+          "code": "17-12-09-001",
+          "name": "DAURAWA KARSHI PRI. SCH DAURAWA KARSHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-002",
+          "name": "DAURAWA MORI PRI. SCH DAURAWA MORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-003",
+          "name": "DAURAWA SHAFE PRI. SCH DAURAWA SHAFE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-004",
+          "name": "GALLANKYAU CIKIN GARI/GALLANKYAU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-005",
+          "name": "KUNDIGA PRI. SCH./KUNDIGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-006",
+          "name": "KURKET CIKIN GARI/KURKET",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-007",
+          "name": "KARSHI KAYA PRI. SCH./KARSHI KAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-008",
+          "name": "SHAFE PRI. SCH. /SHAFE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-009",
+          "name": "TINKISHI CIKIN GARI/TINKISHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-010",
+          "name": "TINKISHI FULANI G/ SARKIN FULANI/TINKISHI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-011",
+          "name": "SOBASHI GANGARA DANDALI/GANGARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-09-012",
+          "name": "DAURAWA KARSHI II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-09-013",
+          "name": "GALLANKYAU II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-09-014",
+          "name": "KUNDIGA PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-09-015",
+          "name": "SHAFE PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-09-016",
+          "name": "TINKISHI CLINIC",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "YOLA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-12-10",
+      "pollingUnits": [
+        {
+          "code": "17-12-10-001",
+          "name": "GASAKOLI PRI. SCH. GASAKOLI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-10-002",
+          "name": "KWARARE PRI. SCH. KWARARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-10-003",
+          "name": "YOLA PRI. SCH. YOLA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-10-004",
+          "name": "DODAL DANDALI/DODAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-10-005",
+          "name": "GASAKOLI PRI. SCH. II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-10-006",
+          "name": "DODAL ISLAMIYYA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-10-007",
+          "name": "YOLA DANDALI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-10-008",
+          "name": "YOLA FARURE",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-10-009",
+          "name": "KWARARE PRI. SCH II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "ZAUMAR SAINAWA",
+      "inecCode": "11",
+      "registrationAreaCode": "17-12-11",
+      "pollingUnits": [
+        {
+          "code": "17-12-11-001",
+          "name": "BISYAWAL CIKIN GARI/BISYAWAL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-002",
+          "name": "DIWIGI HABE PRI. SCH. DIWIGI HABE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-003",
+          "name": "DIWIGI FULANI PRI. SCH. DIWIGI FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-004",
+          "name": "FARA TUKWANE PRI. SCH. FARA TUKWANE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-005",
+          "name": "FIRTAWA PRI. SCH. FURTAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-006",
+          "name": "KABADOYA PRI. SCH. KABADOYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-007",
+          "name": "KABADOYA FULANI PRI. SCH. KABADOYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-008",
+          "name": "ZANGON KAYA DANDALI/ZANGON KAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-009",
+          "name": "ZAUMAR GAURAYE PRI. SCH.  Z/GAURAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-010",
+          "name": "Z/MAHAUTA PRI.  Z/MAHAUTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-011",
+          "name": "Z/FULANI PRI. SCH.  Z/FULANI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-012",
+          "name": "Z/SAINAWA CIKIN GARI  Z/SAINAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-12-11-013",
+          "name": "FARA TUKANE FULANI",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-12-11-014",
+          "name": "ZAUMAR GAURAYE ISLAMIYYA",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 111,
+    "existingPuCount": 77,
+    "newPuCount": 34
+  }
+}

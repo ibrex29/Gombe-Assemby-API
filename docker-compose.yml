@@ -1,0 +1,6 @@
+# Convenience alias — run from electromon-api/ project root
+# Usage: docker compose up -d
+
+include:
+  - path: infra/compose/base.yml
+  - path: infra/compose/local.yml

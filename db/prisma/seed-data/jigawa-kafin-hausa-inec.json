@@ -1,0 +1,1274 @@
+{
+  "source": "INEC Polling Unit Portal (via JayCodist/inec-polling-units-scraper)",
+  "extractedAt": "2026-08-10",
+  "state": {
+    "name": "Jigawa",
+    "code": "JI",
+    "inecCode": "17"
+  },
+  "lga": {
+    "name": "KAFIN HAUSA",
+    "inecCode": "15",
+    "delimiterPrefix": "17-15"
+  },
+  "wards": [
+    {
+      "name": "BALANGU",
+      "inecCode": "01",
+      "registrationAreaCode": "17-15-01",
+      "pollingUnits": [
+        {
+          "code": "17-15-01-001",
+          "name": "BALANGU PRI. SCH.  BULANGU GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-002",
+          "name": "DISTRICT HEAD OFFICE BULANGU KUDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-003",
+          "name": "BALANGU PRI. SCH. BULANGU YAMMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-004",
+          "name": "BUBARI PRI. SCH. BUBARI BUBARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-005",
+          "name": "CHAKWASAM PRI. SCH. CHAKWASAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-006",
+          "name": "CHIROMARI VILLAGE CENTRE  CHIROMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-007",
+          "name": "DISPENSARY/FAWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-008",
+          "name": "GALADIMARI PRI. SCH. GALADIMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-009",
+          "name": "VILLAGE CENTRE/GIDAN JAURO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-010",
+          "name": "VILLAGE CENTRE/GOYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-011",
+          "name": "VILLAGE CENTRE/ KAKAMARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-012",
+          "name": "DISPENSARY/KARABBALI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-013",
+          "name": "LUGGA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-014",
+          "name": "MALUMAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-015",
+          "name": "VILLAGE CENTRE/MANGARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-016",
+          "name": "SABON SARA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-017",
+          "name": "TUMUNJIRI PRIMARY SCHOOL",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-018",
+          "name": "VILLAGE/TURAKA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-019",
+          "name": "VILLAGE/TSAGANWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-020",
+          "name": "VILLAGE/ YAWAN KOGI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-021",
+          "name": "PRIMARY SCHOOL/ YAMUSORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-022",
+          "name": "PRIMARY SCHOOL/ YAYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-023",
+          "name": "WASARI/ VILLAGE CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-01-024",
+          "name": "SABON SARA PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-01-025",
+          "name": "BULANGU YAMMA PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-01-026",
+          "name": "DISTRICT HEAD OFFICE BULANGU KUDU II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-01-027",
+          "name": "DISTRICT HEAD OFFICE BULANGU KUDU III",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "DUMADUMIN TOKA",
+      "inecCode": "02",
+      "registrationAreaCode": "17-15-02",
+      "pollingUnits": [
+        {
+          "code": "17-15-02-001",
+          "name": "PRI. SCH. AUNO IBRAHIM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-002",
+          "name": "VILLAGE CENTRE/AUNO MAKERA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-003",
+          "name": "AUNO MASARAUTA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-004",
+          "name": "DUMADUMIN TOKA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-005",
+          "name": "VILLAGE CENTRE/DUNDAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-006",
+          "name": "VILLAGE CENTRE/GIDAN CHEDIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-007",
+          "name": "GIDAN KARGO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-008",
+          "name": "HANIYAL PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-009",
+          "name": "LUFUDA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-010",
+          "name": "VILLAGE CENTRE/MAJERIN MASARAUTA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-011",
+          "name": "MAJERIN ZANGOMA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-012",
+          "name": "VILLAGE CENTRE/WALUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-02-013",
+          "name": "DUMADUMIN-TOKA PS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "GAFAYA",
+      "inecCode": "03",
+      "registrationAreaCode": "17-15-03",
+      "pollingUnits": [
+        {
+          "code": "17-15-03-001",
+          "name": "PRIMARY SCHOOL / ADIN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-002",
+          "name": "PRIMARY SCHOOL / ALAGARNO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-003",
+          "name": "VILLAGE CENTRE / AMADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-004",
+          "name": "VILLAGE CENTRE / AZAUNA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-005",
+          "name": "PRIMARY SCHOOL / BAUSHE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-006",
+          "name": "PRIMARY SCHOOL / CHIYAYI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-007",
+          "name": "PRIMARY SCHOOL / GAFAYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-008",
+          "name": "VILLAGE CENTRE / KALETA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-009",
+          "name": "VILLAGE CENTRE / KATIRJE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-010",
+          "name": "VILLAGE CENTRE / KURUBO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-011",
+          "name": "PRIMARY SCHOOL KWARMAJAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-012",
+          "name": "RAMFA PRIMARY SCHOOL I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-013",
+          "name": "PRIMARY SCHOOL SABARA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-014",
+          "name": "VILLAGE CENTRE / WUI - WUI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-015",
+          "name": "PRIMARY SCHOOL / Z / KAFI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-016",
+          "name": "VILLAGE CENTRE/MADAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-03-017",
+          "name": "GAFAYA PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-03-019",
+          "name": "DANDALIN BARNAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-03-020",
+          "name": "RAMFA PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "JABO",
+      "inecCode": "04",
+      "registrationAreaCode": "17-15-04",
+      "pollingUnits": [
+        {
+          "code": "17-15-04-001",
+          "name": "AIMUN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-002",
+          "name": "AKURYA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-003",
+          "name": "GABARI PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-004",
+          "name": "GAMAYIN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-005",
+          "name": "GUMALDUWA PRI. SCH. GUMALDUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-006",
+          "name": "HAGO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-007",
+          "name": "VILLAGE CENTRE/HARDO ALI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-008",
+          "name": "INKAIBO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-009",
+          "name": "JABO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-010",
+          "name": "KIRABABBA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-011",
+          "name": "LIMAWA PRY SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-012",
+          "name": "VILLAGE CENTRE/MALUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-013",
+          "name": "SHUWARI PRI.  SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-014",
+          "name": "TAGE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-015",
+          "name": "WA'EK PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-016",
+          "name": "YOLA MUSA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-017",
+          "name": "VILLAGE CENTRE/SABONGIDA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-04-018",
+          "name": "LIMAWA PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-04-019",
+          "name": "TAGE PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-04-020",
+          "name": "JABO PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-04-021",
+          "name": "HAGO TOWN II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KAFIN HAUSA",
+      "inecCode": "05",
+      "registrationAreaCode": "17-15-05",
+      "pollingUnits": [
+        {
+          "code": "17-15-05-001",
+          "name": "AGURA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-002",
+          "name": "A/GALADIMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-003",
+          "name": "A/CHIROMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-004",
+          "name": "ASKA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-005",
+          "name": "BEBAYI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-006",
+          "name": "VILLAGE CENTRE/DAWASA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-007",
+          "name": "DUDUMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-008",
+          "name": "GAFASA HARUNA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-009",
+          "name": "G/TURAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-010",
+          "name": "KARGUMAKA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-011",
+          "name": "KAZAN GALADIMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-012",
+          "name": "KAFIN HAUSA GABAS  PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-013",
+          "name": "KAFIN HAUSA YAMMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-014",
+          "name": "AGENCY FOR MASS EDU./ KAFIN HAUSA FADA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-015",
+          "name": "KAFIN HAUSA KUDU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-016",
+          "name": "KAFIN HAUSA  AREWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-017",
+          "name": "KAMU GATAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-018",
+          "name": "KAZAN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-019",
+          "name": "MADAWA BELLO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-020",
+          "name": "MASASSADI PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-021",
+          "name": "TURAKAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-022",
+          "name": "TOYAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-023",
+          "name": "MADAKI/A PRI. SCH. PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-024",
+          "name": "YANDARMAN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-05-025",
+          "name": "BAKIN KASUWA/KAFIN HAUSAKUDU",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-026",
+          "name": "VILLAGE CENTRE DAWA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-027",
+          "name": "KARGUMAKA PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-028",
+          "name": "KAFIN HAUSA GABAS PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-029",
+          "name": "KAFIN HAUSA YAMMA",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-030",
+          "name": "AGENCY MASI EDUCAT",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-031",
+          "name": "KAFIN HAUSA KUDU PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-032",
+          "name": "KAFIN HAUSA KUDU PS III",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-033",
+          "name": "KAFIN HAUSA AREWA PAS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-034",
+          "name": "YANDARMAN PS II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-05-035",
+          "name": "BAKIN KASUWA KAFIN HAUSA II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "KAZALEWA",
+      "inecCode": "06",
+      "registrationAreaCode": "17-15-06",
+      "pollingUnits": [
+        {
+          "code": "17-15-06-001",
+          "name": "ABDALLAWA PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-002",
+          "name": "VILLAGE CENTRE/ADUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-003",
+          "name": "ALIMAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-004",
+          "name": "ATARU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-005",
+          "name": "BIRKIDI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-006",
+          "name": "VILLAGE CENTRE/GANZARAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-007",
+          "name": "GIWARE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-008",
+          "name": "VILLAGE CENTRE/KATANGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-009",
+          "name": "KAZALEWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-010",
+          "name": "VILLAGE CENTRE/KUNUNU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-011",
+          "name": "KUNUNU ZAKI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-012",
+          "name": "LAFIYAN MALAM PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-013",
+          "name": "VILLAGE CENTRE/MARUWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-014",
+          "name": "VILLAGE CENTRE/KATEKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-06-016",
+          "name": "VILLAGE CENTRE KUNUNU PS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MAJAWA",
+      "inecCode": "07",
+      "registrationAreaCode": "17-15-07",
+      "pollingUnits": [
+        {
+          "code": "17-15-07-001",
+          "name": "ALHAJERI PRI. SCH. ALHAJERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-002",
+          "name": "ATABZA PRI. SCH. ATABZA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-003",
+          "name": "DUWAMERIN - ZANGOMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-004",
+          "name": "VILLAGE CENTRE/GORAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-005",
+          "name": "GIDANDADADA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-006",
+          "name": "VILLAGE CENTRE/KALGERI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-007",
+          "name": "MAJAWA PRI. SCH. I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-008",
+          "name": "MARUWA PRI. SCH. II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-009",
+          "name": "SHAKATO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-010",
+          "name": "VILLAGE CENTRE/SUSO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-011",
+          "name": "TUMBAI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-012",
+          "name": "WOLOYE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-013",
+          "name": "VILLAGE CENTRE/WARYAM",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-07-014",
+          "name": "SHAKATO PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "MEZAN",
+      "inecCode": "08",
+      "registrationAreaCode": "17-15-08",
+      "pollingUnits": [
+        {
+          "code": "17-15-08-001",
+          "name": "ADUYA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-002",
+          "name": "VILLAGE CENTRE BAGGAWO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-003",
+          "name": "B/GANDU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-004",
+          "name": "B/KARI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-005",
+          "name": "VILLAGE CENTRE/DAMNO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-006",
+          "name": "GILADORI PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-007",
+          "name": "GULUGULUN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-008",
+          "name": "VILLAGE CENTRE/J/GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-009",
+          "name": "J/MEZAN PRI. SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-010",
+          "name": "KARSHA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-011",
+          "name": "KWATALO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-012",
+          "name": "VILLAGE CENTRE/M/KIRI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-013",
+          "name": "MEZAN PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-014",
+          "name": "VILLAGE CENTRE/M/KWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-015",
+          "name": "S/GIDA GABAS PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-016",
+          "name": "S/GIDA  YAMMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-017",
+          "name": "SATERI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-018",
+          "name": "VILLAGE CENTRE/TAKAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-019",
+          "name": "Y/RINDE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-020",
+          "name": "MAKERA/MEZAN",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-08-021",
+          "name": "MEZAN PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-08-022",
+          "name": "KWATALO PRIMARY SCHOOL II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-08-023",
+          "name": "SABON GIDA PRIMARI SCHOOL II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "RUBA",
+      "inecCode": "09",
+      "registrationAreaCode": "17-15-09",
+      "pollingUnits": [
+        {
+          "code": "17-15-09-001",
+          "name": "VILLAGE CENTRE/DUNDAYE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-002",
+          "name": "VILLAGE CENTRE/RUWANDAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-003",
+          "name": "TUMBAI PRI. SCH/FAKO/TUMBAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-004",
+          "name": "G/AMADU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-005",
+          "name": "GIDAN KANYA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-006",
+          "name": "GIDAN MATA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-007",
+          "name": "KORE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-008",
+          "name": "JAJERI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-009",
+          "name": "VILLAGE CENTRE/JALGA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-010",
+          "name": "KWATONMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-011",
+          "name": "DISPENSARY/G/SARKI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-012",
+          "name": "MARUKO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-013",
+          "name": "RUBA PRI. SCH.  I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-014",
+          "name": "RUBA PRI. SCH.  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-015",
+          "name": "SHARBI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-016",
+          "name": "D/KYAURE PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-017",
+          "name": "GAIKAU RUGA VILLAGE CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-09-018",
+          "name": "DUMADUMIN KYAURE P.S II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-09-019",
+          "name": "RUBA JSS1 II",
+          "remark": "NEW PU"
+        },
+        {
+          "code": "17-15-09-020",
+          "name": "UP RUBA JSS II",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "SARAWA",
+      "inecCode": "10",
+      "registrationAreaCode": "17-15-10",
+      "pollingUnits": [
+        {
+          "code": "17-15-10-001",
+          "name": "MATAKUWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-002",
+          "name": "KUTUNGUM PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-003",
+          "name": "VILLAGE CENTRE/BALEWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-004",
+          "name": "AUTAKO PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-005",
+          "name": "FADAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-006",
+          "name": "BARADUWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-007",
+          "name": "KAUZAWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-008",
+          "name": "DISPENSARY/K/GALADIMA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-009",
+          "name": "GATASHU PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-010",
+          "name": "SARAWA YAMMA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-011",
+          "name": "AFIRZINA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-012",
+          "name": "DUNDU VILLAGE CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-013",
+          "name": "VILLAGE CENTRE/MALUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-014",
+          "name": "DAWAYA VILLAGE CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-015",
+          "name": "ANSAYA VILLAGE CENTRE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-016",
+          "name": "VILLAGE CENTRE/GANDU",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-017",
+          "name": "VILLAGE CENTRE/GURGUNDAHO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-018",
+          "name": "VILLAGE CENTRE/TAMBALE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-019",
+          "name": "VILLAGE CENTRE/DAMANYO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-020",
+          "name": "A/MAGAJI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-021",
+          "name": "K/FADA/MATAKUR",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-022",
+          "name": "K/FADA JODADE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-023",
+          "name": "K/FADA/KYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-024",
+          "name": "K/FADA/ABEWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-025",
+          "name": "TAGAGADAWAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-026",
+          "name": "K/FADA/S/MAKERA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-027",
+          "name": "G/MAIUNGUWA/TILORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-028",
+          "name": "VILLAGE CENTRE/HADA GWAI-GWAI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-029",
+          "name": "ADARAUSHE PRI SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-030",
+          "name": "MANABA PRI SCH",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-031",
+          "name": "DISPENSARY/ SARAWA GABAS",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-032",
+          "name": "VILLAGE CENTRE/G/NABATI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-033",
+          "name": "KADUGUR PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-034",
+          "name": "PRY SCH/AUTAKO",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-10-035",
+          "name": "ISLAMIYYA P S SARAWA GABAS",
+          "remark": "NEW PU"
+        }
+      ]
+    },
+    {
+      "name": "ZAGO",
+      "inecCode": "11",
+      "registrationAreaCode": "17-15-11",
+      "pollingUnits": [
+        {
+          "code": "17-15-11-001",
+          "name": "VILLAGE CENTRE/G/KWARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-002",
+          "name": "GUMURWA PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-003",
+          "name": "KULLIMI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-004",
+          "name": "DISPENSARY/KOLORI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-005",
+          "name": "VILLAGE CENTRE/MALUMAWA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-006",
+          "name": "VILLAGE CENTRE/MAJIYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-007",
+          "name": "SHAMAKERI PRI. SCH I",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-008",
+          "name": "SHAMAKERI PRI. SCH  II",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-009",
+          "name": "RIMI PRI. SCH.",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-010",
+          "name": "Z/KAFI/ILIYARI",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-011",
+          "name": "Z/KANYA",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-012",
+          "name": "VILLAGE CENTRE/KWANTARE",
+          "remark": "EXISTING PU"
+        },
+        {
+          "code": "17-15-11-013",
+          "name": "DANDALIN ZANGON KANYA VILLAGE",
+          "remark": "NEW PU"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "wardCount": 11,
+    "pollingUnitCount": 235,
+    "existingPuCount": 202,
+    "newPuCount": 33
+  }
+}

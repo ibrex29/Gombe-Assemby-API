@@ -1,0 +1,35 @@
+name: Deploy production
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+concurrency:
+  group: api-deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: SSH deploy production
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.PRODUCTION_HOST }}
+          username: ${{ secrets.PRODUCTION_USER }}
+          key: ${{ secrets.PRODUCTION_SSH_KEY }}
+          script: |
+            set -euo pipefail
+            cd ${{ secrets.PRODUCTION_API_PATH }}
+            git fetch --tags --all
+            git checkout "${{ github.ref_name }}"
+            chmod +x infra/scripts/*.sh
+            ENV=production EXTERNAL=${EXTERNAL:-0} ./infra/scripts/deploy.sh
+            echo "Production API deploy OK"
+        env:
+          EXTERNAL: ${{ vars.PRODUCTION_EXTERNAL_DB || '0' }}

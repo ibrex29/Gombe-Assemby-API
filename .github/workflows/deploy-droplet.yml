@@ -1,0 +1,34 @@
+name: Deploy droplet
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: api-deploy-droplet
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: SSH deploy droplet
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          command_timeout: 40m
+          script: |
+            set -euo pipefail
+            cd ${{ secrets.DROPLET_API_PATH }}
+            git fetch origin
+            git checkout main
+            git pull --ff-only origin main
+            chmod +x infra/scripts/deploy-droplet.sh
+            ./infra/scripts/deploy-droplet.sh
+            echo "Droplet API deploy OK"

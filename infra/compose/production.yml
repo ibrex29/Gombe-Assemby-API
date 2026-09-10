@@ -1,0 +1,68 @@
+# Production — API stack, hardened defaults
+
+services:
+  postgres:
+    container_name: electromon-prod-postgres
+    mem_limit: 2g
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 512M
+
+  redis:
+    container_name: electromon-prod-redis
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    mem_limit: 768m
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  rabbitmq:
+    container_name: electromon-prod-rabbitmq
+    mem_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  minio:
+    container_name: electromon-prod-minio
+    mem_limit: 512m
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  minio-init:
+    container_name: electromon-prod-minio-init
+
+  migrate:
+    container_name: electromon-prod-migrate
+    environment:
+      RUN_SEED: "false"
+
+  api:
+    container_name: electromon-prod-api
+    # Reachable via Caddy on the shared network — do not publish Node ports publicly.
+    expose:
+      - "3001"
+    environment:
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?JWT_ACCESS_SECRET is required}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:?JWT_REFRESH_SECRET is required}
+      METRICS_TOKEN: ${METRICS_TOKEN:?METRICS_TOKEN is required}
+      CORS_ORIGIN: ${CORS_ORIGIN:-https://app.electromon.ng}
+    mem_limit: 1g
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "5"

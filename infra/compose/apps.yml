@@ -1,0 +1,103 @@
+# API application services — migrate + api
+# Usage: docker compose -f infra/compose/base.yml -f infra/compose/local.yml -f infra/compose/apps.yml --profile apps up -d
+
+x-api-env: &api-env
+  NODE_ENV: ${NODE_ENV:-production}
+  DATABASE_URL: postgresql://${POSTGRES_USER:-electromon}:${POSTGRES_PASSWORD:-electromon}@postgres:5432/${POSTGRES_DB:-electromon}?schema=public
+  REDIS_URL: redis://redis:6379
+  RABBITMQ_URL: amqp://${RABBITMQ_USER:-electromon}:${RABBITMQ_PASSWORD:-electromon}@rabbitmq:5672
+  JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:-local-dev-access-secret-min-32-chars-long}
+  JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-local-dev-refresh-secret-min-32-chars-long}
+  JWT_ACCESS_EXPIRY: ${JWT_ACCESS_EXPIRY:-15m}
+  JWT_REFRESH_EXPIRY: ${JWT_REFRESH_EXPIRY:-7d}
+  S3_ENDPOINT: http://minio:9000
+  S3_ACCESS_KEY: ${S3_ACCESS_KEY:-electromon}
+  S3_SECRET_KEY: ${S3_SECRET_KEY:-electromonsecret}
+  S3_BUCKET: ${S3_BUCKET:-electromon}
+  S3_REGION: ${S3_REGION:-us-east-1}
+  API_PORT: "3001"
+  API_PUBLIC_URL: ${API_PUBLIC_URL:-http://localhost:3001}
+  CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+  METRICS_TOKEN: ${METRICS_TOKEN:-}
+  FCM_SERVICE_ACCOUNT_JSON: ${FCM_SERVICE_ACCOUNT_JSON:-}
+  FCM_DRY_RUN: ${FCM_DRY_RUN:-false}
+  GOOGLE_CLOUD_PROJECT: ${GOOGLE_CLOUD_PROJECT:-}
+  GOOGLE_CLOUD_VISION_CREDENTIALS: ${GOOGLE_CLOUD_VISION_CREDENTIALS:-}
+  GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS:-}
+  OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+  AI_MODEL: ${AI_MODEL:-}
+  AI_OCR_MODEL: ${AI_OCR_MODEL:-}
+  AI_READONLY_DATABASE_URL: postgresql://electromon_ai_readonly:${AI_READONLY_DB_PASSWORD:-electromon_ai}@postgres:5432/${POSTGRES_DB:-electromon}?schema=public
+  SOCIAL_INGEST_TOKEN: ${SOCIAL_INGEST_TOKEN:-}
+  PULSEFORGE_API_KEY: ${PULSEFORGE_API_KEY:-}
+  PULSEFORGE_BASE_URL: ${PULSEFORGE_BASE_URL:-https://pulseforge.vercel.app/api/v1}
+  AI_SOCIAL_MODEL: ${AI_SOCIAL_MODEL:-}
+  SITUATION_ROOM_CACHE_TTL_SEC: ${SITUATION_ROOM_CACHE_TTL_SEC:-10}
+  CLOUDINARY_URL: ${CLOUDINARY_URL:-}
+  CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+  CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+  CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+  CLOUDINARY_FOLDER: ${CLOUDINARY_FOLDER:-electromon/uploads}
+  SUPPORTED_STATE_CODES: ${SUPPORTED_STATE_CODES:-}
+  TRIAGE_SWEEP_ENABLED: ${TRIAGE_SWEEP_ENABLED:-false}
+  TRIAGE_SWEEP_INTERVAL_SEC: ${TRIAGE_SWEEP_INTERVAL_SEC:-900}
+  TRIAGE_ELECTION_MODE: ${TRIAGE_ELECTION_MODE:-true}
+  IREV_ENABLED: ${IREV_ENABLED:-false}
+  IREV_BASE_URL: ${IREV_BASE_URL:-}
+  IREV_ELECTION_ID: ${IREV_ELECTION_ID:-}
+  IREV_PORTAL_URL: ${IREV_PORTAL_URL:-}
+  IREV_ELECTION_LABEL: ${IREV_ELECTION_LABEL:-}
+  IREV_FETCH_RATE_LIMIT: ${IREV_FETCH_RATE_LIMIT:-30}
+  IREV_SWEEP_INTERVAL_MS: ${IREV_SWEEP_INTERVAL_MS:-3600000}
+  IREV_CATALOG_INTERVAL_MS: ${IREV_CATALOG_INTERVAL_MS:-20000}
+  IREV_CATALOG_WARD_BATCH: ${IREV_CATALOG_WARD_BATCH:-8}
+  IREV_CATALOG_STALE_MS: ${IREV_CATALOG_STALE_MS:-21600000}
+  IREV_STATS_CACHE_MS: ${IREV_STATS_CACHE_MS:-300000}
+
+services:
+  migrate:
+    profiles: ["apps"]
+    build:
+      # Paths are relative to --project-directory (repo root), not this file.
+      context: .
+      dockerfile: infra/dockerfiles/migrate.Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-electromon}:${POSTGRES_PASSWORD:-electromon}@postgres:5432/${POSTGRES_DB:-electromon}?schema=public
+      RUN_SEED: ${RUN_SEED:-false}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+    networks:
+      - electromon
+
+  api:
+    profiles: ["apps"]
+    build:
+      context: .
+      dockerfile: infra/dockerfiles/api.Dockerfile
+    environment:
+      <<: *api-env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/api/v1/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    volumes:
+      - api_uploads:/app/uploads
+    restart: unless-stopped
+    networks:
+      - electromon
