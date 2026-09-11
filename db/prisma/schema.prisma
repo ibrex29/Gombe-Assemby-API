@@ -122,6 +122,18 @@ enum FieldReportStatus {
   RESOLVED
 }
 
+enum FieldReportSource {
+  DASHBOARD
+  WHATSAPP
+}
+
+enum WhatsAppInboundStatus {
+  RECEIVED
+  IGNORED
+  PROCESSED
+  FAILED
+}
+
 enum PollingUnitStrength {
   STRONG
   SWING
@@ -716,6 +728,9 @@ model FieldReport {
   originalTranscript String?
   isUrgent      Boolean           @default(false)
   status        FieldReportStatus @default(OPEN)
+  source           FieldReportSource @default(DASHBOARD)
+  /// WhatsApp `wamid` (or other channel id). Null for dashboard reports.
+  sourceMessageId  String?
   wardComment   String?
   handledById   String?
   handledAt     DateTime?
@@ -727,15 +742,38 @@ model FieldReport {
   handledBy   User?        @relation("FieldReportHandler", fields: [handledById], references: [id])
   ward        Ward?        @relation(fields: [wardId], references: [id])
   pollingUnit PollingUnit? @relation(fields: [pollingUnitId], references: [id])
+  whatsappInbounds WhatsAppInboundMessage[]
 
+  @@unique([sourceMessageId])
   @@index([campaignId])
   @@index([type])
   @@index([incidentType])
   @@index([incidentSeverity])
   @@index([status])
+  @@index([source])
   @@index([wardId])
   @@index([createdAt])
   @@map("field_reports")
+}
+
+/// Raw Meta Cloud API inbound, kept for election-day replay and dedupe.
+model WhatsAppInboundMessage {
+  id            String                @id @default(cuid())
+  wamid         String                @unique
+  fromPhone     String
+  payload       Json
+  status        WhatsAppInboundStatus @default(RECEIVED)
+  ignoreReason  String?
+  fieldReportId String?
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+
+  fieldReport FieldReport? @relation(fields: [fieldReportId], references: [id], onDelete: SetNull)
+
+  @@index([fromPhone])
+  @@index([status])
+  @@index([createdAt])
+  @@map("whatsapp_inbound_messages")
 }
 
 // ─── Election Day ────────────────────────────────────────────────────────────

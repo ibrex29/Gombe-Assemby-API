@@ -127,13 +127,36 @@ describe('UploadsService', () => {
   it('rejects files larger than 5 MB', async () => {
     const service = new UploadsService();
     const file = multerFile({
-      mimetype: 'audio/m4a',
+      mimetype: 'image/jpeg',
       buffer: Buffer.alloc(5 * 1024 * 1024 + 1),
       size: 5 * 1024 * 1024 + 1,
     });
 
     await expect(service.saveFile(file)).rejects.toBeInstanceOf(BadRequestException);
     expect(uploadMock).not.toHaveBeenCalled();
+    expect(uploadStreamMock).not.toHaveBeenCalled();
+  });
+
+  it('accepts WhatsApp ogg/opus voice notes', async () => {
+    const service = new UploadsService();
+    const result = await service.saveBuffer({
+      buffer: Buffer.from('fake-ogg'),
+      mimeType: 'audio/ogg; codecs=opus',
+      originalname: 'voice.ogg',
+    });
+
+    expect(uploadStreamMock).toHaveBeenCalled();
+    expect(result.mimeType).toBe('audio/ogg');
+  });
+
+  it('rejects audio larger than 16 MB', async () => {
+    const service = new UploadsService();
+    await expect(
+      service.saveBuffer({
+        buffer: Buffer.alloc(16 * 1024 * 1024 + 1),
+        mimeType: 'audio/ogg',
+      }),
+    ).rejects.toBeInstanceOf(BadRequestException);
     expect(uploadStreamMock).not.toHaveBeenCalled();
   });
 });

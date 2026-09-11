@@ -25,7 +25,10 @@ function lanOriginUrls(port: number): string[] {
 }
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule, { bufferLogs: true });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    bufferLogs: true,
+    rawBody: true,
+  });
   app.useLogger(app.get(Logger));
 
   app.useStaticAssets(join(process.cwd(), 'uploads'), { prefix: '/uploads/' });

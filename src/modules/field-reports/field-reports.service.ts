@@ -5,7 +5,7 @@ import {
   type TriageDirtyPayload,
 } from '../ai/triage/triage.events';
 import { Prisma } from '@electromon/db';
-import { FieldReportStatus, FieldReportType, IncidentType, IncidentSeverity, isIncidentSeverityUrgent, JwtPayload, NotificationType, PulseSource, pulsePatchFromIncident } from '@electromon/shared';
+import { FieldReportSource, FieldReportStatus, FieldReportType, IncidentType, IncidentSeverity, isIncidentSeverityUrgent, JwtPayload, NotificationType, PulseSource, pulsePatchFromIncident } from '@electromon/shared';
 import { PrismaService } from '../../common/prisma/prisma.service';
 import {
   getLgaScopeId,
@@ -33,6 +33,13 @@ import { SituationRoomService } from '../situation-room/situation-room.service';
 
 const VOICE_REPORT_TITLE = 'Voice report';
 const VOICE_REPORT_PROCESSING = 'Voice report — processing…';
+const WHATSAPP_REPORT_TITLE = 'WhatsApp report';
+const WHATSAPP_REPORT_PROCESSING = 'WhatsApp report — processing…';
+
+export type FieldReportOrigin = {
+  source?: FieldReportSource;
+  sourceMessageId?: string;
+};
 
 @Injectable()
 export class FieldReportsService {
@@ -175,27 +182,37 @@ export class FieldReportsService {
     });
   }
 
-  async create(user: JwtPayload, dto: CreateFieldReportDto) {
+  async create(user: JwtPayload, dto: CreateFieldReportDto, origin?: FieldReportOrigin) {
     await this.assertCampaignAccess(user.sub, dto.campaignId);
 
     const isIncident =
       dto.type === FieldReportType.INCIDENT || dto.type === FieldReportType.SECURITY_CONCERN;
     const isVoiceReport = Boolean(dto.audioUrl?.trim());
+    const source = origin?.source ?? FieldReportSource.DASHBOARD;
+    const isWhatsApp = source === FieldReportSource.WHATSAPP;
+    const isDeferredClassify = isVoiceReport || isWhatsApp;
 
-    if (isIncident && !isVoiceReport && !dto.incidentType) {
+    if (isIncident && !isDeferredClassify && !dto.incidentType) {
       throw new BadRequestException('incidentType is required for incident reports');
     }
-    if (isIncident && !isVoiceReport && !dto.incidentSeverity) {
+    if (isIncident && !isDeferredClassify && !dto.incidentSeverity) {
       throw new BadRequestException('incidentSeverity is required for incident reports');
     }
 
     const incidentType =
-      dto.incidentType ?? (isVoiceReport ? IncidentType.OTHERS : undefined);
+      dto.incidentType ?? (isDeferredClassify ? IncidentType.OTHERS : undefined);
     const incidentSeverity =
-      dto.incidentSeverity ?? (isVoiceReport ? IncidentSeverity.MEDIUM : undefined);
-    const title = dto.title?.trim() || (isVoiceReport ? VOICE_REPORT_TITLE : '');
+      dto.incidentSeverity ?? (isDeferredClassify ? IncidentSeverity.MEDIUM : undefined);
+    const title =
+      dto.title?.trim() ||
+      (isVoiceReport ? VOICE_REPORT_TITLE : isWhatsApp ? WHATSAPP_REPORT_TITLE : '');
     const description =
-      dto.description?.trim() || (isVoiceReport ? VOICE_REPORT_PROCESSING : '');
+      dto.description?.trim() ||
+      (isVoiceReport
+        ? VOICE_REPORT_PROCESSING
+        : isWhatsApp
+          ? WHATSAPP_REPORT_PROCESSING
+          : '');
 
     if (!title) {
       throw new BadRequestException('title is required');
@@ -280,6 +297,8 @@ export class FieldReportsService {
         isUrgent,
         photoUrls: dto.photoUrls ?? [],
         audioUrl: dto.audioUrl?.trim() || null,
+        source,
+        sourceMessageId: origin?.sourceMessageId ?? null,
         status: initialStatus,
         ...(initialStatus === FieldReportStatus.ESCALATED
           ? { handledById: user.sub, handledAt: new Date() }

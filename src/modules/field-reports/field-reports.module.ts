@@ -8,5 +8,6 @@ import { SituationRoomModule } from '../situation-room/situation-room.module';
   imports: [SituationRoomModule],
   controllers: [FieldReportsController],
   providers: [FieldReportsService, VoiceIncidentWorker],
+  exports: [FieldReportsService],
 })
 export class FieldReportsModule {}

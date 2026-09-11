@@ -234,6 +234,16 @@ State → SenatorialDistrict → LGA → Ward → PollingUnit
 | GET | `/field-reports` | List reports |
 | POST | `/field-reports` | Submit report |
 
+## WhatsApp (public)
+
+Meta Cloud API incident intake. HMAC on POST. See [WHATSAPP.md](./WHATSAPP.md).
+Credentials stay unset on the Assembly droplet; the Governorship API is the live webhook.
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/whatsapp/webhook` | Hub challenge |
+| POST | `/whatsapp/webhook` | Inbound messages |
+
 ---
 
 ## Analytics

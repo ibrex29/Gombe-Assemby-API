@@ -5,7 +5,6 @@ import { existsSync } from 'fs';
 import { basename, join } from 'path';
 import {
   IncidentSeverity,
-  IncidentType,
   isIncidentSeverityUrgent,
 } from '@electromon/shared';
 import { PrismaService } from '../../common/prisma/prisma.service';
@@ -14,10 +13,8 @@ import {
   TRIAGE_DIRTY_EVENT,
   type TriageDirtyPayload,
 } from '../ai/triage/triage.events';
-import {
-  INCIDENT_TYPE_TITLES,
-  parseVoiceIncidentJson,
-} from './voice-incident-parse';
+import { INCIDENT_TYPE_TITLES } from './voice-incident-parse';
+import { classifyIncidentNarrative } from './incident-classify';
 import {
   VOICE_INCIDENT_PROCESS_EVENT,
   type VoiceIncidentProcessJob,
@@ -136,44 +133,7 @@ export class VoiceIncidentWorker implements OnModuleInit {
       format: audio.format,
     });
 
-    const incidentTypes = Object.values(IncidentType).join(', ');
-    const severities = Object.values(IncidentSeverity).join(', ');
-
-    const system = `You normalize Nigerian election-day incident voice transcripts for polling unit agents.
-
-The transcript may be in English, Hausa, Igbo, Yoruba, or Nigerian Pidgin.
-
-Return JSON only in this exact shape:
-{
-  "language": "ha|ig|yo|pcm|en|other",
-  "originalTranscript": "the transcript as spoken, lightly cleaned",
-  "englishSummary": "One or two clear English sentences for senior officers who will not listen to audio.",
-  "incidentType": "<one of: ${incidentTypes}>",
-  "incidentSeverity": "<one of: ${severities}>"
-}
-
-Classify incidentType from what happened (violence, ballot snatching, vote buying, intimidation, BVAS issues, etc.).
-Use CRITICAL or HIGH only for immediate physical danger or ballot box snatching in progress.
-Never invent details not present in the transcript.`;
-
-    const completion = await this.llm.complete('assistant', {
-      messages: [
-        { role: 'system', content: system },
-        {
-          role: 'user',
-          content: `Transcribe and classify this incident voice report:\n\n${stt.text}`,
-        },
-      ],
-      temperature: 0,
-      maxTokens: 800,
-      jsonResponse: true,
-    });
-
-    if (!completion.content?.trim()) {
-      return { ok: false as const, error: 'AI returned an empty voice report read' };
-    }
-
-    const parsed = parseVoiceIncidentJson(completion.content);
+    const parsed = await classifyIncidentNarrative(this.llm, stt.text);
     if (!parsed.ok) return parsed;
 
     return {

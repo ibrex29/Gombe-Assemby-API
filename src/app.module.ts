@@ -31,6 +31,7 @@ import { VolunteersModule } from './modules/volunteers/volunteers.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AiModule } from './modules/ai/ai.module';
 import { IrevModule } from './modules/irev/irev.module';
+import { WhatsAppModule } from './modules/whatsapp/whatsapp.module';
 import { DeploymentScopeModule } from './common/deployment-scope/deployment-scope.module';
 import { ContestModule } from './common/contest/contest.module';
 
@@ -65,6 +66,7 @@ import { ContestModule } from './common/contest/contest.module';
     AnalyticsModule,
     AiModule,
     IrevModule,
+    WhatsAppModule,
     HealthModule,
   ],
   controllers: [MetricsController],

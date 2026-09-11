@@ -15,6 +15,7 @@ This repo is the **NestJS backend** for Electromon. The dashboard lives in a sep
 | [IREV.md](./IREV.md) | INEC IReV comparison: portal stats, PU verification, command center |
 | [AI-ASSISTANT.md](./AI-ASSISTANT.md) | Grounded AI Q&A: SQL sandbox, RLS, grounding check |
 | [AI-SOCIAL.md](./AI-SOCIAL.md) | Social listening ingest, sentiment, and the fetcher seam |
+| [WHATSAPP.md](./WHATSAPP.md) | WhatsApp Cloud API incident intake |
 | [TESTING.md](./TESTING.md) | Unit and e2e tests |
 | [PHASE-0.md](./PHASE-0.md) | Phase 0 foundation (historical) |
 

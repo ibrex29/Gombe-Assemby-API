@@ -24,7 +24,8 @@ const ALLOWED_MIME = new Set([
   'audio/ogg',
   'audio/wav',
 ]);
-const MAX_BYTES = 5 * 1024 * 1024;
+const IMAGE_MAX_BYTES = 5 * 1024 * 1024;
+const AUDIO_MAX_BYTES = 16 * 1024 * 1024;
 
 export type UploadedFileResult = {
   filename: string;
@@ -33,6 +34,13 @@ export type UploadedFileResult = {
   size: number;
   provider: 'cloudinary' | 'local';
 };
+
+/** Strip WhatsApp codec parameters and map opus to ogg. */
+export function normalizeUploadMime(raw: string): string {
+  const base = raw.split(';')[0].trim().toLowerCase();
+  if (base === 'audio/opus') return 'audio/ogg';
+  return base;
+}
 
 @Injectable()
 export class UploadsService {
@@ -100,17 +108,42 @@ export class UploadsService {
     return this.saveToDisk(file, req);
   }
 
+  async saveBuffer(input: {
+    buffer: Buffer;
+    mimeType: string;
+    originalname?: string;
+  }): Promise<UploadedFileResult> {
+    const mimeType = normalizeUploadMime(input.mimeType);
+    return this.saveFile({
+      fieldname: 'file',
+      originalname: input.originalname ?? `upload${extensionForMime(mimeType)}`,
+      encoding: '7bit',
+      mimetype: mimeType,
+      size: input.buffer.length,
+      buffer: input.buffer,
+      stream: null as never,
+      destination: '',
+      filename: '',
+      path: '',
+    });
+  }
+
   private validateFile(file: Express.Multer.File) {
     if (!file) {
       throw new BadRequestException('No file uploaded');
     }
+    file.mimetype = normalizeUploadMime(file.mimetype);
     if (!ALLOWED_MIME.has(file.mimetype)) {
       throw new BadRequestException(
         'Only JPEG, PNG, WebP, GIF, PDF, and common audio formats are allowed',
       );
     }
-    if (file.size > MAX_BYTES) {
-      throw new BadRequestException('File must be 5 MB or smaller');
+    const isAudio = file.mimetype.startsWith('audio/');
+    const maxBytes = isAudio ? AUDIO_MAX_BYTES : IMAGE_MAX_BYTES;
+    if (file.size > maxBytes) {
+      throw new BadRequestException(
+        isAudio ? 'Audio must be 16 MB or smaller' : 'File must be 5 MB or smaller',
+      );
     }
   }
 
@@ -262,4 +295,13 @@ function audioExtension(mime: string): string {
       'audio/wav': '.wav',
     }[mime] ?? '.m4a'
   );
+}
+
+function extensionForMime(mime: string): string {
+  if (mime === 'application/pdf') return '.pdf';
+  if (mime.startsWith('audio/')) return audioExtension(mime);
+  if (mime === 'image/png') return '.png';
+  if (mime === 'image/webp') return '.webp';
+  if (mime === 'image/gif') return '.gif';
+  return '.jpg';
 }

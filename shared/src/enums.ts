@@ -105,6 +105,18 @@ export enum FieldReportStatus {
   RESOLVED = 'RESOLVED',
 }
 
+export enum FieldReportSource {
+  DASHBOARD = 'DASHBOARD',
+  WHATSAPP = 'WHATSAPP',
+}
+
+export enum WhatsAppInboundStatus {
+  RECEIVED = 'RECEIVED',
+  IGNORED = 'IGNORED',
+  PROCESSED = 'PROCESSED',
+  FAILED = 'FAILED',
+}
+
 export enum PollingUnitStrength {
   STRONG = 'STRONG',
   SWING = 'SWING',
