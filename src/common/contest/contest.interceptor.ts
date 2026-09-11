@@ -25,7 +25,8 @@ export class ContestInterceptor implements NestInterceptor {
             contest.type === 'ASSEMBLY' && seatRaw
               ? await this.contests.resolveSeat(campaignId, seatRaw)
               : null;
-          return lastValueFrom(this.contests.run(contest, seat, () => next.handle()));
+          const explicit = Boolean(typeof raw === 'string' ? raw.trim() : raw);
+          return lastValueFrom(this.contests.run(contest, seat, () => next.handle(), explicit));
         })
         .catch((err: unknown) => {
           if (err instanceof NotFoundException) throw err;

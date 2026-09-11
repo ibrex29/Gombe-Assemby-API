@@ -19,6 +19,24 @@ export type SeedOutcome =
   | 'LANDSLIDE_WIN'
   | 'LANDSLIDE_LOSS';
 
+function collationWhere(
+  campaignId: string,
+  contestId: string,
+  level: CollationLevel,
+  scopeType: ScopeType,
+  scopeId: string,
+) {
+  return {
+    campaignId_contestId_level_scopeType_scopeId: {
+      campaignId,
+      contestId,
+      level,
+      scopeType,
+      scopeId,
+    },
+  };
+}
+
 function sumPartyMaps(values: PartyTotals[]): PartyTotals {
   if (values.length === 0) return {};
   const codes = [...new Set(values.flatMap((entry) => Object.keys(entry)))];
@@ -355,6 +373,7 @@ async function writeSeedActionLog(
 export async function seedPollingUnitResult(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   input: SeedPuResultInput,
 ) {
   const partyResults =
@@ -394,17 +413,17 @@ export async function seedPollingUnitResult(
   };
 
   const result = await prisma.collationResult.upsert({
-    where: {
-      campaignId_level_scopeType_scopeId: {
-        campaignId,
-        level: CollationLevel.POLLING_UNIT,
-        scopeType: ScopeType.POLLING_UNIT,
-        scopeId: input.puId,
-      },
-    },
+    where: collationWhere(
+      campaignId,
+      contestId,
+      CollationLevel.POLLING_UNIT,
+      ScopeType.POLLING_UNIT,
+      input.puId,
+    ),
     update: payload,
     create: {
       campaignId,
+      contestId,
       level: CollationLevel.POLLING_UNIT,
       scopeType: ScopeType.POLLING_UNIT,
       scopeId: input.puId,
@@ -418,6 +437,7 @@ export async function seedPollingUnitResult(
 export async function seedWardRollupFromPus(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   wardId: string,
   partyCodes: string[],
   options: {
@@ -441,6 +461,7 @@ export async function seedWardRollupFromPus(
   const puResults = await prisma.collationResult.findMany({
     where: {
       campaignId,
+      contestId,
       level: CollationLevel.POLLING_UNIT,
       scopeId: { in: pus.map((pu) => pu.id) },
       ...(approvedOnly ? { status: CollationResultStatus.APPROVED } : {}),
@@ -490,17 +511,17 @@ export async function seedWardRollupFromPus(
   };
 
   const result = await prisma.collationResult.upsert({
-    where: {
-      campaignId_level_scopeType_scopeId: {
-        campaignId,
-        level: CollationLevel.WARD,
-        scopeType: ScopeType.WARD,
-        scopeId: wardId,
-      },
-    },
+    where: collationWhere(
+      campaignId,
+      contestId,
+      CollationLevel.WARD,
+      ScopeType.WARD,
+      wardId,
+    ),
     update: payload,
     create: {
       campaignId,
+      contestId,
       level: CollationLevel.WARD,
       scopeType: ScopeType.WARD,
       scopeId: wardId,
@@ -514,6 +535,7 @@ export async function seedWardRollupFromPus(
 export async function seedLgaRollupFromWards(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   lgaId: string,
   partyCodes: string[],
   options: {
@@ -532,6 +554,7 @@ export async function seedLgaRollupFromWards(
   const wardResults = await prisma.collationResult.findMany({
     where: {
       campaignId,
+      contestId,
       level: CollationLevel.WARD,
       scopeId: { in: wards.map((ward) => ward.id) },
       ...(approvedOnly ? { status: CollationResultStatus.APPROVED } : {}),
@@ -553,17 +576,17 @@ export async function seedLgaRollupFromWards(
   }
 
   await prisma.collationResult.upsert({
-    where: {
-      campaignId_level_scopeType_scopeId: {
-        campaignId,
-        level: CollationLevel.LGA,
-        scopeType: ScopeType.LGA,
-        scopeId: lgaId,
-      },
-    },
+    where: collationWhere(
+      campaignId,
+      contestId,
+      CollationLevel.LGA,
+      ScopeType.LGA,
+      lgaId,
+    ),
     update: { partyResults, votesCast, status: status as CollationResultStatus },
     create: {
       campaignId,
+      contestId,
       level: CollationLevel.LGA,
       scopeType: ScopeType.LGA,
       scopeId: lgaId,
@@ -593,6 +616,7 @@ export async function seedLgaRollupFromWards(
 export async function seedLgaCollationTree(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   lgaId: string,
   partyCodes: string[],
   actors: ActorIds = {},
@@ -655,7 +679,7 @@ export async function seedLgaCollationTree(
         puOutcome = 'TIE';
       }
 
-      const seeded = await seedPollingUnitResult(prisma, campaignId, {
+      const seeded = await seedPollingUnitResult(prisma, campaignId, contestId, {
         puId: pu.id,
         index: puIndex,
         partyCodes,
@@ -739,7 +763,7 @@ export async function seedLgaCollationTree(
       wardStatus = 'APPROVED';
     }
 
-    const wardRollup = await seedWardRollupFromPus(prisma, campaignId, ward.id, partyCodes, {
+    const wardRollup = await seedWardRollupFromPus(prisma, campaignId, contestId, ward.id, partyCodes, {
       status: wardStatus,
       approvedOnly: true,
       submittedById: wardOfficerId,
@@ -786,7 +810,7 @@ export async function seedLgaCollationTree(
   }
 
   // LGA rollup from ward-approved PUs — live snapshot, no LGA/state approval
-  await seedLgaRollupFromWards(prisma, campaignId, lgaId, partyCodes, {
+  await seedLgaRollupFromWards(prisma, campaignId, contestId, lgaId, partyCodes, {
     status: 'APPROVED',
     approvedOnly: true,
   });
@@ -803,11 +827,12 @@ export async function seedLgaCollationTree(
 export async function seedHadejiaCollationResults(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   hadejiaLgaId: string,
   partyCodes: string[],
   actors: ActorIds = {},
 ) {
-  return seedLgaCollationTree(prisma, campaignId, hadejiaLgaId, partyCodes, actors);
+  return seedLgaCollationTree(prisma, campaignId, contestId, hadejiaLgaId, partyCodes, actors);
 }
 
 function resolvePuStatus(input: {
@@ -849,6 +874,7 @@ function resolvePuStatus(input: {
 export async function seedStateLgaSummaries(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   stateId: string,
   partyCodes: string[],
 ) {
@@ -869,6 +895,7 @@ export async function seedStateLgaSummaries(
     const existing = await prisma.collationResult.findFirst({
       where: {
         campaignId,
+        contestId,
         level: CollationLevel.LGA,
         scopeId: lga.id,
       },
@@ -902,6 +929,7 @@ export async function seedStateLgaSummaries(
       await prisma.collationResult.create({
         data: {
           campaignId,
+          contestId,
           level: CollationLevel.LGA,
           scopeType: ScopeType.LGA,
           scopeId: lga.id,
@@ -932,6 +960,7 @@ export async function seedStateLgaSummaries(
 export async function seedCompetitiveLgaTrees(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   stateId: string,
   partyCodes: string[],
   actors: ActorIds = {},
@@ -994,7 +1023,7 @@ export async function seedCompetitiveLgaTrees(
             ? 'SUBMITTED'
             : 'APPROVED';
 
-        await seedPollingUnitResult(prisma, campaignId, {
+        await seedPollingUnitResult(prisma, campaignId, contestId, {
           puId: pu.id,
           index: puIndex,
           partyCodes,
@@ -1012,7 +1041,7 @@ export async function seedCompetitiveLgaTrees(
 
       const wardStatus: RollupStatus =
         wardIndex % 6 === 1 ? 'SUBMITTED' : 'APPROVED';
-      await seedWardRollupFromPus(prisma, campaignId, ward.id, partyCodes, {
+      await seedWardRollupFromPus(prisma, campaignId, contestId, ward.id, partyCodes, {
         status: wardStatus,
         approvedOnly: true,
         submittedById: actors.wardOfficerId,
@@ -1021,7 +1050,7 @@ export async function seedCompetitiveLgaTrees(
       seededWards += 1;
     }
 
-    await seedLgaRollupFromWards(prisma, campaignId, lga.id, partyCodes, {
+    await seedLgaRollupFromWards(prisma, campaignId, contestId, lga.id, partyCodes, {
       status: 'APPROVED',
       approvedOnly: true,
     });
@@ -1043,6 +1072,7 @@ function scalePartyResults(results: PartyTotals, factor: number): PartyTotals {
 export async function seedNationalSummaries(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   partyCodes: string[],
   stateOutcomes: Array<{ stateId: string; name: string; outcome: SeedOutcome }>,
 ) {
@@ -1058,6 +1088,7 @@ export async function seedNationalSummaries(
       await prisma.collationResult.deleteMany({
         where: {
           campaignId,
+          contestId,
           OR: [
             { level: CollationLevel.STATE, scopeId: row.stateId },
             { level: CollationLevel.LGA, scopeId: { in: lgas.map((l) => l.id) } },
@@ -1084,14 +1115,13 @@ export async function seedNationalSummaries(
     }
 
     await prisma.collationResult.upsert({
-      where: {
-        campaignId_level_scopeType_scopeId: {
-          campaignId,
-          level: CollationLevel.STATE,
-          scopeType: ScopeType.STATE,
-          scopeId: row.stateId,
-        },
-      },
+      where: collationWhere(
+        campaignId,
+        contestId,
+        CollationLevel.STATE,
+        ScopeType.STATE,
+        row.stateId,
+      ),
       update: {
         partyResults: stateParties,
         votesCast: stateVotes,
@@ -1099,6 +1129,7 @@ export async function seedNationalSummaries(
       },
       create: {
         campaignId,
+        contestId,
         level: CollationLevel.STATE,
         scopeType: ScopeType.STATE,
         scopeId: row.stateId,
@@ -1136,14 +1167,13 @@ export async function seedNationalSummaries(
       );
       const lgaVotes = Object.values(lgaParties).reduce((sum, n) => sum + n, 0);
       await prisma.collationResult.upsert({
-        where: {
-          campaignId_level_scopeType_scopeId: {
-            campaignId,
-            level: CollationLevel.LGA,
-            scopeType: ScopeType.LGA,
-            scopeId: lga.id,
-          },
-        },
+        where: collationWhere(
+          campaignId,
+          contestId,
+          CollationLevel.LGA,
+          ScopeType.LGA,
+          lga.id,
+        ),
         update: {
           partyResults: lgaParties,
           votesCast: lgaVotes,
@@ -1154,6 +1184,7 @@ export async function seedNationalSummaries(
         },
         create: {
           campaignId,
+          contestId,
           level: CollationLevel.LGA,
           scopeType: ScopeType.LGA,
           scopeId: lga.id,
@@ -1170,14 +1201,13 @@ export async function seedNationalSummaries(
 
   const nationalVotes = Object.values(nationalTotals).reduce((sum, n) => sum + n, 0);
   await prisma.collationResult.upsert({
-    where: {
-      campaignId_level_scopeType_scopeId: {
-        campaignId,
-        level: CollationLevel.NATIONAL,
-        scopeType: ScopeType.NATIONAL,
-        scopeId: 'NGA',
-      },
-    },
+    where: collationWhere(
+      campaignId,
+      contestId,
+      CollationLevel.NATIONAL,
+      ScopeType.NATIONAL,
+      'NGA',
+    ),
     update: {
       partyResults: nationalTotals,
       votesCast: nationalVotes,
@@ -1185,6 +1215,7 @@ export async function seedNationalSummaries(
     },
     create: {
       campaignId,
+      contestId,
       level: CollationLevel.NATIONAL,
       scopeType: ScopeType.NATIONAL,
       scopeId: 'NGA',

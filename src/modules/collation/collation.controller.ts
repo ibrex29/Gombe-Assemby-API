@@ -388,7 +388,11 @@ export class CollationController {
 
   @Get('ward/pu-submissions')
   @Roles(CampaignRole.WARD_RA_OFFICER)
-  @ApiOperation({ summary: 'Paginated PU collation submissions in the ward officer scope' })
+  @ApiOperation({
+    summary: 'Paginated PU collation submissions in the ward officer scope',
+    description:
+      'Omit `contest` to receive both Governorship and House of Assembly sheets grouped per polling unit. Pass `contest` to keep the single-contest list used by mobile.',
+  })
   @ApiQuery({ name: 'page', required: false, type: Number })
   @ApiQuery({ name: 'limit', required: false, type: Number })
   @ApiQuery({ name: 'search', required: false, type: String })
@@ -397,18 +401,21 @@ export class CollationController {
     required: false,
     enum: ['DRAFT', 'SUBMITTED', 'APPROVED', 'REJECTED', 'NOT_STARTED'],
   })
+  @ApiQuery({ name: 'contest', required: false, type: String })
   listWardPuSubmissions(
     @CurrentUser() user: JwtPayload,
     @Query('page') page?: string,
     @Query('limit') limit?: string,
     @Query('search') search?: string,
     @Query('status') status?: CollationResultStatus | 'NOT_STARTED',
+    @Query('contest') contest?: string,
   ) {
     return this.collationService.listWardPuSubmissions(user, {
       page: page ? parseInt(page, 10) : undefined,
       limit: limit ? parseInt(limit, 10) : undefined,
       search,
       status,
+      allContests: !contest?.trim(),
     });
   }
 

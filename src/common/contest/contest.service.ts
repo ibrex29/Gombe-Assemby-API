@@ -25,7 +25,11 @@ export type ResolvedSeat = {
   irevElectionId: string | null;
 };
 
-type ContestStore = { contest: ResolvedContest; seat: ResolvedSeat | null };
+type ContestStore = {
+  contest: ResolvedContest;
+  seat: ResolvedSeat | null;
+  explicit: boolean;
+};
 
 const FALLBACK_GOV_ID = '6407d9bfce35006e92156f2e';
 
@@ -35,11 +39,16 @@ export class ContestService {
 
   constructor(private prisma: PrismaService) {}
 
-  run<T>(contest: ResolvedContest, seatOrFn: ResolvedSeat | null | (() => T), fn?: () => T): T {
+  run<T>(
+    contest: ResolvedContest,
+    seatOrFn: ResolvedSeat | null | (() => T),
+    fn?: () => T,
+    explicit = false,
+  ): T {
     if (typeof seatOrFn === 'function') {
-      return this.als.run({ contest, seat: null }, seatOrFn);
+      return this.als.run({ contest, seat: null, explicit }, seatOrFn);
     }
-    return this.als.run({ contest, seat: seatOrFn }, fn!);
+    return this.als.run({ contest, seat: seatOrFn, explicit }, fn!);
   }
 
   current(): ResolvedContest | null {
@@ -48,6 +57,11 @@ export class ContestService {
 
   seat(): ResolvedSeat | null {
     return this.als.getStore()?.seat ?? null;
+  }
+
+  /** True when the caller passed `contest` / `contestId` on this request. */
+  explicit(): boolean {
+    return this.als.getStore()?.explicit ?? false;
   }
 
   id(): string {

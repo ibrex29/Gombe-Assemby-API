@@ -135,4 +135,19 @@ describe('ContestService seats', () => {
     const seen = service.run(contest, seat, () => service.seat());
     expect(seen?.code).toBe('DEBA');
   });
+
+  it('records whether the caller passed an explicit contest', () => {
+    const contest = {
+      id: 'c-gov',
+      campaignId: 'campaign-1',
+      type: ContestType.GOVERNORSHIP,
+      slug: 'governorship',
+      label: 'Governorship',
+      irevElectionId: null,
+      irevElectionLabel: null,
+      isDefault: true,
+    };
+    expect(service.run(contest, () => service.explicit())).toBe(false);
+    expect(service.run(contest, null, () => service.explicit(), true)).toBe(true);
+  });
 });

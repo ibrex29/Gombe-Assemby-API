@@ -108,6 +108,7 @@ export interface MatureDemoActors {
 export async function seedMatureNationalDemo(
   prisma: PrismaClient,
   campaignId: string,
+  contestId: string,
   partyCodes: string[],
   actors: MatureDemoActors,
 ) {
@@ -172,7 +173,7 @@ export async function seedMatureNationalDemo(
           if (puPos % 7 === 0) puOutcome = 'TIE';
           else if (puPos % 9 === 0) puOutcome = wardOutcome.includes('WIN') ? 'LOSS' : 'WIN';
 
-          await seedPollingUnitResult(prisma, campaignId, {
+          await seedPollingUnitResult(prisma, campaignId, contestId, {
             puId: pu.id,
             index: puIndex,
             partyCodes,
@@ -195,7 +196,7 @@ export async function seedMatureNationalDemo(
         const wardStatus =
           wardIndex % 5 === 1 ? ('SUBMITTED' as const) : wardIndex % 7 === 2 ? ('REJECTED' as const) : ('APPROVED' as const);
 
-        await seedWardRollupFromPus(prisma, campaignId, ward.id, partyCodes, {
+        await seedWardRollupFromPus(prisma, campaignId, contestId, ward.id, partyCodes, {
           status: wardStatus,
           approvedOnly: true,
           submittedById: actors.wardOfficerId,
@@ -204,7 +205,7 @@ export async function seedMatureNationalDemo(
         seededWards += 1;
       }
 
-      await seedLgaRollupFromWards(prisma, campaignId, lga.id, partyCodes, {
+      await seedLgaRollupFromWards(prisma, campaignId, contestId, lga.id, partyCodes, {
         status: lgaIndex % 4 === 0 ? 'SUBMITTED' : 'APPROVED',
         approvedOnly: true,
       });

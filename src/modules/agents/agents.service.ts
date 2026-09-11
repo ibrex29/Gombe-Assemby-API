@@ -37,6 +37,29 @@ import {
 export class AgentsService {
   constructor(private prisma: PrismaService) {}
 
+  private uniqueConstraintFields(error: unknown): string[] {
+    if (typeof error !== 'object' || error === null || !('code' in error)) return [];
+    if ((error as { code?: string }).code !== 'P2002') return [];
+    const target = (error as { meta?: { target?: unknown } }).meta?.target;
+    if (Array.isArray(target)) return target.map((field) => String(field).toLowerCase());
+    if (typeof target === 'string') return [target.toLowerCase()];
+    return [];
+  }
+
+  private rethrowIdentityClash(error: unknown): never {
+    const fields = this.uniqueConstraintFields(error);
+    if (fields.length) {
+      if (fields.some((field) => field.includes('email'))) {
+        throw new ConflictException('Email already in use');
+      }
+      if (fields.some((field) => field.includes('phone'))) {
+        throw new ConflictException('Phone number already in use');
+      }
+      throw new ConflictException('That account already exists');
+    }
+    throw error;
+  }
+
   private assertViewer(user: JwtPayload) {
     const allowed = new Set([
       CampaignRole.CAMPAIGN_DIRECTOR,
@@ -1228,50 +1251,50 @@ export class AgentsService {
     const passwordHash = await bcrypt.hash(dto.password, 12);
 
     const candidates = phoneLookupCandidates(dto.phoneNumber);
-    let existing = await this.prisma.user.findFirst({
-      where: {
-        OR: [
-          { email },
-          ...(candidates.length ? [{ phoneNumber: { in: candidates } }] : []),
-        ],
-      },
-    });
+    const [byEmail, byPhone] = await Promise.all([
+      this.prisma.user.findUnique({ where: { email } }),
+      candidates.length
+        ? this.prisma.user.findFirst({ where: { phoneNumber: { in: candidates } } })
+        : Promise.resolve(null),
+    ]);
 
-    if (existing) {
-      const otherPhone = await this.prisma.user.findFirst({
-        where: {
-          id: { not: existing.id },
-          phoneNumber: { in: candidates },
-        },
-      });
-      if (otherPhone) {
-        throw new ConflictException('Phone number already in use');
-      }
+    if (byEmail && byPhone && byEmail.id !== byPhone.id) {
+      throw new ConflictException(
+        dto.email
+          ? 'Email and phone belong to different accounts'
+          : 'Phone number already in use',
+      );
     }
 
-    if (!existing) {
-      existing = await this.prisma.user.create({
-        data: {
-          email,
-          phoneNumber,
-          passwordHash,
-          firstName: dto.firstName.trim(),
-          lastName: dto.lastName.trim(),
-          isActive: true,
-        },
-      });
-    } else {
-      existing = await this.prisma.user.update({
-        where: { id: existing.id },
-        data: {
-          firstName: dto.firstName.trim(),
-          lastName: dto.lastName.trim(),
-          phoneNumber,
-          passwordHash,
-          isActive: true,
-          ...(dto.email ? { email } : {}),
-        },
-      });
+    let existing = byPhone ?? byEmail;
+
+    try {
+      if (!existing) {
+        existing = await this.prisma.user.create({
+          data: {
+            email,
+            phoneNumber,
+            passwordHash,
+            firstName: dto.firstName.trim(),
+            lastName: dto.lastName.trim(),
+            isActive: true,
+          },
+        });
+      } else {
+        existing = await this.prisma.user.update({
+          where: { id: existing.id },
+          data: {
+            firstName: dto.firstName.trim(),
+            lastName: dto.lastName.trim(),
+            phoneNumber,
+            passwordHash,
+            isActive: true,
+            ...(dto.email && existing.email !== email ? { email } : {}),
+          },
+        });
+      }
+    } catch (error) {
+      this.rethrowIdentityClash(error);
     }
 
     await this.assertPuSeatAvailable(
@@ -1366,22 +1389,34 @@ export class AgentsService {
       if (clash) throw new ConflictException('Phone number already in use');
     }
 
+    if (dto.email) {
+      const nextEmail = dto.email.trim().toLowerCase();
+      const emailClash = await this.prisma.user.findFirst({
+        where: { id: { not: membership.userId }, email: nextEmail },
+      });
+      if (emailClash) throw new ConflictException('Email already in use');
+    }
+
     const passwordHash = dto.password
       ? await bcrypt.hash(dto.password, 12)
       : undefined;
 
-    await this.prisma.user.update({
-      where: { id: membership.userId },
-      data: {
-        ...(dto.firstName ? { firstName: dto.firstName.trim() } : {}),
-        ...(dto.lastName ? { lastName: dto.lastName.trim() } : {}),
-        ...(dto.phoneNumber ? { phoneNumber } : {}),
-        ...(dto.email ? { email: dto.email.trim().toLowerCase() } : {}),
-        ...(passwordHash ? { passwordHash } : {}),
-        ...(dto.isActive === false ? { isActive: false } : {}),
-        ...(dto.isActive === true ? { isActive: true } : {}),
-      },
-    });
+    try {
+      await this.prisma.user.update({
+        where: { id: membership.userId },
+        data: {
+          ...(dto.firstName ? { firstName: dto.firstName.trim() } : {}),
+          ...(dto.lastName ? { lastName: dto.lastName.trim() } : {}),
+          ...(dto.phoneNumber ? { phoneNumber } : {}),
+          ...(dto.email ? { email: dto.email.trim().toLowerCase() } : {}),
+          ...(passwordHash ? { passwordHash } : {}),
+          ...(dto.isActive === false ? { isActive: false } : {}),
+          ...(dto.isActive === true ? { isActive: true } : {}),
+        },
+      });
+    } catch (error) {
+      this.rethrowIdentityClash(error);
+    }
 
     const updated = await this.prisma.campaignMembership.update({
       where: { id: membershipId },

@@ -10,6 +10,7 @@ import {
   VerificationStatus,
   CommitmentStatus,
   SituationStatus,
+  ContestType,
 } from '../src/generated/client';
 import { createPgAdapter } from '../src/client';
 import { seedNigeriaInecFromJayCodist } from './seed-inec-nigeria';
@@ -60,6 +61,46 @@ async function main() {
       isNational: true,
       clientPartyCode: CLIENT_PARTY_CODE,
       trackedParties: TRACKED_PARTIES,
+    },
+  });
+
+  const governorship = await prisma.contest.upsert({
+    where: { campaignId_type: { campaignId: campaign.id, type: ContestType.GOVERNORSHIP } },
+    update: {
+      slug: 'governorship',
+      label: 'Governorship',
+      isDefault: true,
+      irevElectionId: process.env.IREV_ELECTION_ID?.trim() || '6407d9bfce35006e92156f2e',
+      irevElectionLabel: process.env.IREV_ELECTION_LABEL?.trim() || 'Gombe Governorship Election',
+    },
+    create: {
+      campaignId: campaign.id,
+      type: ContestType.GOVERNORSHIP,
+      slug: 'governorship',
+      label: 'Governorship',
+      isDefault: true,
+      irevElectionId: process.env.IREV_ELECTION_ID?.trim() || '6407d9bfce35006e92156f2e',
+      irevElectionLabel: process.env.IREV_ELECTION_LABEL?.trim() || 'Gombe Governorship Election',
+    },
+  });
+  await prisma.contest.upsert({
+    where: { campaignId_type: { campaignId: campaign.id, type: ContestType.ASSEMBLY } },
+    update: {
+      slug: 'assembly',
+      label: 'State House of Assembly',
+      irevElectionId: process.env.IREV_ASSEMBLY_ELECTION_ID?.trim() || null,
+      irevElectionLabel:
+        process.env.IREV_ASSEMBLY_ELECTION_LABEL?.trim() || 'Gombe State House of Assembly Election',
+    },
+    create: {
+      campaignId: campaign.id,
+      type: ContestType.ASSEMBLY,
+      slug: 'assembly',
+      label: 'State House of Assembly',
+      isDefault: false,
+      irevElectionId: process.env.IREV_ASSEMBLY_ELECTION_ID?.trim() || null,
+      irevElectionLabel:
+        process.env.IREV_ASSEMBLY_ELECTION_LABEL?.trim() || 'Gombe State House of Assembly Election',
     },
   });
 
@@ -249,6 +290,7 @@ async function main() {
   const outcomeSummary = await seedNationalSummaries(
     prisma,
     campaign.id,
+    governorship.id,
     PARTY_CODES,
     stateOutcomes,
   );
@@ -258,7 +300,7 @@ async function main() {
   console.log(`  Campaign party: ${CLIENT_PARTY_CODE} · Tracking: ${PARTY_CODES.join(', ')}`);
 
   console.log('Seeding mature demo — PU coverage, win/loss/tie mix, incidents…');
-  const mature = await seedMatureNationalDemo(prisma, campaign.id, PARTY_CODES, {
+  const mature = await seedMatureNationalDemo(prisma, campaign.id, governorship.id, PARTY_CODES, {
     directorId: director.id,
     puOfficerId: seededOfficers['pu.agent@electromon.ng'],
     wardOfficerId: seededOfficers['ward.coordinator@electromon.ng'],
@@ -273,7 +315,7 @@ async function main() {
   );
 
   console.log(`Seeding FCT demo LGA workflow (${inec.sample.lgaName})…`);
-  await seedLgaCollationTree(prisma, campaign.id, inec.sample.lgaId, PARTY_CODES, {
+  await seedLgaCollationTree(prisma, campaign.id, governorship.id, inec.sample.lgaId, PARTY_CODES, {
     puOfficerId: seededOfficers['pu.agent@electromon.ng'],
     wardOfficerId: seededOfficers['ward.coordinator@electromon.ng'],
     lgaOfficerId: seededOfficers['lga.coordinator@electromon.ng'],
@@ -287,12 +329,12 @@ async function main() {
     });
     if (hadejia) {
       console.log('Seeding Jigawa Hadejia deep collation tree…');
-      await seedLgaCollationTree(prisma, campaign.id, hadejia.id, PARTY_CODES, {
+      await seedLgaCollationTree(prisma, campaign.id, governorship.id, hadejia.id, PARTY_CODES, {
         puOfficerId: seededOfficers['pu.agent@electromon.ng'],
         wardOfficerId: seededOfficers['ward.coordinator@electromon.ng'],
         lgaOfficerId: seededOfficers['lga.coordinator@electromon.ng'],
       });
-      await seedCompetitiveLgaTrees(prisma, campaign.id, jigawa.id, PARTY_CODES, {
+      await seedCompetitiveLgaTrees(prisma, campaign.id, governorship.id, jigawa.id, PARTY_CODES, {
         puOfficerId: seededOfficers['pu.agent@electromon.ng'],
         wardOfficerId: seededOfficers['ward.coordinator@electromon.ng'],
         lgaOfficerId: seededOfficers['lga.coordinator@electromon.ng'],

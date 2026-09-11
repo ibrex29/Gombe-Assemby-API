@@ -1,6 +1,7 @@
 import { ContestType } from '@electromon/shared';
 
 export const TEST_CONTEST_ID = 'contest-gov';
+export const TEST_ASSEMBLY_CONTEST_ID = 'contest-sha';
 
 export const testContest = {
   id: TEST_CONTEST_ID,
@@ -13,12 +14,24 @@ export const testContest = {
   isDefault: true,
 };
 
+export const testAssemblyContest = {
+  id: TEST_ASSEMBLY_CONTEST_ID,
+  campaignId: 'campaign-1',
+  type: ContestType.ASSEMBLY,
+  slug: 'assembly',
+  label: 'State House of Assembly',
+  irevElectionId: null,
+  irevElectionLabel: 'Gombe State House of Assembly Election',
+  isDefault: false,
+};
+
 export function createMockContestService() {
   return {
     id: jest.fn(() => TEST_CONTEST_ID),
     scope: jest.fn((campaignId: string) => ({ campaignId, contestId: TEST_CONTEST_ID })),
     current: jest.fn(() => testContest),
-    list: jest.fn(async () => [testContest]),
+    explicit: jest.fn(() => false),
+    list: jest.fn(async () => [testContest, testAssemblyContest]),
     resolve: jest.fn(async () => testContest),
     lookupUnlocked: jest.fn(async () => testContest),
     active: jest.fn(async () => testContest),
