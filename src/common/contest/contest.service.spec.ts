@@ -53,6 +53,64 @@ describe('ContestService seats', () => {
     );
   });
 
+  it('lookupUnlocked ignores DEFAULT_CONTEST and returns the named race', async () => {
+    const previous = process.env.DEFAULT_CONTEST;
+    process.env.DEFAULT_CONTEST = 'assembly';
+    prisma.contest.findFirst.mockResolvedValue({
+      id: 'c-gov',
+      campaignId: 'campaign-1',
+      type: ContestType.GOVERNORSHIP,
+      slug: 'governorship',
+      label: 'Governorship',
+      irevElectionId: null,
+      irevElectionLabel: null,
+      isDefault: true,
+    });
+
+    try {
+      const contest = await service.lookupUnlocked('campaign-1', 'governorship');
+      expect(contest.type).toBe(ContestType.GOVERNORSHIP);
+      expect(prisma.contest.findFirst).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({ campaignId: 'campaign-1' }),
+        }),
+      );
+    } finally {
+      if (previous === undefined) delete process.env.DEFAULT_CONTEST;
+      else process.env.DEFAULT_CONTEST = previous;
+    }
+  });
+
+  it('resolve stays locked to DEFAULT_CONTEST even when another race is requested', async () => {
+    const previous = process.env.DEFAULT_CONTEST;
+    process.env.DEFAULT_CONTEST = 'assembly';
+    prisma.contest.findFirst.mockResolvedValue({
+      id: 'c-assembly',
+      campaignId: 'campaign-1',
+      type: ContestType.ASSEMBLY,
+      slug: 'assembly',
+      label: 'State House of Assembly',
+      irevElectionId: null,
+      irevElectionLabel: null,
+      isDefault: false,
+    });
+
+    try {
+      const contest = await service.resolve('campaign-1', 'governorship');
+      expect(contest.type).toBe(ContestType.ASSEMBLY);
+      expect(prisma.contest.findFirst).toHaveBeenCalledWith(
+        expect.objectContaining({
+          where: expect.objectContaining({
+            OR: expect.arrayContaining([{ type: ContestType.ASSEMBLY }]),
+          }),
+        }),
+      );
+    } finally {
+      if (previous === undefined) delete process.env.DEFAULT_CONTEST;
+      else process.env.DEFAULT_CONTEST = previous;
+    }
+  });
+
   it('exposes the resolved seat on the request store', () => {
     const contest = {
       id: 'c-assembly',

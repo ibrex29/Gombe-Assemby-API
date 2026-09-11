@@ -71,6 +71,35 @@ const results = new Map<string, unknown>([
 ]);
 
 describe('buildChart', () => {
+  it('charts the governorship block when get_race_summary returned both races', () => {
+    const dual = {
+      races: [
+        {
+          contest: { type: 'GOVERNORSHIP', label: 'Governorship' },
+          geographyLevel: 'LGA',
+          unitLabel: 'LGAs',
+          units: [
+            { name: 'Akko', sharePercent: 41, clientVotes: 200 },
+            { name: 'Billiri', sharePercent: 22, clientVotes: 80 },
+          ],
+          partyStandings: raceSummary.partyStandings,
+        },
+        {
+          contest: { type: 'ASSEMBLY', label: 'State House of Assembly' },
+          geographyLevel: 'CONSTITUENCY',
+          unitLabel: 'constituencies',
+          units: [{ name: 'Deba', sharePercent: 51, clientVotes: 90 }],
+          partyStandings: raceSummary.partyStandings,
+        },
+      ],
+    };
+    const chart = buildChart(
+      { type: 'bar', source: 'race_summary', metric: 'sharePercent' },
+      new Map([['get_race_summary', dual]]),
+    );
+    expect(chart.series.map((point) => point.label)).toEqual(['Akko', 'Billiri']);
+  });
+
   it('builds a series from the real tool result', () => {
     const chart = buildChart(
       { type: 'bar', source: 'race_summary', metric: 'sharePercent' },

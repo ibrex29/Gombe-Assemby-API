@@ -184,4 +184,37 @@ describe('CollationBrowseService browse rollups', () => {
       resultStatus: 'SUBMITTED',
     });
   });
+
+  it('getAssemblyRaceAnalytics returns 24 constituency units', async () => {
+    prisma.campaign.findUniqueOrThrow.mockResolvedValue({
+      id: TEST_CAMPAIGN_ID,
+      name: 'Pantamiyya',
+      isNational: false,
+      clientPartyCode: 'PDP',
+      trackedParties: [
+        { code: 'PDP', name: 'PDP' },
+        { code: 'APC', name: 'APC' },
+      ],
+      stateId: 'state-go',
+      state: { id: 'state-go', name: 'Gombe', code: 'GO' },
+    });
+    prisma.stateAssemblyConstituency.findMany.mockResolvedValue(
+      Array.from({ length: 24 }, (_, index) => ({
+        id: `seat-${index}`,
+        name: `Seat ${index + 1}`,
+        code: `S${index + 1}`,
+        lga: { id: 'lga-1', name: 'Akko' },
+        wards: [{ id: `ward-${index}` }],
+      })),
+    );
+    prisma.collationResult.findMany.mockResolvedValue([]);
+    prisma.pollingUnit.findMany.mockResolvedValue([]);
+
+    const result = await service.getAssemblyRaceAnalytics(nationalDirector);
+
+    expect(result.geographyLevel).toBe('CONSTITUENCY');
+    expect(result.unitLabel).toBe('constituencies');
+    expect(result.lgas).toHaveLength(24);
+    expect(result.summary.lgaCount).toBe(24);
+  });
 });

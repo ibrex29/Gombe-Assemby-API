@@ -105,7 +105,23 @@ export class ContestService {
       if (any) return toResolved(any);
       throw new NotFoundException('No contest is configured for this campaign');
     }
+    return this.findByKey(campaignId, key);
+  }
 
+  /**
+   * Resolve a contest by slug/type/id without honouring DEFAULT_CONTEST.
+   * Used by Intelligence so it can see every race on this campaign.
+   * Collation boards keep using resolve(), which stays process-locked.
+   */
+  async lookupUnlocked(campaignId: string, key: string): Promise<ResolvedContest> {
+    const trimmed = key.trim();
+    if (!trimmed) {
+      throw new NotFoundException('Contest key is required');
+    }
+    return this.findByKey(campaignId, trimmed);
+  }
+
+  private async findByKey(campaignId: string, key: string): Promise<ResolvedContest> {
     const normalized = key.toLowerCase();
     const type =
       normalized === 'assembly' || normalized === 'sha' || normalized === 'house'

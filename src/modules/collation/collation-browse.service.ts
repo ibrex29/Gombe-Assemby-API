@@ -16,7 +16,7 @@ import {
 } from '@electromon/shared';
 import { Prisma } from '@electromon/db';
 import { PrismaService } from '../../common/prisma/prisma.service';
-import { ContestService } from '../../common/contest/contest.service';
+import { ContestService, type ResolvedSeat } from '../../common/contest/contest.service';
 import { DeploymentScopeService } from '../../common/deployment-scope/deployment-scope.service';
 import { RedisService } from '../../common/redis/redis.service';
 import { CollationReadinessService } from './collation-readiness.service';
@@ -2374,6 +2374,448 @@ export class CollationBrowseService {
       await this.redis.setJson(raceCacheKey, racePayload, NATIONAL_SITUATION_CACHE_TTL_SEC);
     }
     return racePayload;
+  }
+
+  /**
+   * House of Assembly standings for Intelligence: 24 constituencies, or the
+   * wards of one named seat. Same summary shape as getRaceAnalytics so the
+   * assistant can label races without learning a second schema.
+   */
+  async getAssemblyRaceAnalytics(user: JwtPayload, seat?: ResolvedSeat | null) {
+    if (!user.campaignId) throw new ForbiddenException('Campaign membership required');
+    this.assertCanBrowseLevel(user, CollationLevel.LGA);
+    if (this.isScopedToWard(user) || this.isScopedToPu(user)) {
+      throw new ForbiddenException('Race analytics requires LGA or higher scope');
+    }
+
+    const partyConfig = await this.getCampaignPartyConfig(user.campaignId);
+    const campaign = await this.prisma.campaign.findUniqueOrThrow({
+      where: { id: user.campaignId },
+      include: { state: true },
+    });
+    if (!campaign.stateId) {
+      throw new ForbiddenException('This campaign has no state to list Assembly seats');
+    }
+
+    const contestId = this.contests.id();
+    const clientCode =
+      partyConfig.clientPartyCode ?? this.deploymentScope.clientPartyCode() ?? 'APC';
+
+    if (seat) {
+      return this.buildAssemblyWardRace(user, partyConfig, clientCode, campaign, seat, contestId);
+    }
+
+    const seats = await this.prisma.stateAssemblyConstituency.findMany({
+      where: { stateId: campaign.stateId },
+      include: { lga: { select: { id: true, name: true } }, wards: { select: { id: true } } },
+      orderBy: { name: 'asc' },
+    });
+    const scopeIds = seats.map((row) => row.id);
+    const wardIds = seats.flatMap((row) => row.wards.map((ward) => ward.id));
+    const lgaIds = [...new Set(seats.map((row) => row.lga?.id).filter((id): id is string => Boolean(id)))];
+
+    const [results, pollingUnits, reportingMaps] = await Promise.all([
+      scopeIds.length
+        ? this.prisma.collationResult.findMany({
+            where: {
+              campaignId: user.campaignId,
+              contestId,
+              level: CollationLevel.CONSTITUENCY,
+              scopeId: { in: scopeIds },
+            },
+            select: { scopeId: true, status: true, partyResults: true },
+          })
+        : Promise.resolve([]),
+      wardIds.length
+        ? this.prisma.pollingUnit.findMany({
+            where: { wardId: { in: wardIds } },
+            select: { id: true, wardId: true },
+          })
+        : Promise.resolve([]),
+      lgaIds.length ? this.loadPuReportingMaps(user.campaignId, lgaIds) : this.emptyReportingMaps(),
+    ]);
+
+    const puResults =
+      pollingUnits.length > 0
+        ? await this.prisma.collationResult.findMany({
+            where: {
+              campaignId: user.campaignId,
+              contestId,
+              level: CollationLevel.POLLING_UNIT,
+              status: CollationResultStatus.APPROVED,
+              scopeId: { in: pollingUnits.map((pu) => pu.id) },
+            },
+            select: { scopeId: true, partyResults: true, status: true },
+          })
+        : [];
+
+    const byScope = new Map(results.map((row) => [row.scopeId, row]));
+    const puByWard = new Map<string, string[]>();
+    for (const pu of pollingUnits) {
+      const list = puByWard.get(pu.wardId) ?? [];
+      list.push(pu.id);
+      puByWard.set(pu.wardId, list);
+    }
+    const puResultById = new Map(puResults.map((row) => [row.scopeId, row]));
+
+    const partyTotals = emptyPartyTotals(partyConfig.partyColumns);
+    const units: Array<{
+      id: string;
+      name: string;
+      parties: Record<string, number>;
+      totalVotes: number;
+      clientVotes: number;
+      margin: number;
+      outcome: MapOutcome;
+      leadingParty: string | null;
+      resultStatus: string;
+      share: number;
+      reporting: ScopeReporting;
+      zone: string | null;
+    }> = [];
+
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+    let pending = 0;
+    let puTotal = 0;
+    let puWithResult = 0;
+
+    for (const row of seats) {
+      const result = byScope.get(row.id);
+      let parties = parsePartyTotals(result?.partyResults, partyConfig.partyColumns);
+      if (partiesTotal(parties) <= 0) {
+        parties = emptyPartyTotals(partyConfig.partyColumns);
+        for (const ward of row.wards) {
+          for (const puId of puByWard.get(ward.id) ?? []) {
+            const puResult = puResultById.get(puId);
+            if (!puResult) continue;
+            addPartyTotals(parties, parsePartyTotals(puResult.partyResults, partyConfig.partyColumns));
+          }
+        }
+      }
+      const totalVotes = partiesTotal(parties);
+      for (const code of partyConfig.partyColumns) {
+        partyTotals[code] = (partyTotals[code] ?? 0) + (parties[code] ?? 0);
+      }
+      const { outcome, leadingParty, margin } = computeOutcome(
+        parties,
+        partyConfig.partyColumns,
+        partyConfig.clientPartyCode,
+      );
+      const clientVotes = partyConfig.clientPartyCode
+        ? (parties[partyConfig.clientPartyCode] ?? 0)
+        : 0;
+      if (outcome === 'WIN') wins += 1;
+      else if (outcome === 'LOSS') losses += 1;
+      else if (outcome === 'TIE') ties += 1;
+      else pending += 1;
+
+      const seatWardIds = row.wards.map((ward) => ward.id);
+      let seatPuTotal = 0;
+      let seatPuReported = 0;
+      for (const wardId of seatWardIds) {
+        const cov = reportingMaps.byWard.get(wardId);
+        seatPuTotal += cov?.total ?? 0;
+        seatPuReported += cov?.reported ?? 0;
+      }
+      puTotal += seatPuTotal;
+      puWithResult += seatPuReported;
+
+      units.push({
+        id: row.id,
+        name: row.name,
+        parties,
+        totalVotes,
+        clientVotes,
+        margin,
+        outcome,
+        leadingParty,
+        resultStatus: result?.status ?? (totalVotes > 0 ? 'APPROVED' : 'NOT_STARTED'),
+        share:
+          totalVotes > 0 && partyConfig.clientPartyCode
+            ? Math.round((clientVotes / totalVotes) * 1000) / 10
+            : 0,
+        reporting: this.reportingStats(seatPuTotal, seatPuReported),
+        zone: null,
+      });
+    }
+
+    return this.finishAssemblyRacePayload({
+      scopeName: campaign.state.name,
+      stateId: campaign.stateId,
+      geographyLevel: 'CONSTITUENCY',
+      unitLabel: 'constituencies',
+      unitCount: seats.length,
+      units,
+      partyTotals,
+      partyConfig,
+      clientCode,
+      wins,
+      losses,
+      ties,
+      pending,
+      puTotal,
+      puWithResult,
+    });
+  }
+
+  private async buildAssemblyWardRace(
+    user: JwtPayload,
+    partyConfig: Awaited<ReturnType<CollationBrowseService['getCampaignPartyConfig']>>,
+    clientCode: string,
+    campaign: { state: { name: string } },
+    seat: ResolvedSeat,
+    contestId: string,
+  ) {
+    const wards = seat.wards.length
+      ? await this.prisma.ward.findMany({
+          where: { id: { in: seat.wardIds } },
+          orderBy: { name: 'asc' },
+        })
+      : [];
+    const lgaIds = seat.lgaId ? [seat.lgaId] : [];
+    const [results, pollingUnits, reportingMaps] = await Promise.all([
+      wards.length
+        ? this.prisma.collationResult.findMany({
+            where: {
+              campaignId: user.campaignId!,
+              contestId,
+              level: CollationLevel.WARD,
+              scopeId: { in: wards.map((ward) => ward.id) },
+            },
+            select: { scopeId: true, status: true, partyResults: true },
+          })
+        : Promise.resolve([]),
+      seat.wardIds.length
+        ? this.prisma.pollingUnit.findMany({
+            where: { wardId: { in: seat.wardIds } },
+            select: { id: true, wardId: true },
+          })
+        : Promise.resolve([]),
+      lgaIds.length ? this.loadPuReportingMaps(user.campaignId!, lgaIds) : this.emptyReportingMaps(),
+    ]);
+    const puResults =
+      pollingUnits.length > 0
+        ? await this.prisma.collationResult.findMany({
+            where: {
+              campaignId: user.campaignId!,
+              contestId,
+              level: CollationLevel.POLLING_UNIT,
+              status: CollationResultStatus.APPROVED,
+              scopeId: { in: pollingUnits.map((pu) => pu.id) },
+            },
+            select: { scopeId: true, partyResults: true, status: true },
+          })
+        : [];
+    const byScope = new Map(results.map((row) => [row.scopeId, row]));
+    const puPartiesByWard = new Map<string, Record<string, number>>();
+    for (const pu of pollingUnits) {
+      const puResult = puResults.find((row) => row.scopeId === pu.id);
+      if (!puResult) continue;
+      puPartiesByWard.set(
+        pu.wardId,
+        addPartyTotals(
+          puPartiesByWard.get(pu.wardId) ?? emptyPartyTotals(partyConfig.partyColumns),
+          parsePartyTotals(puResult.partyResults, partyConfig.partyColumns),
+        ),
+      );
+    }
+
+    const partyTotals = emptyPartyTotals(partyConfig.partyColumns);
+    const units: Array<{
+      id: string;
+      name: string;
+      parties: Record<string, number>;
+      totalVotes: number;
+      clientVotes: number;
+      margin: number;
+      outcome: MapOutcome;
+      leadingParty: string | null;
+      resultStatus: string;
+      share: number;
+      reporting: ScopeReporting;
+      zone: string | null;
+    }> = [];
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+    let pending = 0;
+    let puTotal = 0;
+    let puWithResult = 0;
+
+    for (const ward of wards) {
+      const result = byScope.get(ward.id);
+      let parties = parsePartyTotals(result?.partyResults, partyConfig.partyColumns);
+      if (partiesTotal(parties) <= 0) {
+        parties = puPartiesByWard.get(ward.id) ?? emptyPartyTotals(partyConfig.partyColumns);
+      }
+      const totalVotes = partiesTotal(parties);
+      for (const code of partyConfig.partyColumns) {
+        partyTotals[code] = (partyTotals[code] ?? 0) + (parties[code] ?? 0);
+      }
+      const { outcome, leadingParty, margin } = computeOutcome(
+        parties,
+        partyConfig.partyColumns,
+        partyConfig.clientPartyCode,
+      );
+      const clientVotes = partyConfig.clientPartyCode
+        ? (parties[partyConfig.clientPartyCode] ?? 0)
+        : 0;
+      if (outcome === 'WIN') wins += 1;
+      else if (outcome === 'LOSS') losses += 1;
+      else if (outcome === 'TIE') ties += 1;
+      else pending += 1;
+      const cov = reportingMaps.byWard.get(ward.id);
+      puTotal += cov?.total ?? 0;
+      puWithResult += cov?.reported ?? 0;
+      units.push({
+        id: ward.id,
+        name: titleCaseName(ward.name),
+        parties,
+        totalVotes,
+        clientVotes,
+        margin,
+        outcome,
+        leadingParty,
+        resultStatus: result?.status ?? (totalVotes > 0 ? 'APPROVED' : 'NOT_STARTED'),
+        share:
+          totalVotes > 0 && partyConfig.clientPartyCode
+            ? Math.round((clientVotes / totalVotes) * 1000) / 10
+            : 0,
+        reporting: this.buildReportingFromCov(cov),
+        zone: null,
+      });
+    }
+
+    return this.finishAssemblyRacePayload({
+      scopeName: `${seat.name}${seat.lgaName ? ` · ${seat.lgaName}` : ''}`,
+      stateId: '',
+      geographyLevel: 'WARD',
+      unitLabel: 'wards',
+      unitCount: wards.length,
+      units,
+      partyTotals,
+      partyConfig,
+      clientCode,
+      wins,
+      losses,
+      ties,
+      pending,
+      puTotal,
+      puWithResult,
+    });
+  }
+
+  private emptyReportingMaps() {
+    return {
+      byLga: new Map<string, { total: number; reported: number; approved: number; lastAt: Date | null }>(),
+      byWard: new Map<string, { total: number; reported: number; approved: number; lastAt: Date | null }>(),
+      puByLga: new Map<string, Set<string>>(),
+      puByWard: new Map<string, Set<string>>(),
+      puResults: [] as Array<{
+        scopeId: string;
+        status: string;
+        submittedAt: Date | null;
+        approvedAt: Date | null;
+        createdAt: Date;
+        partyResults?: unknown;
+      }>,
+    };
+  }
+
+  private finishAssemblyRacePayload(input: {
+    scopeName: string;
+    stateId: string;
+    geographyLevel: 'CONSTITUENCY' | 'WARD';
+    unitLabel: string;
+    unitCount: number;
+    units: Array<{
+      id: string;
+      name: string;
+      parties: Record<string, number>;
+      totalVotes: number;
+      clientVotes: number;
+      margin: number;
+      outcome: MapOutcome;
+      leadingParty: string | null;
+      resultStatus: string;
+      share: number;
+      reporting: ScopeReporting;
+      zone: string | null;
+    }>;
+    partyTotals: Record<string, number>;
+    partyConfig: Awaited<ReturnType<CollationBrowseService['getCampaignPartyConfig']>>;
+    clientCode: string;
+    wins: number;
+    losses: number;
+    ties: number;
+    pending: number;
+    puTotal: number;
+    puWithResult: number;
+  }) {
+    const statewideTotal = Object.values(input.partyTotals).reduce((sum, n) => sum + n, 0);
+    const clientVotes = input.partyTotals[input.clientCode] ?? 0;
+    const rankedParties = input.partyConfig.partyColumns
+      .map((code) => ({
+        code,
+        name: input.partyConfig.trackedParties.find((p) => p.code === code)?.name ?? code,
+        votes: input.partyTotals[code] ?? 0,
+        share:
+          statewideTotal > 0
+            ? Math.round(((input.partyTotals[code] ?? 0) / statewideTotal) * 1000) / 10
+            : 0,
+      }))
+      .sort((a, b) => b.votes - a.votes);
+    const rival = rankedParties.find((p) => p.code !== input.clientCode);
+    const reportingPct =
+      input.puTotal > 0 ? Math.round((input.puWithResult / input.puTotal) * 1000) / 10 : 0;
+
+    return this.withPartyMeta(
+      {
+        stateName: input.scopeName,
+        stateId: input.stateId,
+        geographyLevel: input.geographyLevel,
+        unitLabel: input.unitLabel,
+        clientPartyCode: input.clientCode,
+        summary: {
+          lgaCount: input.unitCount,
+          wins: input.wins,
+          losses: input.losses,
+          ties: input.ties,
+          pending: input.pending,
+          statewideTotalVotes: statewideTotal,
+          clientVotes,
+          raceLead: clientVotes - (rival?.votes ?? 0),
+          rivalCode: rival?.code ?? null,
+          rivalVotes: rival?.votes ?? 0,
+          reporting: {
+            pollingUnitsTotal: input.puTotal,
+            pollingUnitsReported: input.puWithResult,
+            percent: reportingPct,
+          },
+          velocity: { windowMinutes: 15, newlyReported: 0, newlyApproved: 0 },
+          incidents: { open: 0, urgent: 0 },
+          irevMismatches: 0,
+          irevAttention: { votesAtRisk: { total: 0 }, clusters: [], feed: { items: [] } },
+        },
+        partyStandings: rankedParties,
+        lgas: input.units.sort((a, b) => a.name.localeCompare(b.name)),
+        biggestLeads: [...input.units]
+          .filter((row) => row.outcome === 'WIN')
+          .sort((a, b) => b.margin - a.margin)
+          .slice(0, 8),
+        biggestDeficits: [...input.units]
+          .filter((row) => row.outcome === 'LOSS')
+          .sort((a, b) => b.margin - a.margin)
+          .slice(0, 8),
+        closestRaces: [...input.units]
+          .filter((row) => row.outcome !== 'PENDING' && row.totalVotes > 0)
+          .sort((a, b) => Math.abs(a.margin) - Math.abs(b.margin))
+          .slice(0, 8),
+      },
+      input.partyConfig,
+    );
   }
 
   private mapOutcomeRow(input: {

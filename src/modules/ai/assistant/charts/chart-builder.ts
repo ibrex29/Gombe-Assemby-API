@@ -142,12 +142,28 @@ function zonesMatch(a: string, b: string): boolean {
   return a.trim().toLowerCase() === b.trim().toLowerCase();
 }
 
+function unwrapRaceSummary(raw: unknown): Record<string, unknown> {
+  const payload = raw as Record<string, unknown>;
+  if (!Array.isArray(payload.races) || payload.races.length === 0) {
+    return payload;
+  }
+  const races = payload.races.filter(
+    (row): row is Record<string, unknown> => !!row && typeof row === 'object',
+  );
+  if (races.length === 1) return races[0];
+  return (
+    races.find(
+      (row) => row.geographyLevel === 'LGA' || row.geographyLevel === 'STATE',
+    ) ?? races[0]
+  );
+}
+
 function extractRows(
   source: ChartSource,
   raw: unknown,
   zone: string | null,
 ): { rows: Array<Record<string, unknown>>; unitLabel: string; zoneLabel?: string } {
-  const payload = raw as Record<string, unknown>;
+  const payload = unwrapRaceSummary(raw);
   const unitLabel = typeof payload.unitLabel === 'string' ? payload.unitLabel : 'Units';
 
   if (source === 'party_standings') {

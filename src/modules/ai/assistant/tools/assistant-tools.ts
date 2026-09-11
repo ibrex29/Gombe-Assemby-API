@@ -1,4 +1,10 @@
-import { CollationLevel, JwtPayload } from '@electromon/shared';
+import { NotFoundException } from '@nestjs/common';
+import { CollationLevel, ContestType, JwtPayload } from '@electromon/shared';
+import {
+  ContestService,
+  type ResolvedContest,
+  type ResolvedSeat,
+} from '../../../../common/contest/contest.service';
 import { CollationBrowseService } from '../../../collation/collation-browse.service';
 import { LlmToolDefinition } from '../../core/llm/llm.types';
 import {
@@ -44,6 +50,7 @@ export interface ToolContext {
   user: JwtPayload;
   campaignId: string;
   browse: CollationBrowseService;
+  contests: ContestService;
   readonlyDb: ReadonlyDbService;
   evidence: EvidenceService;
   triage: TriageService;
@@ -123,9 +130,32 @@ const runSql: AssistantTool = {
  * the same LGA rows in four derived lists, which burns context without adding
  * information — and everything kept here is also the grounding haystack.
  */
-export function toRaceSummaryToolResult(
-  raw: Awaited<ReturnType<CollationBrowseService['getRaceAnalytics']>>,
-) {
+export function toRaceSummaryToolResult(raw: {
+  stateName: string;
+  geographyLevel?: string;
+  unitLabel?: string;
+  clientPartyCode: string;
+  summary: { lgaCount: number };
+  partyStandings: Array<{
+    code: string;
+    name: string;
+    votes: number;
+    share: number;
+  }>;
+  lgas: Array<{
+    name: string;
+    zone?: string | null;
+    outcome: string;
+    leadingParty: string | null;
+    margin: number;
+    totalVotes: number;
+    clientVotes: number;
+    share: number;
+    reporting: { percent: number };
+    resultStatus: string;
+    parties?: Record<string, number>;
+  }>;
+}) {
   // Nationally the underlying service returns one row per STATE; inside a state
   // it returns one row per LGA. It reports which via geographyLevel/unitLabel, so
   // the rows are renamed here to `units` — calling them `lgas` at national scope
@@ -166,6 +196,74 @@ export function toRaceSummaryToolResult(
       resultStatus: unit.resultStatus,
     })),
   };
+}
+
+export function toLabeledRaceSummary(
+  contest: Pick<ResolvedContest, 'type' | 'slug' | 'label'>,
+  raw: Parameters<typeof toRaceSummaryToolResult>[0],
+  seat?: Pick<ResolvedSeat, 'name' | 'code'> | null,
+) {
+  return {
+    contest: {
+      type: contest.type,
+      slug: contest.slug,
+      label: contest.label,
+      seat: seat ? { name: seat.name, code: seat.code } : null,
+    },
+    ...toRaceSummaryToolResult(raw),
+  };
+}
+
+export function wrapRaceSummaries(
+  races: ReturnType<typeof toLabeledRaceSummary>[],
+) {
+  if (races.length === 1) return races[0];
+  return { races };
+}
+
+function parseContestKey(raw: unknown): string | null {
+  if (typeof raw !== 'string') return null;
+  const value = raw.trim().toLowerCase();
+  if (!value) return null;
+  if (value === 'governor') return 'governorship';
+  return value;
+}
+
+async function resolveRequestedContests(
+  ctx: ToolContext,
+  contestArg: unknown,
+  seatRequested: boolean,
+): Promise<ResolvedContest[]> {
+  const key = parseContestKey(contestArg);
+  if (key) {
+    return [await ctx.contests.lookupUnlocked(ctx.campaignId, key)];
+  }
+  const listed = await ctx.contests.list(ctx.campaignId);
+  if (seatRequested) {
+    const assembly = listed.find((row) => row.type === ContestType.ASSEMBLY);
+    if (assembly) return [assembly];
+    return [await ctx.contests.lookupUnlocked(ctx.campaignId, 'assembly')];
+  }
+  if (listed.length > 0) return listed;
+  const current = ctx.contests.current();
+  return current ? [current] : [];
+}
+
+function contestLabel(contest: ResolvedContest) {
+  return { type: contest.type, slug: contest.slug, label: contest.label };
+}
+
+function isEmptyIrevBrief(brief: unknown): boolean {
+  const payload = brief as {
+    votesAtRisk?: { total?: number; count?: number };
+    clusters?: unknown[];
+    feed?: { items?: unknown[] };
+  };
+  const risk =
+    Number(payload.votesAtRisk?.total ?? payload.votesAtRisk?.count ?? 0) || 0;
+  const clusters = Array.isArray(payload.clusters) ? payload.clusters.length : 0;
+  const feed = Array.isArray(payload.feed?.items) ? payload.feed.items.length : 0;
+  return risk === 0 && clusters === 0 && feed === 0;
 }
 
 /** Aggregate party votes for each geopolitical zone present on the rows. */
@@ -216,21 +314,60 @@ const raceSummary: AssistantTool = {
   definition: {
     name: 'get_race_summary',
     description: [
-      'Preferred source for standings: who is winning or losing, margins, vote share, overall',
-      'totals, polling-unit reporting coverage, and open incident counts, broken down by',
-      'geography. On a national campaign the rows are STATES; inside a single state they are',
-      'LGAs — read the geographyLevel and unitLabel fields and describe them accordingly.',
-      'National rows carry a zone field (North West, South East, ...) — group by it for',
-      'regional questions instead of assigning states to zones yourself.',
-      'Use this before writing SQL about results — it applies the campaign win/loss rules',
-      'consistently with the Situation Room dashboards.',
+      'Preferred source for standings across the whole campaign. Omit contest unless the',
+      'question is only one race — the default returns every contest, each labeled.',
+      'Governorship rows are LGAs (or STATES on a national campaign). Assembly rows are',
+      'constituencies (24 seats in Gombe); pass seat for one constituency\'s wards.',
+      'Read geographyLevel, unitLabel and contest.label and describe them accordingly.',
+      'Never say a race is out of scope. Use this before writing SQL about results.',
     ].join(' '),
-    parameters: { type: 'object', properties: {}, additionalProperties: false },
+    parameters: {
+      type: 'object',
+      properties: {
+        contest: {
+          type: 'string',
+          enum: ['governorship', 'assembly'],
+          description:
+            'Optional. Omit for both races. Pass only when the user named one race.',
+        },
+        seat: {
+          type: 'string',
+          description:
+            'Optional Assembly constituency name or code (e.g. Deba, Akko).',
+        },
+      },
+      additionalProperties: false,
+    },
   },
-  async execute(_args, ctx) {
+  async execute(args, ctx) {
     ctx.emit('Computing the race summary', 'get_race_summary');
-    const raw = await ctx.browse.getRaceAnalytics(ctx.user);
-    return toRaceSummaryToolResult(raw);
+    const seatRaw = typeof args.seat === 'string' ? args.seat.trim() : '';
+    const contests = await resolveRequestedContests(ctx, args.contest, Boolean(seatRaw));
+    if (contests.length === 0) {
+      return { error: 'No contest is configured for this campaign.' };
+    }
+    let seat: ResolvedSeat | null = null;
+    if (seatRaw) {
+      try {
+        seat = await ctx.contests.resolveSeat(ctx.campaignId, seatRaw);
+      } catch (error) {
+        if (error instanceof NotFoundException) {
+          return { error: `Unknown assembly seat "${seatRaw}".` };
+        }
+        throw error;
+      }
+    }
+    const races = [];
+    for (const contest of contests) {
+      const useSeat = contest.type === ContestType.ASSEMBLY ? seat : null;
+      const raw = await ctx.contests.run(contest, useSeat, () =>
+        contest.type === ContestType.ASSEMBLY
+          ? ctx.browse.getAssemblyRaceAnalytics(ctx.user, useSeat)
+          : ctx.browse.getRaceAnalytics(ctx.user),
+      );
+      races.push(toLabeledRaceSummary(contest, raw, useSeat));
+    }
+    return wrapRaceSummaries(races);
   },
 };
 
@@ -238,16 +375,47 @@ const irevAttention: AssistantTool = {
   definition: {
     name: 'get_irev_attention',
     description: [
-      'Ranked IReV hold sheets: client-party votes in dispute versus official INEC scans,',
-      'document replacements, ward clusters, and what changed in the last 20 minutes.',
-      'Use for questions about IReV mismatches, official scan disagreements, replacements,',
-      'or which polling units to review next. These are review flags, not findings of fraud.',
+      'Ranked IReV hold sheets for every contest unless you pass contest: client-party votes',
+      'in dispute versus official INEC scans, document replacements, ward clusters, and what',
+      'changed in the last 20 minutes. Assembly IReV may be unavailable — that is a gap, not',
+      'zero mismatches. These are review flags, not findings of fraud.',
     ].join(' '),
-    parameters: { type: 'object', properties: {}, additionalProperties: false },
+    parameters: {
+      type: 'object',
+      properties: {
+        contest: {
+          type: 'string',
+          enum: ['governorship', 'assembly'],
+          description: 'Optional. Omit for both races.',
+        },
+      },
+      additionalProperties: false,
+    },
   },
-  async execute(_args, ctx) {
+  async execute(args, ctx) {
     ctx.emit('Ranking IReV hold sheets', 'get_irev_attention');
-    return ctx.browse.getIrevAttentionBrief(ctx.user);
+    const contests = await resolveRequestedContests(ctx, args.contest, false);
+    const races = [];
+    for (const contest of contests) {
+      const brief = await ctx.contests.run(contest, null, () =>
+        ctx.browse.getIrevAttentionBrief(ctx.user),
+      );
+      if (contest.type === ContestType.ASSEMBLY && isEmptyIrevBrief(brief)) {
+        races.push({
+          contest: contestLabel(contest),
+          available: false,
+          reason:
+            'IReV scans are not ingested for the State House of Assembly yet.',
+        });
+        continue;
+      }
+      races.push({
+        contest: contestLabel(contest),
+        available: true,
+        ...brief,
+      });
+    }
+    return races.length === 1 ? races[0] : { races };
   },
 };
 
@@ -400,12 +568,17 @@ const triageSnapshot: AssistantTool = {
       'turnout and verification flags — report them as given, and never invent a score.',
       'An outlook of UNKNOWN means reporting is still too thin to call that scope; say so',
       'rather than substituting whoever is currently ahead.',
-      'The result also carries the most recent risk movements — use those when asked',
-      'what changed, what is new, or what has got worse since earlier.',
+      'Omit contest unless the question is only one race — the default returns every contest,',
+      'each labeled. The result also carries the most recent risk movements.',
     ].join(' '),
     parameters: {
       type: 'object',
       properties: {
+        contest: {
+          type: 'string',
+          enum: ['governorship', 'assembly'],
+          description: 'Optional. Omit for both races.',
+        },
         level: {
           type: 'string',
           enum: ['STATE', 'LGA'],
@@ -428,31 +601,31 @@ const triageSnapshot: AssistantTool = {
     ctx.emit('Reading the risk board', 'get_triage_risk');
     const level =
       args.level === 'LGA' ? CollationLevel.LGA : CollationLevel.STATE;
-    const board = await ctx.triage.overview(
-      ctx.user,
-      level,
-      args.riskLevel as never,
-    );
+    const contests = await resolveRequestedContests(ctx, args.contest, false);
     const limit = Math.min(Math.max(Number(args.limit) || 15, 1), 50);
-    return {
-      level: board.level,
-      unitLabel: board.unitLabel,
-      summary: board.summary,
-      // Worst first; the rest are omitted rather than truncated silently.
-      rows: board.rows.slice(0, limit),
-      omitted: Math.max(0, board.rows.length - limit),
-      // What moved, so "what changed tonight" is answerable without a
-      // second tool: bands only, since a score drifting inside a band is
-      // not news.
-      recentTransitions: (board.recentTransitions ?? []).map((row) => ({
-        name: row.name,
-        from: row.fromRisk,
-        to: row.toRisk,
-        raised: row.raised,
-        at: row.at,
-        acknowledged: row.acknowledged,
-      })),
-    };
+    const races = [];
+    for (const contest of contests) {
+      const board = await ctx.contests.run(contest, null, () =>
+        ctx.triage.overview(ctx.user, level, args.riskLevel as never),
+      );
+      races.push({
+        contest: contestLabel(contest),
+        level: board.level,
+        unitLabel: board.unitLabel,
+        summary: board.summary,
+        rows: board.rows.slice(0, limit),
+        omitted: Math.max(0, board.rows.length - limit),
+        recentTransitions: (board.recentTransitions ?? []).map((row) => ({
+          name: row.name,
+          from: row.fromRisk,
+          to: row.toRisk,
+          raised: row.raised,
+          at: row.at,
+          acknowledged: row.acknowledged,
+        })),
+      });
+    }
+    return races.length === 1 ? races[0] : { races };
   },
 };
 

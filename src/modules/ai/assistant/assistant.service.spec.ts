@@ -67,7 +67,21 @@ describe('AssistantService', () => {
       getModelId: jest.fn().mockReturnValue('test/model'),
       complete: jest.fn(),
     };
-    browse = { getRaceAnalytics: jest.fn(), getIncidentHotspots: jest.fn() };
+    browse = {
+      getRaceAnalytics: jest.fn(),
+      getAssemblyRaceAnalytics: jest.fn(),
+      getIncidentHotspots: jest.fn(),
+    };
+    const contests = {
+      list: jest.fn().mockResolvedValue([
+        { type: 'GOVERNORSHIP', slug: 'governorship', label: 'Governorship' },
+        { type: 'ASSEMBLY', slug: 'assembly', label: 'State House of Assembly' },
+      ]),
+      lookupUnlocked: jest.fn(),
+      resolveSeat: jest.fn(),
+      run: jest.fn((_contest: unknown, _seat: unknown, fn: () => unknown) => fn()),
+      current: jest.fn(),
+    };
     metrics = {
       recordAiRequest: jest.fn(),
       recordAiToolCall: jest.fn(),
@@ -95,6 +109,7 @@ describe('AssistantService', () => {
       prisma,
       llm,
       browse,
+      contests as any,
       metrics,
       readonlyDb,
       evidence,
@@ -125,6 +140,15 @@ describe('AssistantService', () => {
     await expect(
       service.chat(user, { message: 'hi' }, emit),
     ).rejects.toBeInstanceOf(ForbiddenException);
+  });
+
+  it('tells the model both races are in scope', async () => {
+    llm.complete.mockResolvedValue(completion({ content: 'Done.' }));
+    await service.chat(user, { message: 'overview' }, emit);
+    const system = llm.complete.mock.calls[0][1].messages[0].content as string;
+    expect(system).toContain('State House of Assembly');
+    expect(system).toContain('Governorship');
+    expect(system).toContain('Never say a race is out of scope');
   });
 
   it('answers with figures traced to a tool result', async () => {

@@ -51,6 +51,7 @@ export const ALLOWED_COLUMNS: Record<string, ReadonlySet<string>> = {
     'name',
     'registrationAreaCode',
     'lgaId',
+    'constituencyId',
     'latitude',
     'longitude',
     'createdAt',
@@ -108,9 +109,29 @@ export const ALLOWED_COLUMNS: Record<string, ReadonlySet<string>> = {
     'createdAt',
     'updatedAt',
   ]),
+  contests: new Set([
+    'id',
+    'campaignId',
+    'type',
+    'slug',
+    'label',
+    'isDefault',
+    'createdAt',
+    'updatedAt',
+  ]),
+  state_assembly_constituencies: new Set([
+    'id',
+    'name',
+    'code',
+    'stateId',
+    'lgaId',
+    'createdAt',
+    'updatedAt',
+  ]),
   collation_results: new Set([
     'id',
     'campaignId',
+    'contestId',
     'level',
     'scopeType',
     'scopeId',
@@ -297,10 +318,11 @@ TENANCY: every campaign-scoped table is already filtered by the database to the
 requesting user's campaign. Never write a filter to look at "other campaigns" —
 none are visible, and asking for them returns nothing.
 
-GEOGRAPHY: this deployment is national. Do not scope queries to a single state
-unless the question asks for one. In particular, never join through
-campaigns."stateId" to bound geography on a national campaign — that is the
-campaign's base state, not its coverage.
+GEOGRAPHY: read campaigns."isNational". When it is false, this campaign covers
+one state (campaigns."stateId") — LGAs, wards, PUs and Assembly seats in that
+state only. When it is true, do not scope queries to a single state unless the
+question asks for one, and never join through campaigns."stateId" to bound
+geography — that is the campaign's base state, not its coverage.
 
 TABLES
 
@@ -312,7 +334,7 @@ states(id, name, code, zone)
      questions ("how are we doing in the North West?").
 senatorial_districts(id, name, "stateId")
 lgas(id, name, "stateId", "senatorialDistrictId")
-wards(id, name, "registrationAreaCode", "lgaId", latitude, longitude)
+wards(id, name, "registrationAreaCode", "lgaId", "constituencyId", latitude, longitude)
   -- "registrationAreaCode" is the INEC RA code, e.g. '17-08-01'
 polling_units(id, code, name, "wardId", latitude, longitude, "strengthAssessment", status, "historicalResults")
   -- code is the INEC delimitation code, e.g. '17-08-01-001'
@@ -326,6 +348,13 @@ campaigns(id, name, slug, "stateId", "clientPartyCode", "trackedParties", "isAct
      true, "stateId" is only the campaign's home/base state — DO NOT filter
      geography by it, or you will silently report one state as if it were the
      whole country.
+contests(id, "campaignId", type, slug, label, "isDefault", "createdAt", "updatedAt")
+  -- One row per race. type: GOVERNORSHIP | ASSEMBLY. slug: governorship | assembly.
+     This campaign tracks both. Join collation_results."contestId" = contests.id
+     and label the race. NEVER add governorship votes to Assembly votes.
+state_assembly_constituencies(id, name, code, "stateId", "lgaId", "createdAt", "updatedAt")
+  -- Gombe State House of Assembly seats (24). Wards map onto a seat via
+     wards."constituencyId" when present. Join on id for CONSTITUENCY results.
 campaign_memberships(id, "campaignId", role, "scopeType", "scopeId", "isActive", "createdAt")
   -- role: CANDIDATE | CAMPAIGN_DIRECTOR | DATA_ANALYST | MEDIA_TEAM |
      POLLING_AGENT | VOLUNTEER | VOLUNTEER_COORDINATOR | POLLING_AGENT_COORDINATOR |
@@ -353,13 +382,15 @@ field_reports(id, "campaignId", type, "incidentType", "incidentSeverity", title,
        LEFT JOIN wards pw ON pw.id = pu."wardId"
      then group by coalesce(w."lgaId", pw."lgaId").
 
-collation_results(id, "campaignId", level, "scopeType", "scopeId",
+collation_results(id, "campaignId", "contestId", level, "scopeType", "scopeId",
                   "registeredVoters", "accreditedVoters", "ballotPapersIssued",
                   "unusedBallotPapers", "spoiledBallotPapers", "invalidVotes",
                   "votesCast", "usedBallotPapers", "partyResults", status,
                   "approvalComment", "rejectionReason", "submittedAt",
                   "approvedAt", "createdAt", "updatedAt")
-  -- One row per (campaign, level, scope). level: POLLING_UNIT | WARD | LGA | STATE | NATIONAL.
+  -- One row per (campaign, contest, level, scope). Always filter or join
+     "contestId" so governorship and Assembly figures stay separate.
+     level: POLLING_UNIT | WARD | LGA | CONSTITUENCY | STATE | NATIONAL.
      Higher levels are rollups of approved children, so DO NOT sum PU rows and
      LGA rows together — pick one level.
   -- This is a NATIONWIDE deployment: roughly 176,000 polling units, 8,800 wards,
@@ -392,6 +423,7 @@ collation_results(id, "campaignId", level, "scopeType", "scopeId",
        level='POLLING_UNIT' -> polling_units.id
        level='WARD'         -> wards.id
        level='LGA'          -> lgas.id
+       level='CONSTITUENCY' -> state_assembly_constituencies.id
        level='STATE'        -> states.id
        level='NATIONAL'     -> a fixed sentinel, not a geography row; do not join it
      e.g.  JOIN lgas l ON l.id = cr."scopeId" AND cr.level = 'LGA'

@@ -20,6 +20,7 @@ export function createMockContestService() {
     current: jest.fn(() => testContest),
     list: jest.fn(async () => [testContest]),
     resolve: jest.fn(async () => testContest),
+    lookupUnlocked: jest.fn(async () => testContest),
     active: jest.fn(async () => testContest),
     run: jest.fn((...args: unknown[]) => {
       const fn = args[args.length - 1] as () => unknown;

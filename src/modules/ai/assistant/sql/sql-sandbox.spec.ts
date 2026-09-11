@@ -19,6 +19,15 @@ describe('sanitizeSql', () => {
   describe('allows legitimate analytical queries', () => {
     it.each([
       ['plain select', 'SELECT id, name FROM lgas'],
+      ['contests', 'SELECT id, type, slug, label FROM contests'],
+      [
+        'assembly seats',
+        'SELECT id, name, code FROM state_assembly_constituencies',
+      ],
+      [
+        'results by contest',
+        'SELECT cr."contestId", cr."votesCast" FROM collation_results cr',
+      ],
       ['count(*)', 'SELECT count(*) FROM field_reports'],
       [
         'aliased join',

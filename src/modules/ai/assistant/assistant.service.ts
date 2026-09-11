@@ -8,6 +8,7 @@ import {
 import { JwtPayload } from '@electromon/shared';
 import { PrismaService } from '../../../common/prisma/prisma.service';
 import { MetricsService } from '../../../common/metrics/metrics.service';
+import { ContestService } from '../../../common/contest/contest.service';
 import { CollationBrowseService } from '../../collation/collation-browse.service';
 import { OpenRouterClient } from '../core/llm/openrouter.client';
 import { LlmError, LlmMessage, LlmToolChoice } from '../core/llm/llm.types';
@@ -118,6 +119,7 @@ export class AssistantService {
     private prisma: PrismaService,
     private llm: OpenRouterClient,
     private browse: CollationBrowseService,
+    private contests: ContestService,
     private metrics: MetricsService,
     private readonlyDb: ReadonlyDbService,
     private evidence: EvidenceService,
@@ -174,11 +176,17 @@ export class AssistantService {
       },
     });
 
+    const races = await this.contests.list(user.campaignId);
     const system = buildSystemPrompt({
       stateName: campaign.state.name,
       campaignName: campaign.name,
       clientPartyCode: campaign.clientPartyCode,
       isNational: campaign.isNational,
+      races: races.map((race) => ({
+        type: race.type,
+        slug: race.slug,
+        label: race.label,
+      })),
     });
 
     const baseMessages: LlmMessage[] = [
@@ -196,6 +204,7 @@ export class AssistantService {
       user,
       campaignId: user.campaignId,
       browse: this.browse,
+      contests: this.contests,
       readonlyDb: this.readonlyDb,
       evidence: this.evidence,
       triage: this.triage,

@@ -6,6 +6,7 @@ import {
   ScopeType,
   SocialSentiment,
 } from '@electromon/shared';
+import { ContestService } from '../../../common/contest/contest.service';
 import { PrismaService } from '../../../common/prisma/prisma.service';
 import { normalizeTrackedParties, getPartyCodes } from '@electromon/shared';
 import { TriageInputs } from './scoring/triage-scoring';
@@ -31,7 +32,17 @@ export interface TriageTarget {
  */
 @Injectable()
 export class TriageInputCollectorService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private contests: ContestService,
+  ) {}
+
+  private contestSql() {
+    const contestId = this.contests.current()?.id;
+    return contestId
+      ? Prisma.sql`AND cr."contestId" = ${contestId}`
+      : Prisma.empty;
+  }
 
   /** Campaign-level facts every scope needs. */
   async loadCampaignContext(campaignId: string) {
@@ -278,6 +289,7 @@ export class TriageInputCollectorService {
       JOIN polling_units pu ON pu.id = cr."scopeId"
       JOIN wards w ON w.id = pu."wardId"
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr.level = 'POLLING_UNIT'
         AND cr.status IN ('SUBMITTED', 'APPROVED', 'REJECTED')
         AND w."lgaId" = ANY(${lgaIds})
@@ -306,6 +318,7 @@ export class TriageInputCollectorService {
       JOIN wards w ON w.id = pu."wardId"
       CROSS JOIN LATERAL jsonb_each_text(cr."partyResults") AS kv(key, value)
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr.level = 'POLLING_UNIT'
         AND cr.status IN ('SUBMITTED', 'APPROVED', 'REJECTED')
         AND cr."partyResults" IS NOT NULL
@@ -384,6 +397,7 @@ export class TriageInputCollectorService {
       JOIN polling_units pu ON pu.id = cr."scopeId"
       JOIN wards w ON w.id = pu."wardId"
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr.level = 'POLLING_UNIT'
         AND cr."submittedAt" IS NOT NULL
         AND w."lgaId" = ANY(${lgaIds})
@@ -690,6 +704,7 @@ export class TriageInputCollectorService {
       JOIN polling_units pu ON pu.id = cr."scopeId"
       JOIN wards w ON w.id = pu."wardId"
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr.level = 'POLLING_UNIT'
         AND cr.status IN ('SUBMITTED', 'APPROVED', 'REJECTED')
         AND ${parentWhere}
@@ -717,6 +732,7 @@ export class TriageInputCollectorService {
       JOIN wards w ON w.id = pu."wardId"
       CROSS JOIN LATERAL jsonb_each_text(cr."partyResults") AS kv(key, value)
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr.level = 'POLLING_UNIT'
         AND cr.status IN ('SUBMITTED', 'APPROVED', 'REJECTED')
         AND cr."partyResults" IS NOT NULL
@@ -810,6 +826,7 @@ export class TriageInputCollectorService {
       JOIN polling_units pu ON pu.id = cr."scopeId"
       JOIN wards w ON w.id = pu."wardId"
       WHERE cr."campaignId" = ${campaignId}
+        ${this.contestSql()}
         AND cr."submittedAt" IS NOT NULL
         AND cr.level = 'POLLING_UNIT'
         AND ${parentWhere}
