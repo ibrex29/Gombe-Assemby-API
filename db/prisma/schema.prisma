@@ -756,7 +756,7 @@ model FieldReport {
   @@map("field_reports")
 }
 
-/// Raw Meta Cloud API inbound, kept for election-day replay and dedupe.
+/// Raw inbound WhatsApp (Termii), kept for election-day replay and dedupe.
 model WhatsAppInboundMessage {
   id            String                @id @default(cuid())
   wamid         String                @unique

@@ -4,56 +4,56 @@ import {
   parseStoredWhatsAppMessage,
 } from './whatsapp-inbound.parser';
 
-const webhook = {
-  object: 'whatsapp_business_account',
-  entry: [
-    {
-      changes: [
-        {
-          value: {
-            messages: [
-              {
-                from: '2348031234567',
-                id: 'wamid.TEXT1',
-                type: 'text',
-                text: { body: 'Thugs at the gate' },
-              },
-              {
-                from: '2348031234567',
-                id: 'wamid.IMG1',
-                type: 'image',
-                image: {
-                  id: 'media-1',
-                  caption: 'EC8A torn',
-                  mime_type: 'image/jpeg',
-                },
-              },
-            ],
-            statuses: [{ id: 'wamid.STATUS', status: 'delivered' }],
-          },
-        },
-      ],
-    },
-  ],
+const inbound = {
+  type: 'inbound',
+  id: '8248611476370959318',
+  message_id: '3905204342778053556',
+  receiver: '12022214836',
+  sender: '2347069549231',
+  message: 'Thugs at the gate',
+  received_at: '2020-12-16T10:51:03.000000Z',
+  status: 'Received',
+  channel: 'whatsapp',
 };
 
 describe('extractWhatsAppMessages', () => {
-  it('pulls text and image messages and ignores delivery statuses', () => {
-    const messages = extractWhatsAppMessages(webhook);
-    expect(messages).toHaveLength(2);
+  it('parses a Termii inbound text message', () => {
+    const messages = extractWhatsAppMessages(inbound);
+    expect(messages).toHaveLength(1);
     expect(messages[0]).toMatchObject({
-      wamid: 'wamid.TEXT1',
-      from: '2348031234567',
+      wamid: '3905204342778053556',
+      from: '2347069549231',
       text: 'Thugs at the gate',
+      type: 'text',
     });
-    expect(messages[1]?.image).toMatchObject({
-      id: 'media-1',
+  });
+
+  it('parses inbound media URLs', () => {
+    const messages = extractWhatsAppMessages({
+      ...inbound,
+      message: '',
+      media: { url: 'https://cdn.termii.com/shot.jpg', caption: 'EC8A torn' },
+    });
+    expect(messages[0]?.image).toMatchObject({
+      url: 'https://cdn.termii.com/shot.jpg',
       caption: 'EC8A torn',
     });
   });
 
+  it('ignores delivery reports and device status', () => {
+    expect(extractWhatsAppMessages({ type: 'device_status', device_id: 'x' })).toEqual([]);
+    expect(
+      extractWhatsAppMessages({
+        type: 'outbound',
+        message_id: '1',
+        sender: 'Pantamiyya',
+        receiver: '2347069549231',
+      }),
+    ).toEqual([]);
+  });
+
   it('reads a stored parsed payload back', () => {
-    const [first] = extractWhatsAppMessages(webhook);
+    const [first] = extractWhatsAppMessages(inbound);
     expect(parseStoredWhatsAppMessage(first)).toEqual(first);
   });
 });

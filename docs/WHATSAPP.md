@@ -1,82 +1,63 @@
-# WhatsApp incident intake
+# WhatsApp incident intake (Termii)
 
 Registered field agents can text, voice-note, or photo an incident to the
-campaign WhatsApp Business number. Electromon creates the same `FieldReport`
-records the dashboard already uses. Result sheets stay on **My Unit**.
+campaign WhatsApp number hosted on **Termii**. Electromon creates the same
+`FieldReport` records the dashboard already uses. Result sheets stay on **My Unit**.
 
 **Live webhook:** Governorship API only
 (`https://api.pantamiyya.alphabetandnumbers.com/api/v1/whatsapp/webhook`).
-Incidents are campaign-scoped, so the Assembly dashboard reads them from the
-shared database. Keep WhatsApp env vars **unset** on the Assembly droplet.
+Keep Termii env vars **unset** on the Assembly droplet.
 
 ## Flow
 
 ```
-agent WhatsApp  →  Meta Cloud API  →  POST /whatsapp/webhook
-                                         │ HMAC + persist inbound
-                                         ▼
-                                  WhatsAppInboundWorker
-                                         │ phone → membership
-                                         ▼
-                                  FieldReportsService.create
-                                         │
-                    voice ───────────────┼─────────────── text / caption
-                    existing STT worker  │  shared classifier
-                                         ▼
-                                  Incident desk / map / notifications
+agent WhatsApp  →  Termii  →  POST /whatsapp/webhook
+                                 │ HMAC-SHA512 + persist inbound
+                                 ▼
+                          WhatsAppInboundWorker
+                                 │ phone → membership
+                                 ▼
+                          FieldReportsService.create
 ```
 
-The webhook returns 200 after persisting the inbound row. Classification and
-media download happen asynchronously.
+## Environment (Governorship only)
+
+```
+TERMII_API_KEY=
+TERMII_SECRET_KEY=          # dashboard secret; used to verify X-Termii-Signature
+TERMII_DEVICE_ID=           # WhatsApp device name / ID on Termii (the `from` when we reply)
+TERMII_BASE_URL=https://v3.api.termii.com
+# WHATSAPP_CAMPAIGN_ID=     # optional if a phone could match more than one campaign
+```
+
+`TERMII_SECRET_KEY` is **not** the API key. Find it on the Termii dashboard
+(API / secret key). If it is unset we fall back to signing with `TERMII_API_KEY`.
+
+Do not commit keys. Rotate any key that was pasted in chat.
+
+## Termii dashboard
+
+1. Developer console → add webhook URL  
+   `https://api.pantamiyya.alphabetandnumbers.com/api/v1/whatsapp/webhook`
+2. Connect the WhatsApp device and copy its **device ID / name** into `TERMII_DEVICE_ID`.
+3. Agents WhatsApp that number. Their Electromon phone must be E.164 `+234…`.
+
+Replies use `POST /api/sms/send` with `channel: "whatsapp"`.
 
 ## Agent behaviour
 
 | Inbound | Result |
 |---------|--------|
 | Text | Incident; type/severity classified from the message |
-| Photo (+ optional caption) | `photoUrls`; caption classified when present |
-| Voice note | `audioUrl`; existing voice STT + classifier |
-| Location | lat/long on the report |
+| Photo / media URL | `photoUrls` when Termii includes a media URL |
+| Voice / audio URL | `audioUrl`; existing voice STT + classifier |
 | `help` / `hi` / `start` | Instructions; no record |
 | Unregistered number | “not registered” reply; no record |
-| Video / document / sticker | Ask for text, photo, or voice |
+| Delivery reports / device status | Ignored |
 
-Identity is the sender’s phone against `users.phoneNumber` (E.164 `+234…`).
-Polling-unit agents get `pollingUnitId` from their membership. Duplicate Meta
-`wamid` values are no-ops.
+## Ops
 
-## Endpoints
-
-Public (no JWT). Throttling skipped — Meta retries bursts.
-
-### GET `/api/v1/whatsapp/webhook`
-
-Meta hub challenge. Requires `WHATSAPP_VERIFY_TOKEN`.
-
-### POST `/api/v1/whatsapp/webhook`
-
-Signed with `X-Hub-Signature-256` (`WHATSAPP_APP_SECRET`). Requires
-`WHATSAPP_ACCESS_TOKEN` and `WHATSAPP_PHONE_NUMBER_ID` or returns 503.
-
-## Environment
-
-Set these on the **Governorship** droplet only:
-
-```
-WHATSAPP_VERIFY_TOKEN=
-WHATSAPP_APP_SECRET=
-WHATSAPP_ACCESS_TOKEN=
-WHATSAPP_PHONE_NUMBER_ID=
-WHATSAPP_GRAPH_VERSION=v21.0
-# WHATSAPP_CAMPAIGN_ID=   # optional if a phone could match more than one campaign
-```
-
-Webhook URL in Meta: `https://api.pantamiyya.alphabetandnumbers.com/api/v1/whatsapp/webhook`
-Subscribe to `messages`.
-
-## Ops checklist
-
-1. Meta Business + WhatsApp Cloud API number; app in Live mode.
-2. Point the webhook at the Governorship URL; subscribe to `messages`.
-3. Agent phones in Electromon must match WhatsApp (E.164).
-4. Leave Assembly WhatsApp env unset.
+1. Set env on the Governorship droplet and restart the API.
+2. Apply the WhatsApp inbound migration if it is not already on the database.
+3. Point Termii at the webhook URL above.
+4. Leave Assembly Termii env unset.

@@ -236,12 +236,12 @@ State → SenatorialDistrict → LGA → Ward → PollingUnit
 
 ## WhatsApp (public)
 
-Meta Cloud API incident intake. HMAC on POST. See [WHATSAPP.md](./WHATSAPP.md).
+Termii inbound WhatsApp. HMAC-SHA512 on POST (`X-Termii-Signature`). See [WHATSAPP.md](./WHATSAPP.md).
 Credentials stay unset on the Assembly droplet; the Governorship API is the live webhook.
 
 | Method | Path | Description |
 |--------|------|-------------|
-| GET | `/whatsapp/webhook` | Hub challenge |
+| GET | `/whatsapp/webhook` | URL check |
 | POST | `/whatsapp/webhook` | Inbound messages |
 
 ---

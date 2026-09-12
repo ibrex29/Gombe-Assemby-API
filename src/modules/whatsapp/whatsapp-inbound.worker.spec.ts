@@ -203,7 +203,10 @@ describe('WhatsAppInboundWorker', () => {
               wamid: 'wamid.VOICE',
               from: '2348031234567',
               type: 'audio',
-              audio: { id: 'media-voice', mimeType: 'audio/ogg; codecs=opus' },
+              audio: {
+                url: 'https://cdn.termii.com/voice.ogg',
+                mimeType: 'audio/ogg; codecs=opus',
+              },
             },
           }),
         ),
@@ -256,7 +259,9 @@ describe('WhatsAppInboundWorker', () => {
 
     await worker.handle({ inboundId: 'in-1' });
 
-    expect(client.downloadMedia).toHaveBeenCalledWith('media-voice');
+    expect(client.downloadMedia).toHaveBeenCalledWith(
+      expect.objectContaining({ url: 'https://cdn.termii.com/voice.ogg' }),
+    );
     expect(uploads.saveBuffer).toHaveBeenCalled();
     expect(fieldReports.create).toHaveBeenCalledWith(
       expect.any(Object),

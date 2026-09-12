@@ -134,7 +134,7 @@ export class WhatsAppInboundWorker {
     let longitude = message.location?.longitude;
 
     if (message.image) {
-      const media = await this.client.downloadMedia(message.image.id);
+      const media = await this.client.downloadMedia(message.image);
       if (!media) return null;
       const uploaded = await this.uploads.saveBuffer({
         buffer: media.buffer,
@@ -145,7 +145,7 @@ export class WhatsAppInboundWorker {
     }
 
     if (message.audio) {
-      const media = await this.client.downloadMedia(message.audio.id);
+      const media = await this.client.downloadMedia(message.audio);
       if (!media) return null;
       const uploaded = await this.uploads.saveBuffer({
         buffer: media.buffer,

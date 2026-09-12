@@ -941,7 +941,14 @@ export class CollationService {
             },
           }),
       contestIds.length === 0
-        ? Promise.resolve([])
+        ? Promise.resolve(
+            [] as Array<{
+              contestId: string;
+              status: CollationResultStatus;
+              rejectionReason: string | null;
+              flaggedPollingUnitIds: string[];
+            }>,
+          )
         : this.prisma.collationResult.findMany({
             where: {
               campaignId: user.campaignId,
