@@ -181,6 +181,8 @@ export class IrevCommandCenterService {
       wardId?: string;
       stateId?: string;
       view?: string;
+      sort?: string;
+      severity?: string;
     },
   ) {
     if (!user.campaignId) throw new ForbiddenException('No active campaign membership');
@@ -190,7 +192,9 @@ export class IrevCommandCenterService {
     const safePage = Math.max(1, Number(params.page) || 1);
     const status = this.parseFilter(params.status);
     const search = params.search?.trim();
-    const view = params.view === 'triage' ? 'triage' : 'overview';
+    const view = 'triage';
+    const sort = this.parseSort(params.sort);
+    const severity = this.parseSeverity(params.severity);
 
     const corpusScope = this.resolveCorpusScope(user, context);
     const geoScope = this.resolveGeoScope(user, context, {
@@ -200,7 +204,7 @@ export class IrevCommandCenterService {
     });
 
     const browseLevel = this.resolveBrowseLevel(user, context, geoScope, search);
-    const showPuQueue = view === 'triage' || browseLevel === 'pu';
+    const showPuQueue = true;
 
     const scopeIds = showPuQueue
       ? await this.resolveScopePuIds(user, context, {
@@ -256,9 +260,10 @@ export class IrevCommandCenterService {
         this.fetchQueueRows(queueWhere, status, user.campaignId, scopeIds, safeLimit),
       ]);
       total = queueTotal;
-      const sorted = await this.mapQueueRows(rawRows, context, user.campaignId);
+      const sorted = await this.mapQueueRows(rawRows, context, user.campaignId, sort, severity);
       const start = (safePage - 1) * safeLimit;
       pageRows = sorted.slice(start, start + safeLimit);
+      if (severity !== 'ALL') total = sorted.length;
     }
 
     const scopeLabel = await this.buildScopeLabel(corpusScope, geoScope, context, stateGrid);
@@ -346,6 +351,8 @@ export class IrevCommandCenterService {
           totalPages: Math.max(1, Math.ceil(total / safeLimit)),
         },
         filter: status,
+        sort,
+        severity,
       },
     };
   }
@@ -587,10 +594,23 @@ export class IrevCommandCenterService {
     return 'lga';
   }
 
+  private parseSort(raw?: string): 'attention' | 'gap' | 'newest' | 'ocr' {
+    if (raw === 'gap' || raw === 'newest' || raw === 'ocr') return raw;
+    return 'attention';
+  }
+
+  private parseSeverity(raw?: string): 'ALL' | 'HIGH' | 'LOW' {
+    const value = (raw ?? '').toUpperCase();
+    if (value === 'HIGH' || value === 'LOW') return value;
+    return 'ALL';
+  }
+
   private async mapQueueRows(
     rawRows: QueueSourceRow[],
     context: Awaited<ReturnType<CollationBrowseService['getContext']>>,
     campaignId: string,
+    sort: 'attention' | 'gap' | 'newest' | 'ocr' = 'attention',
+    severity: 'ALL' | 'HIGH' | 'LOW' = 'ALL',
   ) {
     const puIds = rawRows.map((row) => row.scopeId);
     const [puMap, snapshots] = await Promise.all([
@@ -668,10 +688,34 @@ export class IrevCommandCenterService {
               })
             : null,
           sortRank: irevVerificationSortRank(verification),
+          ocrConfidence: verification?.ocrConfidence ?? null,
+          severityKey: verification?.severity ?? null,
         };
       })
+      .filter((row) => {
+        if (severity === 'ALL') return true;
+        const key = row.severityKey ?? '';
+        if (severity === 'HIGH') {
+          return key === 'REPLACED_MATERIAL' || key === 'MISMATCH_HIGH_CONF';
+        }
+        return key === 'MISMATCH_LOW_CONF' || key === 'MISMATCH_IMMATERIAL';
+      })
       .sort((a, b) => {
-        if (a.sortRank !== b.sortRank) return a.sortRank - b.sortRank;
+        if (sort === 'gap') {
+          const aDelta = Math.abs(a.clientPartyDelta ?? 0);
+          const bDelta = Math.abs(b.clientPartyDelta ?? 0);
+          if (aDelta !== bDelta) return bDelta - aDelta;
+        } else if (sort === 'newest') {
+          const aTime = a.irevFetchedAt ?? a.irevVerifiedAt ?? a.submittedAt ?? '';
+          const bTime = b.irevFetchedAt ?? b.irevVerifiedAt ?? b.submittedAt ?? '';
+          if (aTime !== bTime) return bTime.localeCompare(aTime);
+        } else if (sort === 'ocr') {
+          const aOcr = a.ocrConfidence ?? 2;
+          const bOcr = b.ocrConfidence ?? 2;
+          if (aOcr !== bOcr) return aOcr - bOcr;
+        } else if (a.sortRank !== b.sortRank) {
+          return a.sortRank - b.sortRank;
+        }
         const aDelta = Math.abs(a.clientPartyDelta ?? 0);
         const bDelta = Math.abs(b.clientPartyDelta ?? 0);
         if (aDelta !== bDelta) return bDelta - aDelta;
@@ -679,7 +723,7 @@ export class IrevCommandCenterService {
         const bTime = b.irevVerifiedAt ?? b.submittedAt ?? '';
         return bTime.localeCompare(aTime);
       })
-      .map(({ sortRank: _sortRank, ...row }) => row);
+      .map(({ sortRank: _sortRank, ocrConfidence: _ocr, severityKey: _sev, ...row }) => row);
   }
 
   private async buildGeoNav(
@@ -834,7 +878,7 @@ export class IrevCommandCenterService {
         COUNT(*) FILTER (WHERE NOT COALESCE(inec.published, false) AND agent.pu_id IS NOT NULL)::int AS "campaignOnly",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MATCH')::int AS "verifiedAligned",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MISMATCH')::int AS "verifiedMismatch",
-        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE')::int AS "investigate",
+        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE' OR agent."irevVerification"->>'status' IN ('MISMATCH', 'REPLACED', 'UNREADABLE'))::int AS "investigate",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'PENDING')::int AS "pending",
         COUNT(*) FILTER (WHERE agent.pu_id IS NOT NULL AND agent."irevVerification" IS NULL)::int AS "notChecked",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'IREV_MISSING')::int AS "irevMissing",
@@ -889,7 +933,7 @@ export class IrevCommandCenterService {
         COUNT(*) FILTER (WHERE NOT COALESCE(inec.published, false) AND agent.pu_id IS NOT NULL)::int AS "campaignOnly",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MATCH')::int AS "verifiedAligned",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MISMATCH')::int AS "verifiedMismatch",
-        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE')::int AS "investigate",
+        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE' OR agent."irevVerification"->>'status' IN ('MISMATCH', 'REPLACED', 'UNREADABLE'))::int AS "investigate",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'PENDING')::int AS "pending",
         COUNT(*) FILTER (WHERE agent.pu_id IS NOT NULL AND agent."irevVerification" IS NULL)::int AS "notChecked",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'IREV_MISSING')::int AS "irevMissing",
@@ -1012,7 +1056,7 @@ export class IrevCommandCenterService {
         COUNT(*) FILTER (WHERE NOT COALESCE(inec.published, false) AND agent.pu_id IS NOT NULL)::int AS "campaignOnly",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MATCH')::int AS "verifiedAligned",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MISMATCH')::int AS "verifiedMismatch",
-        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE')::int AS "investigate",
+        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE' OR agent."irevVerification"->>'status' IN ('MISMATCH', 'REPLACED', 'UNREADABLE'))::int AS "investigate",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'PENDING')::int AS "pending",
         COUNT(*) FILTER (WHERE agent.pu_id IS NOT NULL AND agent."irevVerification" IS NULL)::int AS "notChecked",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'IREV_MISSING')::int AS "irevMissing",
@@ -1089,7 +1133,7 @@ export class IrevCommandCenterService {
         COUNT(*) FILTER (WHERE NOT COALESCE(inec.published, false) AND agent.pu_id IS NOT NULL)::int AS "campaignOnly",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MATCH')::int AS "verifiedAligned",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'MISMATCH')::int AS "verifiedMismatch",
-        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE')::int AS "investigate",
+        COUNT(*) FILTER (WHERE agent."irevVerification"->>'recommendation' = 'INVESTIGATE' OR agent."irevVerification"->>'status' IN ('MISMATCH', 'REPLACED', 'UNREADABLE'))::int AS "investigate",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'PENDING')::int AS "pending",
         COUNT(*) FILTER (WHERE agent.pu_id IS NOT NULL AND agent."irevVerification" IS NULL)::int AS "notChecked",
         COUNT(*) FILTER (WHERE agent."irevVerification"->>'status' = 'IREV_MISSING')::int AS "irevMissing",
@@ -1170,7 +1214,12 @@ export class IrevCommandCenterService {
       case 'INVESTIGATE':
         return {
           ...base,
-          irevVerification: { path: ['recommendation'], equals: 'INVESTIGATE' },
+          OR: [
+            { irevVerification: { path: ['recommendation'], equals: 'INVESTIGATE' } },
+            { irevVerification: { path: ['status'], equals: 'MISMATCH' } },
+            { irevVerification: { path: ['status'], equals: 'REPLACED' } },
+            { irevVerification: { path: ['status'], equals: 'UNREADABLE' } },
+          ],
         };
       case 'MATCH':
         return { ...base, irevVerification: { path: ['status'], equals: 'MATCH' } };
@@ -1209,6 +1258,7 @@ export class IrevCommandCenterService {
           OR: [
             { irevVerification: { equals: Prisma.DbNull } },
             { irevVerification: { path: ['recommendation'], equals: 'INVESTIGATE' } },
+            { irevVerification: { path: ['status'], equals: 'MISMATCH' } },
             { irevVerification: { path: ['status'], equals: 'PENDING' } },
             { irevVerification: { path: ['status'], equals: 'UNREADABLE' } },
             { irevVerification: { path: ['status'], equals: 'REPLACED' } },
@@ -1534,7 +1584,12 @@ export class IrevCommandCenterService {
     const rows = await this.prisma.collationResult.findMany({
       where: {
         ...this.baseResultWhere(campaignId, scopeIds),
-        irevVerification: { path: ['recommendation'], equals: 'INVESTIGATE' },
+        OR: [
+          { irevVerification: { path: ['recommendation'], equals: 'INVESTIGATE' } },
+          { irevVerification: { path: ['status'], equals: 'MISMATCH' } },
+          { irevVerification: { path: ['status'], equals: 'REPLACED' } },
+          { irevVerification: { path: ['status'], equals: 'UNREADABLE' } },
+        ],
       },
       select: { irevVerification: true },
       take: 500,

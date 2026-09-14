@@ -71,11 +71,15 @@ export class IrevSweepService implements OnModuleInit {
   }
 
   async enqueueCatalogBatch(limit?: number) {
-    if (!this.client.isEnabled() || this.catalogEnqueueRunning) return;
+    if (!this.client.isEnabled() || this.catalogEnqueueRunning) {
+      return { queued: 0, backlog: 0, limit: 0, truncated: false };
+    }
     this.catalogEnqueueRunning = true;
     try {
       const campaignIds = await this.enabledCampaignIds();
-      if (campaignIds.length === 0) return;
+      if (campaignIds.length === 0) {
+        return { queued: 0, backlog: 0, limit: 0, truncated: false };
+      }
 
       const contest = await this.contests.active(campaignIds[0]);
       const configuredBatch = Number.parseInt(
@@ -116,7 +120,20 @@ export class IrevSweepService implements OnModuleInit {
         select: { id: true },
         take,
       });
-      if (wards.length === 0) return;
+      const backlogWhere = {
+        ...this.deploymentScope.wardInLockedStateWhere(),
+        ...this.irevElections.catalogWardFilter(contest),
+        OR: [
+          { irevGeoMapping: null },
+          { irevGeoMapping: { lastCatalogedAt: null } },
+          { irevGeoMapping: { lastCatalogedAt: { lt: staleBefore } } },
+        ],
+      };
+      const backlog = await this.prisma.ward.count({ where: backlogWhere });
+
+      if (wards.length === 0) {
+        return { queued: 0, backlog, limit: take, truncated: backlog > 0 };
+      }
 
       for (const campaignId of campaignIds) {
         for (const ward of wards) {
@@ -128,8 +145,15 @@ export class IrevSweepService implements OnModuleInit {
         { wards: wards.length, campaigns: campaignIds.length },
         'Enqueued IReV catalog for unfetched wards',
       );
+      return {
+        queued: wards.length * campaignIds.length,
+        backlog,
+        limit: take,
+        truncated: backlog > wards.length,
+      };
     } catch (error) {
       this.logger.warn({ err: error }, 'IReV catalog enqueue failed');
+      return { queued: 0, backlog: 0, limit: 0, truncated: false };
     } finally {
       this.catalogEnqueueRunning = false;
     }
@@ -271,6 +295,70 @@ export class IrevSweepService implements OnModuleInit {
       backlog: fetched + ocrFailed,
       eligibleBacklog,
       staleUrls,
+    };
+  }
+
+  async getCatalogStatus() {
+    const empty = {
+      totalWards: 0,
+      neverCataloged: 0,
+      stale: 0,
+      lastCatalogedAt: null as string | null,
+    };
+    if (!this.client.isEnabled()) return empty;
+
+    const campaignIds = await this.enabledCampaignIds();
+    if (campaignIds.length === 0) return empty;
+
+    const contest = await this.contests.active(campaignIds[0]);
+    const wardWhere = {
+      ...this.deploymentScope.wardInLockedStateWhere(),
+      ...this.irevElections.catalogWardFilter(contest),
+    };
+    const staleMs = Number.parseInt(
+      process.env.IREV_CATALOG_STALE_MS ?? String(DEFAULT_CATALOG_STALE_MS),
+      10,
+    );
+    const staleBefore = new Date(
+      Date.now() - (Number.isFinite(staleMs) && staleMs > 0 ? staleMs : DEFAULT_CATALOG_STALE_MS),
+    );
+
+    const [totalWards, neverCataloged, stale, last] = await Promise.all([
+      this.prisma.ward.count({ where: wardWhere }),
+      this.prisma.ward.count({
+        where: {
+          ...wardWhere,
+          OR: [{ irevGeoMapping: null }, { irevGeoMapping: { lastCatalogedAt: null } }],
+        },
+      }),
+      this.prisma.ward.count({
+        where: { ...wardWhere, irevGeoMapping: { lastCatalogedAt: { lt: staleBefore } } },
+      }),
+      this.prisma.irevGeoMapping.aggregate({
+        where: { ward: wardWhere },
+        _max: { lastCatalogedAt: true },
+      }),
+    ]);
+
+    return {
+      totalWards,
+      neverCataloged,
+      stale,
+      lastCatalogedAt: last._max.lastCatalogedAt?.toISOString() ?? null,
+    };
+  }
+
+  async getPipelineStatus(campaignIds: string[]) {
+    const [ocr, catalog, queue] = await Promise.all([
+      this.getOcrPipelineStatus(campaignIds),
+      this.getCatalogStatus(),
+      this.queue.getDepth(),
+    ]);
+    return {
+      enabled: this.client.isEnabled(),
+      ocr,
+      catalog,
+      queue,
     };
   }
 

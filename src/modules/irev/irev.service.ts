@@ -86,4 +86,37 @@ export class IrevService {
 
     return { queued: true, collationResultId: result.id };
   }
+
+  async refreshResults(user: JwtPayload, resultIds: string[]) {
+    if (!user.campaignId) throw new ForbiddenException('No active campaign membership');
+    if (!this.client.isEnabled()) {
+      throw new ForbiddenException('IReV comparison is disabled');
+    }
+
+    const unique = [...new Set(resultIds.filter((id) => id && !id.startsWith('inec-only-')))].slice(
+      0,
+      100,
+    );
+    if (unique.length === 0) return { queued: 0, collationResultIds: [] as string[] };
+
+    const rows = await this.prisma.collationResult.findMany({
+      where: {
+        id: { in: unique },
+        campaignId: user.campaignId,
+        level: CollationLevel.POLLING_UNIT,
+      },
+      select: { id: true, campaignId: true, scopeId: true },
+    });
+
+    for (const result of rows) {
+      this.queue.publish({
+        collationResultId: result.id,
+        pollingUnitId: result.scopeId,
+        campaignId: result.campaignId,
+        force: true,
+      });
+    }
+
+    return { queued: rows.length, collationResultIds: rows.map((row) => row.id) };
+  }
 }

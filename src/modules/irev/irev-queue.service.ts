@@ -28,10 +28,6 @@ export class IrevQueueService implements OnModuleInit, OnModuleDestroy {
     this.events.on(IREV_FETCH_EVENT, (job: IrevFetchJob) => {
       void this.runJob(job);
     });
-    if (process.env.DISABLE_BACKGROUND_WORKERS === 'true') {
-      this.logger.log('Background workers disabled; not consuming RabbitMQ');
-      return;
-    }
     await this.connectRabbit();
   }
 
@@ -41,6 +37,22 @@ export class IrevQueueService implements OnModuleInit, OnModuleDestroy {
       await this.connection?.close();
     } catch {
       // ignore shutdown errors
+    }
+  }
+
+  async getDepth() {
+    if (!this.channel) {
+      return { connected: false, messages: 0, consumers: 0 };
+    }
+    try {
+      const info = await this.channel.checkQueue(IREV_FETCH_QUEUE);
+      return {
+        connected: true,
+        messages: info.messageCount,
+        consumers: info.consumerCount,
+      };
+    } catch {
+      return { connected: false, messages: 0, consumers: 0 };
     }
   }
 

@@ -1,10 +1,11 @@
-import { Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
 import type { JwtPayload } from '@electromon/shared';
 import { IrevCommandCenterService } from './irev-command-center.service';
 import { IrevResultsService } from './irev-results.service';
 import { IrevService } from './irev.service';
 import { IrevSweepService } from './irev-sweep.service';
+import { RefreshBulkDto } from './dto/refresh-bulk.dto';
 
 @Controller('irev')
 export class IrevController {
@@ -55,6 +56,8 @@ export class IrevController {
     @Query('wardId') wardId?: string,
     @Query('stateId') stateId?: string,
     @Query('view') view?: string,
+    @Query('sort') sort?: string,
+    @Query('severity') severity?: string,
   ) {
     return this.commandCenter.getCommandCenter(user, {
       page: page ? Number(page) : undefined,
@@ -65,12 +68,19 @@ export class IrevController {
       wardId,
       stateId,
       view,
+      sort,
+      severity,
     });
   }
 
   @Get('pu/:pollingUnitId')
   getPuSnapshot(@CurrentUser() user: JwtPayload, @Param('pollingUnitId') pollingUnitId: string) {
     return this.irev.getPuSnapshot(user, pollingUnitId);
+  }
+
+  @Post('refresh-bulk')
+  refreshBulk(@CurrentUser() user: JwtPayload, @Body() body: RefreshBulkDto) {
+    return this.irev.refreshResults(user, body.resultIds ?? []);
   }
 
   @Post('refresh/:resultId')
@@ -108,5 +118,19 @@ export class IrevController {
   async getOcrStatus(@CurrentUser() user: JwtPayload) {
     const campaignIds = user.campaignId ? [user.campaignId] : [];
     return this.sweep.getOcrPipelineStatus(campaignIds);
+  }
+
+  @Get('pipeline-status')
+  async getPipelineStatus(@CurrentUser() user: JwtPayload) {
+    const campaignIds = user.campaignId ? [user.campaignId] : [];
+    return this.sweep.getPipelineStatus(campaignIds);
+  }
+
+  @Post('catalog')
+  async catalog(@CurrentUser() user: JwtPayload, @Query('limit') limit?: string) {
+    const result = await this.sweep.enqueueCatalogBatch(limit ? Number(limit) : undefined);
+    const campaignIds = user.campaignId ? [user.campaignId] : [];
+    const status = await this.sweep.getPipelineStatus(campaignIds);
+    return { ...result, status };
   }
 }
